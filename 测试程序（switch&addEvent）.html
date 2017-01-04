@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<input type="button" value="11">
+		<input type="button" value="22">
+		<input type="button" value="33">
+		<input type="button" value="44">
+	<script>
+		var tags = document.getElementsByTagName('input');
+		var bindEvent = function(ele,type,handler){
+			if(ele.addEventListener){
+				ele.addEventListener(type,handler);
+			}else if(ele.attachEvent){
+				ele.attachEvent('on' + type ,function(e){
+					e = e || window.event;
+					handler.call(ele,e)
+				});
+			}else{
+				ele['on' + type] = fn;
+ 			}
+		}
+		// for(var i = 0,len = tags.length; i < len; i++){
+		// 	tags[i].onclick = function(){
+		// 		var _value = this.value;
+		// 		switch (_value) {
+		// 			case '11':
+		// 			alert('11');
+		// 			break;
+
+		// 			case ('33' || '22'):
+		// 			alert('22 || 33');
+		// 			break;
+
+		// 			case '44':
+		// 			alert('44');
+		// 			break;
+		// 		}
+		// 	}
+		// }
+
+		for(var i = 0,len = tags.length; i < len; i++){
+			bindEvent(tags[i],'click',function(e){
+				var _value = this.value;
+				alert(e);
+				switch (_value) {
+					case '11':
+					alert('11');
+					break;
+
+					case ('33' || '22'):
+					alert('22 || 33');
+					break;
+
+					case '44':
+					alert('44');
+					break;
+				}
+			})
+		}
+
+	</script>
+	</body>
+</html>
