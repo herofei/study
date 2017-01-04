@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>加载..</title>
+<!-- Bootstrap Core CSS -->
+<!--<link href="Public/test_th/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+ Start Bootstrap Custom CSS -->
+
+
+<!--<link rel="stylesheet" type="text/css" href="http://img3.job1001.com/webdev/jjr.yl1001.com/style/reset.css">-->
+<link rel="stylesheet" href="http://192.168.60.200/img_css/webdev/BD/style/base.css">
+<link rel="stylesheet" href="http://192.168.60.200/img_css/webdev/BD/style/bd-index.css">
+<link rel="stylesheet" href="http://192.168.60.200/img_css/webdev/BD/style/table.css">
+<!--
+<link rel="stylesheet" href="/BD_css/style/base.css">
+<link rel="stylesheet" href="/BD_css/style/bd-index.css">
+<link rel="stylesheet" href="/BD_css/style/table.css">
+-->
+<!-- Start Bootstrap Custom CSS
+<link href="../A/Public/bootstrap-3.3.5-dist/css/startbootstrap.css" rel="stylesheet" type="text/css">
+<script src="Public/test_th/bootstrap-3.3.5-dist/js/jquery.min.js"></script>
+<script src="Public/js/DatePicker/WdatePicker.js"></script> -->
+
+<script type="text/javascript" src="http://192.168.60.200/img_css/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/myNew/5.0/js/DatePicker/WdatePicker.js"></script>
+<!--weeboxs
+<link href="/test/img_css/js/weebox/weebox.css" rel="stylesheet" type="text/css">-->
+<!--<link href="/test/img_css/js/weebox/myNew_5.0_weebox.css" rel="stylesheet" type="text/css">
+<script src="/test/img_css/js/weebox/bgiframe.js"></script>
+<script src="/test/img_css/js/weebox/weebox.js"></script>-->
+
+
+<link rel="stylesheet" type="text/css" href="http://192.168.60.200/img_css/js/weebox/weebox.css">
+<script type="text/javascript" src="http://192.168.60.200/img_css/js/weebox/bgiframe.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/js/weebox/myNew_5.0_weebox_utf8.js"></script>
+
+<link rel="stylesheet" type="text/css" href="http://192.168.60.200/img_css/webdev/BD/style/operation_result.css">
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/operation_result_utf8.js"></script>
+
+
+<!--validator-->
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/agent_common.js?_=1452310261"></script>
+<link rel="stylesheet" type="text/css" href="http://j.job1001.com/validator/validator.css">
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/jquery.validator_utf8.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/jquery.validate.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/jvalidate.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/public.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/posfixed.js"></script>
+
+<!--dtree-->
+<link rel="StyleSheet" href="http://img3.job1001.com/oa/img/dtree.css" type="text/css" />
+<script src="http://img3.job1001.com/oa/template/js/dtree.js?version=20140110"></script>
+
+<script type="text/javascript" src="http://j.job1001.com/yl1001plugin/choose/js/choose_item.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/group/js/group_plug.js"></script>
+
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/require.js"></script>
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/YL1001Placeholder.js"></script>
+
+
+
+
+<div class="">
+	
+
+
+<div class="m-header">
+	<div class="header-content">
+		<div class="fl kc-logo">
+			<img src="http://192.168.60.200/img_css/webdev/BD/images/logo-yl.png" alt="logo">
+		</div>
+		<ul class="fl kc-nav" j-data-type="tab" j-data-select-class="current">
+			<li class="fl "><a href="/BD/index.php?m=home&a=index&menu=0&ajax_single=-10">首页</a></li>
+			<li class="fl current"><a href="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10" >客户</a></li><li class="fl "><a href="/BD/index.php?m=lead&a=lists&menu=2&ajax_single=-10" >潜在客户</a></li><li class="fl "><a href="/BD/index.php?m=demand&a=demandList&menu=3&ajax_single=-10" >业务机会</a></li><li class="fl "><a href="/BD/index.php?m=dashboard&a=index&menu=5&ajax_single=-10" >仪表盘</a></li><li class="fl "><a href="/BD/index.php?m=msg&a=msglist&menu=6&ajax_single=-10" >消息</a><span class="kc-f-num" id="top_msg_cnt" style="display:none"><em></em></span></li><li class="fl "><a href="/BD/index.php?m=document&a=lists&menu=7&ajax_single=-10" >文件</a></li><li class="fl "><a href="/BD/index.php?m=product&a=ProductList&menu=8&ajax_single=-10" >产品</a></li>			<script>document.title='客户';</script>
+			
+		</ul>
+		<div class="hd-search">
+			<form action="/BD/index.php?m=client&a=showdetail&menu=1" method="post" j-data-target="main_div" id="sear_form" j-data-type="ajax" j-form-type="list">
+			<input type="text" placeholder="输入公司名称/邮箱/电话" id="cCompany_keyword" name="cCompany_keyword" value="">
+			<i class="t-search" onclick="$('#sear_form').submit()"></i>
+			</form>
+		</div>
+
+		<ul class="fr kc-r-ul" style="margin-right:20px;">
+			<li class="fl" style="color:#afabaa">郭生表，欢迎你！</li>
+			<li class="fl kc-touxiang"><img id='touxiang' src="http://192.168.60.200/img_css/webdev/BD/images/man_default.jpg" alt=""></li>
+			<!--<li class="fl kc-f-comment"><a href="javascript:U('/BD/index.php?m=msg&a=msglist&menu=1',{title:'我的消息',width:750,height:500})"></a><span class="kc-f-num" id="top_msg_cnt" style="display:none"><em></em></span></li>-->
+			<li class="fl kc-f-help"><a href="http://oa1356.crm1001.com/main.php?mode=product&action=require&detail=index" target="_blank"></a></li>
+			
+		</ul>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('#cCompany_keyword').click(function(){
+		$(this).animate({
+			width:'200px'
+		});
+		$(this).css({'background-color': '#FFF'});
+	});
+	$('#cCompany_keyword').blur(function(){
+		if($(this).val()==''){
+			$(this).animate({
+				width:'140px'
+			});
+			$(this).css({'background-color': '#eaeaea'});
+		}
+	});
+
+	$('#sear_form').submit(function(){
+		var keyword_val = $("#cCompany_keyword").val();
+		keyword_val=$.trim(keyword_val);
+		if(keyword_val==''){
+			alert('请输入公司名称、邮箱或电话');
+			return false;
+		}
+		return true;
+	});
+
+
+})
+
+</script>
+
+<script>
+function getMsgFrame(){
+	var url='/BD/index.php?m=msg&a=getmsg&menu=1';
+	$.ajax({
+		url:url,
+		success:function(data){
+			
+			j=0;
+			if(typeof data=='object'&&data!=null){
+				for(var i in data) j++;
+			}
+			if(j>0){
+				if($('#top_msg_cnt').closest('li').hasClass('current')){
+						
+				}else{
+					$('#top_msg_cnt').show();
+				}
+				if(j>100) $('#top_msg_cnt').find('em').text('...');
+				else $('#top_msg_cnt').find('em').text(j);
+			}else{
+				$('#top_msg_cnt').hide();
+			}
+			
+		}
+	});
+}
+window.setInterval(getMsgFrame,3000);
+
+$(document).ready(function(){
+	$.getJSON('/BD/index.php?m=user&a=getUserImage&menu=1',function(jsonarr){
+		if(typeof jsonarr=='object' && jsonarr.photo!=''){
+			$("#touxiang").attr('src',jsonarr.photo);
+		}
+	});
+});
+
+</script>
+	<!--左侧菜单-->
+	<!--<div class="">-->
+	<table class="tab-list-bd" width="100%">
+		<tr>
+			<td width="62" valign="top">
+				&nbsp;
+			</td>
+
+			<td valign="top" style="">
+				<div class="" style="padding-left:15px;padding-right:15px;padding-top:84px;min-height:500px;" id="main_div">
+					<!--子菜单-->
+					
+<div class="kc-r-top clearfix" style="background-color: #fff;padding-left:10px;padding-right:10px;">
+	
+	<ul class="kc-r-top-nav " j-data-type="tab"><li class="fl actived" ><a href="/BD/index.php?m=client&a=lists&menu=1" aria-controls="home" role="tab" data-toggle="tab" j-data-type="ajax" j-data-target="body_main">我的付费资源</a></li><li class="fl " ><a href="/BD/index.php?m=client&a=lists_daili&menu=1" aria-controls="home" role="tab" data-toggle="tab" j-data-type="ajax" j-data-target="body_main">代理付费资源</a></li><li class="fl " ><a href="/BD/index.php?m=client&a=lists_sub&menu=1" aria-controls="home" role="tab" data-toggle="tab" j-data-type="ajax" j-data-target="body_main">下属资源</a></li><li class="fl " ><a href="/BD/index.php?m=client&a=lists_xiet&menu=1" aria-controls="home" role="tab" data-toggle="tab" j-data-type="ajax" j-data-target="body_main">协同开发资源</a></li></ul>
+	<div class="kc-r-top-location fr">
+		<!--<span>你现在的位置：<em>首页</em> 〉客户<em></em></span>-->
+	</div>
+
+</div>
+					<!--主页面-->
+					<div id="body_main" >
+<div class="_content_form_list" j-data-type="" j-data-target="" style="background-color: #fff;padding-left:10px;padding-right:10px;">
+<form class="formlist formlist_client_lists"  method="post" j-form-type="list" action="index.php?m=client&a=lists"  >
+<input type="hidden" value="" name="page" id="page" />
+<input type="hidden" value="" name="pagesize" id="pagesize" />
+<input type="hidden" value="" name="order" id="order" />
+<input type="hidden" value="0" name="subva" id="subva" />
+<input type="hidden" value="1" name="menu" id="menu" />
+<input type="hidden" value="-10" name="ajax_single" id="ajax_single" />
+<input type="hidden" value="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10&localurl=" name="localurl" id="localurl" />
+<input type="hidden" value="" name="isszbattle" id="isszbattle" />
+<input type="hidden" value="" name="dail_userid" id="dail_userid" />
+<input type="hidden" value="" name="gr_xt" id="gr_xt" />
+<!--判断是否是简版-->
+
+	<table width="100%" class="top-table">
+		<td >
+		
+
+		</td>
+		<td algin="right" style="text-align:right">
+		<a href="/BD/index.php?m=client&a=add&hashurl=%2FBD%2Findex.php%3Fm%3Dclient%26a%3Dlists%26menu%3D1%26ajax_single%3D-10&menu=1"  class="add_btn"  target="_blank">添加客户</a>		</td>
+	</table>
+	<style>
+/*.searspan select{}
+.searspan input{}
+.searspan{margin-right:15px;}
+.searspan label{margin-right:5px;}
+#select_type_option{margin-right:15px;}
+#select_type_option_level{margin-right:15px;}
+.short_txt{width:78px;}
+*/
+</style>
+<table  border="0" cellspacing="0" cellpadding="0" width="100%" style="" id="sear_time_1461565246">
+<tr>
+<td>
+<ul class="sear-ul">
+	
+	<li class='searspan fl'><select id="select_type_option" name="select_type_option"><option value="cCompany" >公司名称</option><option value="cType" >客户等级</option><option value="clientgType" >沟通等级</option><option value="cArea" >地区</option><option value="cLinkman" >联系人</option><option value="cTel" >联系方式</option><option value="uId" >企业编号</option><option value="cOprationEnd" >到期时间</option><option value="RecordsDate" >最近拜访时间</option><option value="isrecord" >是否已做拜访</option><option value="lastrecord1" >距上次拜访(月)</option><option value="lastrecord2" >距上次拜访(天)</option></select><span id='cCompany_p' ><input type="text" name="cCompany" class="txt"  value="" id="cCompany" />
+</span><span id='cType_p' style="display:none;"><select name="cType" id="cType" ><option value="" selected>-请选择-</option><option value="未合作" >未合作</option><option value="服务期" >服务期</option><option value="过期" >过期</option></select>
+</span><span id='clientgType_p' style="display:none;"><select name="clientgType" id="clientgType" ><option value="" selected>-请选择-</option><option value="11" >待联系</option><option value="22" >有需求无意向</option><option value="2" >有需求有意向</option><option value="13" >无需求</option><option value="14" >待签</option><option value="15" >已发合同</option><option value="23" >已回合同</option></select>
+</span><span id='cArea_p' style="display:none;"><input type="text" name="cArea" class="txt"  value="" id="cArea" />
+</span><span id='cLinkman_p' style="display:none;"><input type="text" name="cLinkman" class="txt"  value="" id="cLinkman" />
+</span><span id='cTel_p' style="display:none;"><input type="text" name="cTel" class="txt"  value="" id="cTel" />
+</span><span id='uId_p' style="display:none;"><input type="text" name="uId" class="txt"  value="" id="uId" />
+</span><span id='cOprationEnd_p' style="display:none;"><input type="text" name="cOprationEnd_start" id="cOprationEnd_start" class='txt short_txt' value="" onFocus="WdatePicker()"   >-<input type="text" name="cOprationEnd_end" id="cOprationEnd_end" class='txt short_txt' value="" onFocus="WdatePicker()"  >
+</span><span id='RecordsDate_p' style="display:none;"><input type="text" name="RecordsDate_start" id="RecordsDate_start" class='txt short_txt' value="" onFocus="WdatePicker()"   >-<input type="text" name="RecordsDate_end" id="RecordsDate_end" class='txt short_txt' value="" onFocus="WdatePicker()"  >
+</span><span id='isrecord_p' style="display:none;"><select name="isrecord" id="isrecord" ><option value="" selected>请选择</option><option value="1" >未做拜访</option><option value="2" >已做拜访</option></select>
+</span><span id='lastrecord1_p' style="display:none;"><input type="text" name="lastrecord1_start" id="lastrecord1_start" class='txt short_txt' value=""     >-<input type="text" name="lastrecord1_end" id="lastrecord1_end" class='txt short_txt' value=""    >
+</span><span id='lastrecord2_p' style="display:none;"><input type="text" name="lastrecord2_start" id="lastrecord2_start" class='txt short_txt' value=""     >-<input type="text" name="lastrecord2_end" id="lastrecord2_end" class='txt short_txt' value=""    >
+</span></li>	<li >
+		<label>&nbsp;</label>
+		<input type="submit" value="查询"  class="btn BD_search_btn"/>&nbsp;
+		<input type="button" onclick="resetbtn(this)" value="重置"  class="btn BD_cancel_btn"/>
+	</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<script>
+var tquerytable='sear_time_1461565246';
+var query_key_value=$('#'+tquerytable).closest('form[j-form-type=list]').find('#select_type_option').val();
+$(document).ready(function(){
+	
+
+	$('#'+tquerytable).closest('form[j-form-type=list]').on('submit',function(){
+	
+		$(this).find('#subva').val('1');
+		$(this).find('#page').val('0');
+	});
+	
+	$('#'+tquerytable).closest('form[j-form-type=list]').find('#select_type_option').on('change',function(){
+		$(this).parents('li').find('input[type=text]').val('');
+		_this=this;
+		$(this).parents('li').find('select').each(function(){
+			if($(this).attr('id')!=$(_this).attr('id')) $(this).val('');
+		});
+		///console.log(query_key_value);
+
+		$(this).parents('li').find('[id^='+query_key_value+']').hide();
+		query_key_value=$(this).val();
+		$(this).parents('li').find('[id^='+query_key_value+']').show();
+	});
+
+});
+
+function resetbtn(obj){
+	var form=$(obj).closest('form');
+	form.find('#subva').val('1');	
+	form.attr('target','_self');
+	form.find('input[type=text]').val('');
+	form.find('select').find('option:first').attr('selected',true);
+	//alert(form.serialize());
+	form.submit();
+}
+function sub(){
+	return true;
+}
+
+</script>
+
+
+<div class="">
+	<table class="TableBlock" width="100%">
+		<thead><tr class='TableHeader'><th class="th_checkbox"  width='40' norwap='norwap'><span><input type="checkbox" name="checkedAll" id="checkedAll"  /></span></th><th class="th_uId" ><span><a href="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10&order=uId-desc" >企业编号</a><i class="normalEq"></i></span></th><th class="th_cCompany" ><span><a href="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10&order=cCompany-desc" >公司名称</a><i class="normalEq"></i></span></th><th class="th_cTrade" ><span><a href="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10&order=tradeid-desc" >所属行业</a><i class="normalEq"></i></span></th><th class="th_cArea" ><span><a href="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10&order=regionid-desc" >所属地区</a><i class="normalEq"></i></span></th><th class="th_contract_cType" ><span>版本</span></th><th class="th_contract_cMoney" ><span>最近合作金额</span></th><th class="th_cOprationEnd" ><span><a href="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10&order=cOprationEnd-desc" >到期时间</a><i class="normalEq"></i></span></th><th class="th_guzhi" ><span>估值</span></th><th class="th_zhiwei_cnt" ><span>外网职位数</span></th><th class="th_bf_content" ><span>最新拜访记录</span></th><th class="th_RecordsDate" ><span><a href="/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10&order=RecordsDate-desc" >拜访时间</a><i class="normalEq"></i></span></th></tr></thead>
+<tbody>
+<tr  class='TableData0'><td class="td_checkbox"><span class="label"><input name="id[]" type="checkbox" id="id" value="1689422" /></span></td>
+<td class="td_uId"><span class="label"></span></td>
+<td class="td_cCompany"><span class="label"><a  href="/BD/index.php?m=client&a=show&cid=D3RS5M696&menu=1"    target="_blank" >121</a><span class='cCompany_strspan' id='cCompany_1689422' cId='1689422'></span></span></td>
+<td class="td_cTrade"><span class="label">印刷机械英才网</span></td>
+<td class="td_cArea"><span class="label">广东-深圳市-南山区</span></td>
+<td class="td_contract_cType"><span class="label">新的合同</span></td>
+<td class="td_contract_cMoney"><span class="label">11000</span></td>
+<td class="td_cOprationEnd"><span class="label"><span title='服务时间：2015-03-23到2016-03-24'>2016-03-24</span></span></td>
+<td class="td_guzhi"><span class="label"><span id="guzhi_1689422">--</span></span></td>
+<td class="td_zhiwei_cnt"><span class="label"><span id="zhiwei_1689422">--</span></span></td>
+<td class="td_bf_content"><span class="label"><span class='lastRecord_span' id='lastRecord_1689422' cCompany='121'></span></span></td>
+<td class="td_RecordsDate"><span class="label">2016-03-10<br />(<font color='red'>1</font>个月<font color='red'>15</font>天前)</span></td>
+</tr>
+<tr  class='TableData1'><td class="td_checkbox"><span class="label"><input name="id[]" type="checkbox" id="id" value="1689415" /></span></td>
+<td class="td_uId"><span class="label"></span></td>
+<td class="td_cCompany"><span class="label"><a  href="/BD/index.php?m=client&a=show&cid=43RS5M6EZ&menu=1"    target="_blank" >中国电能成套设备有限公司</a><span class='cCompany_strspan' id='cCompany_1689415' cId='1689415'></span></span></td>
+<td class="td_cTrade"><span class="label"></span></td>
+<td class="td_cArea"><span class="label">北京-北京市辖区</span></td>
+<td class="td_contract_cType"><span class="label">高级版</span></td>
+<td class="td_contract_cMoney"><span class="label">5800</span></td>
+<td class="td_cOprationEnd"><span class="label"><span title='服务时间：2015-05-07到2016-05-07'>2016-05-07</span></span></td>
+<td class="td_guzhi"><span class="label"><span id="guzhi_1689415">--</span></span></td>
+<td class="td_zhiwei_cnt"><span class="label"><span id="zhiwei_1689415">--</span></span></td>
+<td class="td_bf_content"><span class="label"><span class='lastRecord_span' id='lastRecord_1689415' cCompany='中国电能成套设备有限公司'></span></span></td>
+<td class="td_RecordsDate"><span class="label">2016-03-08<br />(<font color='red'>1</font>个月<font color='red'>17</font>天前)</span></td>
+</tr>
+</tbody>	</table>
+</div>
+<!--判断是否是简版-->
+
+</form></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var cIdstr = '';
+	
+	$(".cCompany_strspan").each(function(i, element) {
+		cIdstr += $(element).attr("cId")+',';
+    });
+	
+	
+	//$(".cCompany_strspan").html("<img src='http://img3.job1001.com/oa/css/gray/images/loading_16x16.gif'>");
+   // $(".lastRecord_span").html("<img src='http://img3.job1001.com/oa/css/gray/images/loading_16x16.gif'>"); 
+	if(cIdstr!=''){
+		//企业名称后面显示的标签
+		window.setTimeout(function(){
+			$.getJSON('/BD/index.php?m=client_info&a=getCompanyTab&menu=1&cIdstr='+cIdstr,function(data){
+				if(data==null ||  typeof data=='undefined') {
+					return ;
+				}
+				$.each(data,function(company_id,v){
+					var tabstr ='';
+					for(var i=0;i<v.length;i++){
+						if(v[i]!='')
+							tabstr += "<font color='#ee4f4e'>"+v[i]+"</font>&nbsp;";
+					}
+					if(tabstr!=''){
+						tabstr = "<br />"+tabstr;
+					}
+					$("#cCompany_"+company_id).html(tabstr);
+				});
+			});
+		},100);
+		//最近一次拜访记录
+		window.setTimeout(function(){
+			$.getJSON('/BD/index.php?m=records&a=getLastRecord&menu=1&cIdstr='+cIdstr,function(jsonarr){
+				if(jsonarr==null ||  typeof jsonarr=='undefined') {
+					$("#lastRecord_"+company_id).html("<font color='#cccccc'>暂无</font>");
+				}
+				$.each(jsonarr,function(company_id,v){
+					if(typeof(v.content)!='undefined' && v.content!='' && v.content!=null){
+						var cCompany=$("#lastRecord_"+company_id).attr('cCompany');
+						$("#lastRecord_"+company_id).html("<a href='#A' onclick=\"javascript:U('/BD/index.php?m=records&a=lists&fromtype=list&menu=1&cid="+v.cIdcode+"',{title:'查看【"+cCompany+"】的拜访记录',width:700,height:500});\">"+v.content+"</a>");
+						$("#lastRecord_"+company_id).parent().attr("title",v.title);		//设置父元素中td的title属性
+					}else{
+						$("#lastRecord_"+company_id).html("<font color='#cccccc'>暂无</font>");
+					}
+				});
+			});
+		},100);
+	}
+	
+});
+</script></div>
+				</div>
+			</td>
+		</tr>
+		
+	</table>
+	
+
+</div>
+
+
+<div class="bd-aside">
+		<img class="aside-top" src="http://192.168.60.200/img_css/webdev/BD/images/aside-top.png">
+		<ul class="aside-nav">
+			<li class="clearfix">
+				<div class="aside-itemImg showMess">
+					<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon0.png">
+					<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+				</div>
+				<div class="aside-item showMess">
+					<span>快速创建</span>
+					<img class="messageCheck clearfix" src="http://192.168.60.200/img_css/webdev/BD/images/Messmore.png">
+				</div>
+				<div class="aside-liMess"><a href="/BD/index.php?m=client&a=add&menu=1" target='_blank'>添加潜在客户</a></div><div class="aside-liMess"><a href="javascript:U('/BD/index.php?m=demand&a=adddemand&menu=1',{title:'发布商机',width:700,height:550})" >发布商机</a></div><div class="aside-liMess"><a href="javascript:U('/BD/index.php?m=process&a=addshow&menu=1',{title:'发布商机',width:700,height:550})" >创建销售进程</a></div>				
+			</li>
+			<li class="clearfix">
+				<a href="/BD/index.php?m=process&a=processList&menu=3">
+					<div class="aside-itemImg">
+						<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon1.png">
+						<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+					</div>
+				</a>
+				<a href="/BD/index.php?m=process&a=processList&menu=3">
+					<div class="aside-item">
+						<span>销售进程</span>
+						<!--<span class="messageTotal">2132</span>-->
+					</div>
+				</a>
+			</li>
+			<li class="clearfix">
+				<a href="/BD/index.php?m=lead&a=initiative&menu=2">
+					<div class="aside-itemImg">
+						<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon2.png">
+						<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+					</div>
+				</a>
+				<a href="/BD/index.php?m=lead&a=initiative&menu=2">
+					<div class="aside-item">
+						<span>主动注册</span>
+						<!--<span class="messageTotal">12</span>-->
+					</div>
+				</a>
+			</li>
+			<li class="clearfix">
+				<a href="/BD/index.php?m=lead&a=grabbing&menu=2">
+					<div class="aside-itemImg">
+						<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon3.png">
+						<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+					</div>
+				</a>
+				<a href="/BD/index.php?m=lead&a=grabbing&menu=2">
+					<div class="aside-item">
+						<span>外部资源</span>
+					</div>
+				</a>
+			</li>
+			<li class="clearfix">
+				<div class="aside-itemImg showMess">
+					<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon4.png">
+					<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+				</div>
+				<div class="aside-item showMess">
+					<span>最近项目</span>
+					<!--<img class="messageCheck" src="http://192.168.60.200/img_css/webdev/BD/images/Messmore.png">-->
+				</div>
+			</li>
+			<li class="clearfix">
+				
+				<div class="aside-itemImg showMess">
+					<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon5.png">
+					<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+				</div>
+				
+				<div class="aside-item showMess">
+					<span>合同</span>
+					<img class="messageCheck clearfix" src="http://192.168.60.200/img_css/webdev/BD/images/Messmore.png">
+				</div>
+				<div class="aside-liMess"><a href="/BD/index.php?m=contract&a=contractlist&menu=1" >我的合同管理</a></div><div class="aside-liMess"><a href="/BD/index.php?m=contract&a=changeServer&menu=1" >服务变更申请</a></div><div class="aside-liMess"><a href="/BD/index.php?m=contract&a=contractflow&menu=1" >生成合同管理</a></div>			</li>
+			<li class="clearfix">
+				<a href="/BD/index.php?m=fprecord&a=fapiaolist&menu=90">
+					<div class="aside-itemImg">
+						<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon6.png">
+						<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+					</div>
+				</a>
+				<a href="/BD/index.php?m=fprecord&a=fapiaolist&menu=90">
+					<div class="aside-item">
+						<span>发票</span>
+					</div>
+				</a>
+			</li>
+			<li class="clearfix">
+				<div class="aside-itemImg showMess">
+					<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon7.png">
+					<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+				</div>
+				<div class="aside-item showMess">
+					<span>到款</span>
+					<img class="messageCheck clearfix" src="http://192.168.60.200/img_css/webdev/BD/images/Messmore.png">
+				</div>
+				<div class="aside-liMess"><a href="/BD/index.php?m=fprecord&a=mylist&menu=80" >我的到款</a></div><div class="aside-liMess"><a href="/BD/index.php?m=fprecord&a=fpflow&menu=1" >到款处理</a></div><div class="aside-liMess"><a href="/BD/index.php?m=Detailop&a=myList&menu=1" >业绩调整</a></div>			</li>
+			<li class="clearfix">
+				<a href="http://oa1356.crm1001.com/main.php?mode=product&action=require&detail=index" target="_blank">
+					<div class="aside-itemImg">
+						<img src="http://192.168.60.200/img_css/webdev/BD/images/aside-icon8.png">
+						<!--<img class="messageRedIcon" src="http://192.168.60.200/img_css/webdev/BD/images/message.png">-->
+					</div>
+				</a>
+				<a href="http://oa1356.crm1001.com/main.php?mode=product&action=require&detail=index" target="_blank">
+					<div class="aside-item">
+						<span>马上求助</span>
+					</div>
+				</a>
+			</li>
+		</ul>
+</div>
+
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/message.js"></script>
+ 
+
+
+<script type="text/javascript" src="http://192.168.60.200/img_css/webdev/BD/js/yl1001msg.js"></script>
+<script type="text/javascript" src="http://j.job1001.com/yl1001plugin/YLrightbar/right_bar_utf.js?v=2016033105"></script>
+<script>
+$(document).ready(function (){
+	//消息
+	$.YL1001Msg.show('1099',{});
+	//右下角反馈通用组件
+	$.YLrightbar({
+		imgColor: "blue", //设置图片颜色，但必须上传相应颜色的图片，蓝色主题传入"blue"
+		bgColor:"#72a7e2",  //设置hover时背景色，蓝色为#72a7e2
+		isHelp:false, //是否显示帮助中心
+		//helpUrl: "main.php?mode=search&action=index",	//帮助中心链接地址
+		isOpinion:true,  //是否显示意见反馈
+		opinionUrl:"http://oa1356.crm1001.com/main.php?mode=product&action=require&detail=index",//意见反馈url
+		isIndex : true,//是否显示返回首页
+		indexUrl:"http://oa1356.crm1001.com/ylhome.php",	//返回首页地址
+		right:"20px", //设置右边距
+		bottom:"200px", //设置底边距
+		isDrag:true,	//设置可拖动
+		isQRcode:false	//不显示下载二维码
+	});
+});
+</script>
+
+<!--每次都包含-->
+
+<script type="text/javascript">
+//目前兼容a form 标签
+
+$(document).ready(function(){
+	//return ;
+	/*
+	//a下面的异步
+	$("a[j-data-type='ajax']").unbind('click').click(function(){
+		ajax_fun(this);
+		return false;
+	});
+	*/
+	//form下的ajax提交和列表
+	/*$("form[j-data-type='ajax']").submit(function(){
+		ajax_fun(this);
+		return false;
+	});
+	
+	*/
+	//联动,每次都需要初始化
+	$('select[rel$=_0]').each(function(){
+		if(typeof $(this).attr('init')=='undefined'){
+
+			var m=$(this).attr('rel').split('_');
+			param={};
+			param['rel']=m[0]+'_'+-1;
+			param['name']=$(this).attr('data-name');
+			param['data_rel']=$(this).attr('data-rel')+'';
+			param['data_sel']=$(this).attr('data-sel');
+			param['init']=1;
+			$(this).attr('init','1');
+			change_select(param);
+
+		}
+		
+	});
+
+	//等同于jquery loading 
+	$("[j-data-type='ajax_loading']").each(function(){
+		
+		if(typeof $(this).attr('init')=='undefined') {
+			each_ajax(this);
+			$(this).attr('init','1');
+		}
+	});
+
+	
+	//表单验证
+	$("form[j-form-type='form']").each(function(){
+		//return true;
+		//console.log($(this).attr('init'));
+		//console.log($(this).find('.TableContent').attr('id'));
+		//console.log($(this).find('.TableContent').attr('j-table-value'));
+
+		if(typeof $(this).attr('init')=='undefined' && $(this).find('.TableContent').attr('j-table-value')=='1'){ 
+			
+			
+
+			//检查默认的验证配置
+			var id=$(this).find('.TableContent').attr('id');
+			if(id!=null) eval('if (typeof '+id+'_val_str'+'!="undefined") var rules='+id+'_val_str');
+			//检查是否用户自定义的
+			var validate_conf=$(this).attr('validate_conf');
+			if(validate_conf!=null) eval('if(typeof '+validate_conf+'!="undefined") var validate_conf_mm='+validate_conf+";");
+			
+			var param={
+				onsubmit:true,// 是否在提交是验证
+				onfocusout:function(element) { $(element).valid(); },// 是否在获取焦点时验证
+				onkeyup :false,// 是否在敲击键盘时验证
+				//onfocusin:true
+			};
+			if(typeof validate_conf_mm=='object'){
+				for(var i in validate_conf_mm)
+					param[i]=validate_conf_mm[i];
+			}else if(typeof validate_conf_mm=='function'){
+				param=validate_conf_mm($(this));
+			}	
+			var _this=this;
+			if(typeof param['submitHandler']!='function'){
+				param['submitHandler']=function(form){
+					if($(_this).attr('submit')!=null){}
+					//console.log(param);
+					if($(_this).attr('j-data-type')=='ajax')
+						form_ajax(_this);
+					else
+						from.submit();
+				};
+			}
+			if(typeof param['showErrors']!='function'){
+				param['showErrors']=function(errorMap, errorList){showErrors(errorMap, errorList,this);}
+			}
+			if(typeof param['rules']=='undefined') param['rules']={};
+			if(typeof rules!='undefined'){
+				for(var i in rules){
+					if(typeof param['rules'][i]=='undefined')
+						param['rules'][i]=rules[i];
+				}
+			}
+			//console.log(param);
+			$(this).validate(param);
+			$(this).attr('init','1');
+
+		}
+
+	});
+	
+	$('input[placeholder]').YL1001Placeholder({ 
+		useNative: true, 
+		hideOnFocus: true 
+	});
+	
+	//控制显示更多
+	$("[j-data-type='more']").each(function(){
+		if(typeof $(this).attr('init')!='undefined' ) return ;
+		var num=$(this).attr('j-data-num');
+		if(typeof num=='undefined') num=60;
+		var s=$(this).text();
+		$(this).attr('init','1');
+		if(s.length<num) return ;
+		var bx=Math.random()+"_more_id";
+		var boxid="bx"+bx.substring(3,bx.length);
+		$(this).html('<span>'+s.substring(0,parseInt(num))+'</span><span style="display:none" id="'+boxid+'">'+s.substring(parseInt(num),s.length)+'</span><a href="javascript:void(0)" j-data-target="'+boxid+'" j-data-type="show" j-data-on="收起>>" j-data-close="更多>>">更多>></a>');
+	
+	});
+});
+
+</script>
+
+
+
+<!--ajax不包含-->
+
+<!--ajax 非ajax 都执行的页面-->
+<script>var _location_url='/BD/index.php?m=client&a=lists&menu=1&ajax_single=-10';</script>
+
+<script>
+//**获得父类元素对象
+function P(selector,obj){
+	if(typeof obj=='undefined') return null;
+	if($(obj).closest('.dialog-content').length>0)
+		return $(selector);
+	else
+		return $(selector, parent.document);
+}
+</script>
+
+
+
+<script>
+//ajax 相关函数
+//ajax 请求主要是用于连接 a j-data-type='ajax' or form j-data-type='ajax'
+function ajax_fun(_this,_param){
+	var href=null,target=null,target_obj=null;
+	//用于组件的ajax提交，可以是<form> submit <a>click <div>load
+	if(_this!=null){
+		href=($(_this).is('form')?$(_this).attr('action'):$(_this).attr('href'));
+		target=$(_this).attr('j-data-target');
+		
+	}else{
+		href=_param['url'];
+		target=_param['target'];
+		//console.log(href);
+		//console.log('tttttttttttttttttttt');
+	}
+	if(typeof href=='undefined' || href==null) return ;
+	target_obj=_param['target_obj'];
+	
+	
+	if(_param!=null&&typeof _param['before']=='function') _param.before();
+
+	var param={
+		url:href+(href.indexOf('j-data-target=')==-1?'&j-data-target='+(typeof target=='undefined'?'':target):''),
+		//url:getQueryString(href,'j-data-target',target),
+		success:function(data){
+			
+			//
+			//console.log(getQueryString('opentype'));
+			if(getQueryString(href,'opentype')=='dialog'){
+				//if($.weeboxs.getTopBox()!=null) $.weeboxs.getTopBox().setCenterPosition();
+			}
+			//回调函数,ajax from 自行处理
+			if(_param!=null&&typeof _param['success']=='function'&&!_param.success(data)) return ;
+			var msg='';
+			//设置请求读取的数据
+			if(typeof data=='object'){
+				msg=data['info'];
+			}else{
+				msg=data;
+			}
+			//console.log(target_obj);
+			if(typeof target!='undefined'&&target!=''&&target!='object'&&(typeof target_obj=='undefined'||target_obj==null)) $('#'+target).html(msg);
+			else if(typeof target_obj=='object') $(target_obj).html(msg);
+			//
+
+		}
+	};
+	if($(_this).is('form')){
+		param['type']='post',
+		param['data']=$(_this).serialize();
+	}
+	//console.log(param);
+	$.ajax(param);
+}
+//ajax 连接
+function ajax_fun_a(_this,_param){
+	
+}
+//ajax form提交
+function ajax_fun_f(_this,param){
+	
+}
+
+function getQueryString(url,name,value) { 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+	if(typeof value!='undefined'&&value!=null){
+		if(url.indexOf('&'+name+'=')==-1){
+			url=url+'&'+name+'='+value;
+		}else{
+			var regt = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+			url=url.replace(regt,'&'+name+'='+value+'&');
+		}
+		return url;
+	}
+	var r = url.match(reg); 
+	if (r != null) return unescape(r[2]); return null; 
+} 
+
+//处理ajax跳转，
+function deal_jump(data,target,url,parentbox){
+	//console.log(data);
+	//console.log(target);
+	//console.log(url);
+	//console.log(parentbox);
+	
+	if(typeof data=='object'&&data['status']==1){
+		
+		if((typeof url!='undefined'&&url!=null&&url!='null'&&url!='')||(typeof data['url']!='undefined'&&data['url']!=null&&data['url']!='null'&&data['url']!='')){
+			if(typeof data['url']!='undefined') url=data['url'];
+			
+			if(target!=null&&typeof target!='undefined'&&target!='null'&&target!='')
+				ajax_fun(null,{url:url,target:target});
+			else{
+				//weebox的修改操作提示
+				if(typeof parentbox!='undefined'&&parentbox!=null){
+					//console.log(url);
+					ajax_fun(null,{url:url,target_obj:parentbox});
+				}else{
+					location=url;
+					
+				}
+			}
+			window.setTimeout(function(){
+				close_dialog();
+			},1000);
+			return ;
+		}
+		
+		
+		if(target!=null&&typeof target!='undefined'&&target!='null'&&target!=''){
+			if(data['status']==1){
+				window.setTimeout(function(){close_dialog();},1000);
+				each_ajax($('#'+target));
+			}
+		}else{
+			window.setTimeout(function(){location=_location_url;},500);
+			
+		}
+
+	}else{
+		
+	}
+}
+var global_nowbox_tip={};
+//处理结果显示对话框结果显示
+function deal_dialog_tip_show(data,_param){
+	if(typeof data=='object'){
+		if(data['status']==1){
+			return create_tip({type:'OK',tip:data['info']});
+		}else{
+			return create_tip({type:'FAIL',tip:data['info']});
+		}
+	}else{
+		//,width:_param['width'],height:_param['height']
+		//console.log(data);
+		var boxid=Math.random()+"_weebox_id";
+		_param['boxid']=boxid;
+		var nowbox=$.weeboxs.open(data,_param);
+		if(typeof _param['obj']!=null){
+			nowbox.parent=_param['obj'];
+			global_nowbox_tip[boxid]=nowbox;
+		}
+
+		//if(typeof _param['id']!='undefined') nowbox.find('.dialog-content').attr('id',_param['id']);
+		//标题
+		//if(nowbox.find('.TableMsgHeader')!=null){
+		//	nowbox.find('.TableMsgHeader').hide();
+		//	nowbox.setTitle(nowbox.find('.TableMsgHeader').text());//setTitle
+		//}
+		return nowbox;
+	}
+}
+
+
+</script>
+
+<script>
+function create_tip(param){
+	
+	$.wbopen(param['type'],{
+		width:308,          //设置弹出框宽度
+		title:"操作提示",   //设置标题
+		timeout:0,          //自动关闭，单位s
+		content_html:"" ,    //设置正文的html字符串
+		tip:param['tip'],		//设置正文的提示内容，不传则使用默认内容
+		contentType:'text', //第一个参数传入任意值，设置contentType:'iframe'为弹框提示内容，centent_html为url
+		showTitle:true,      //显示标题
+		onok:null,          //传入ok回调函数
+		oncancel:null,      //传入取消回调函数
+		onclose:null,        //弹窗关闭回调函数
+		close_father:false      //自动关闭上一个弹出层
+	});
+}
+//获得包含对话框的容器
+function getparend(_this){
+	var target_obj=null;
+	//检查是否有对话框
+	if($(_this).closest('.dialog-content').length>0){
+		target_obj=$(_this).closest('.dialog-content');
+	}
+	return target_obj;
+}
+</script>
+
+<script>
+//打开对话框，可自动识别添加，修改,删除 主要用于操作类型
+function opendialog(src,type,param){
+	//var optype=param['optype'];//show 显示,op 操作
+
+	if(type=='ajax'){
+		//var src=param['url'];
+		var target=getQueryString(src,'j-data-target');//获得本次刷新的div
+		
+		//var target='';
+
+		create_tip({type:'LOADING'});//创建提示
+		$.ajax({
+			url:src,
+			success:function(data){
+				close_dialog();
+				deal_dialog_tip_show(data,param);
+				deal_jump(data,target);
+				if(typeof param['success']=='function') param.success(data);
+				return false;
+			}
+		});
+		
+	}else{
+		//create_tip({type:'LOADING'});//创建提示
+		
+		var html='<div  id="dialog_frame"><iframe src="'+src+'" scrolling="no" height="'+param['height']+'" width="'+param['width']+'" frameborder="0"/></div>';
+		var nowbox=$.weeboxs.open(html,param);
+		nowbox.find('iframe').load(function(){
+			nowbox.setCenterPosition();
+			
+			//标题
+			if($(this).contents().find('.TableMsgHeader')!=null){
+				$(this).contents().find('.TableMsgHeader').hide();
+				nowbox.setTitle($(this).contents().find('.TableMsgHeader').text());//setTitle
+			}
+		});
+		
+	}
+}
+function dialog(url,param){
+	U(url,param);
+}
+/*打开对话框，有操作界面*/
+function U(url,param){
+	var type='ajax';
+	var nparam={};
+	if(typeof param=='object'){
+		for(var i in param){
+			if(i!='type') nparam[i]=param[i];
+			else type=param[i];
+		}
+	}else{
+		param={};
+	}
+	if(typeof nparam['modal']=='undefined') nparam['modal']=false;
+	
+	if(typeof param['obj']!='undefined') hashurl=encodeURIComponent($(param['obj']).closest('form').find('input[name=localurl]').val());
+	else hashurl=encodeURIComponent($('input[name=localurl]').val());
+	
+	if(typeof hashurl=='undefined'||hashurl=='null'||hashurl=='undefined') hashurl='';
+	
+	var target=getQueryString(url,'j-data-target');//获得本次刷新的div
+	url=url+'&opentype=dialog&j-data-target='+target;
+	if(url.indexOf('&hashurl=')==-1) url=url+'&hashurl='+hashurl;
+	
+	opendialog(url,type,nparam);
+}
+
+//打开对方框
+function openwbox(url,titile,width,height){
+	U(url,{});
+}
+//关闭对话框
+function close_dialog(){
+	if($.weeboxs.getTopBox()) $.weeboxs.getTopBox().close();
+}
+//loading
+function each_ajax(_this){
+	var forobj=$(_this).attr('j-data-for');
+	var url='';
+	if(typeof forobj!='undefined') url=$('#'+forobj).attr('href');
+	else url=$(_this).attr('j-data-url');
+	
+	//回调
+	var success_str=$(_this).attr('j-data-ajax-success');
+	if(typeof success_str!='undefined') eval('var success='+success_str);
+	
+	//var _this=_this;
+	window.setTimeout(function(){
+		ajax_fun(null,{target:$(_this).attr('id'),url:url,success:function(data){
+			if(typeof success=='function') success(data,_this);
+			return true;
+		}});
+	},(Math.random()*1000).toFixed(0) - 0);
+}
+
+//提交表单和验证绑定到一起
+function form_ajax(_this){
+
+    var target=$(_this).attr('j-data-target');
+
+	var success_str=$(_this).attr('j-data-ajax-success');
+	if(success_str!=null) eval('if(typeof '+success_str+'!="undefined") var success='+success_str);
+	
+	if($(_this).closest('.dialog-content').length>0&&$(_this).attr('j-form-type')=='list'){
+		$(_this).attr('j-data-target','');
+		target='';
+	}
+
+	var target_obj=null;
+	//检查是否有对话框
+	if($(_this).closest('.dialog-content').length>0&&(target==null||target=='')){
+		target_obj=$(_this).closest('.dialog-content');
+		//console.log('***');
+	}
+	
+	ajax_fun(_this,{
+		target_obj:target_obj,
+		before:function(){
+			if($(_this).attr('j-form-type')=='form'){close_dialog();create_tip({type:'LOADING'});}
+			if($(_this).attr('j-form-type')=='list'){
+				var l=$(_this).find('.TableHeader').find('th').length;
+				$(_this).find('.TableBlock').find('tbody').find('tr').remove();
+				if($(_this).find('.paging').length>0)
+					$(_this).find('.paging').hide();
+				$(_this).find('.TableBlock').find('tbody').append('<tr class=""><td colspan="'+l+'"  align="center"><div class="TableDataTip mT20"><i class="loading_img"></i><span>数据加载中，请稍等~</span></div></td></tr>');
+				
+			}
+		},
+		success:function(data){
+			
+			if($(_this).attr('j-form-type')=='form'){
+				close_dialog();//关闭提示框
+			}
+			if($(_this).attr('j-form-type')=='list'){
+				return true;
+			}
+			//数据类型的直接返回
+			//if(typeof data!='object') return false;
+			//console.log(data+'((');
+			//操作数据类型
+			var box=deal_dialog_tip_show(data,{title:'提示'});
+			
+			var l=location.href+'';
+			if(data['status']==1&&(target==null||target=='')&&l.indexOf('&hashurl=')!=''){
+				var ll=getQueryString(l,'hashurl');
+			}
+			//console.log(data+'--'+target+'---'+ll);
+			//判断是否有父类box
+			var boxid=$(_this).closest('.weedialog').attr('id');
+			parentbox=null;
+			//console.log(boxid);
+			//console.log(global_nowbox_tip);
+			//console.log(global_nowbox_tip[boxid]);
+			//console.log($(global_nowbox_tip[boxid].parent).attr('href'));
+			//console.log($(global_nowbox_tip[boxid].parent).closest('.dialog-content').length);
+			if(global_nowbox_tip[boxid]!=null&&$(global_nowbox_tip[boxid].parent).closest('.dialog-content').length>0){
+				parentbox=$(global_nowbox_tip[boxid].parent).closest('.dialog-content');
+				//target=;
+				//consoel.log(global_nowbox_tip[boxid].find('.dialog-content'));
+			}
+			//处理跳转
+			deal_jump(data,target,ll,parentbox);
+
+			//处理回调
+			if(typeof success=='function') success(data,_this);
+			return false;
+		}
+	});
+}
+
+	
+/*默认的显示错误信息*/
+function showErrors(errorMap, errorList,_this) {
+	//console.log(errorMap);
+	//console.log(errorList);
+	for(var i in errorList){
+		$(errorList[i]['element']).jobError(errorList[i]['message']);
+		return ;
+		//$(errorList[i]['element']).css({'border':'1px solid red'});
+	}
+}
+
+$(document).ready(function(){
+	var event_root=$(document.body);
+
+	//ajax click
+	event_root.on('click',"a[j-data-type='ajax']",function(){
+		//处理回调函数
+		var success_str=$(_this).attr('j-data-ajax-success');
+		if(typeof success_str!='undefined') eval('var success='+success_str);
+		
+		var target_obj=null;
+		//检查是否有对话框
+		if($(this).closest('.dialog-content').length>0){
+			target_obj=$(this).closest('.dialog-content');
+		}
+		
+		var _this=this;
+		ajax_fun(this,{
+			target_obj:target_obj,
+			success:function(data){
+				if(typeof success=='function') success(data,_this);
+				return true;
+			}
+		});
+		
+		//处理使用div load 的结果
+		var target=$(this).attr('j-data-target');
+		if(target!=null) $('#'+target).attr('j-data-url',$(this).attr('href'));
+		
+		
+		
+		return false;
+	});
+	
+	//弹出对话框
+	event_root.on('click',"[j-data-type='dialog']",function(){
+		var url=($(this).attr('href')=='undefined'?'':$(this).attr('href'));
+		var title=(typeof $(this).attr('title')=='undefined'?'':$(this).attr('title'));
+		var width=(typeof $(this).attr('width')=='undefined'?'':$(this).attr('width'));
+		var height=(typeof $(this).attr('height')=='undefined'?'':$(this).attr('height'));
+		var jtype=(typeof $(this).attr('jtype')=='undefined'?'':$(this).attr('jtype'));
+		var modal=(typeof $(this).attr('modal')=='undefined'?'':$(this).attr('modal'));
+		if(url.substring(0,1)=='#'||url==''||url.substring(0,11)=='javascript:') return true;
+		param={};
+		if(title!='') param['title']=title;
+		if(width!='') param['width']=parseInt(width);
+		if(height!='') param['height']=parseInt(height);
+		if(modal!='') param['modal']=modal;
+		param['obj']=this;
+		
+		U(url,param);
+		return false;
+	});
+
+	//formlist ajax 方式提交
+	event_root.on('submit',"form[j-data-type='ajax']",function(){
+		
+		//如果有验证的就不处理该表单
+		if($(this).find('.TableContent').attr('j-table-value')!=null) return true;
+		form_ajax(this);
+		return false;
+	});
+	//form ajax,form check
+	//event_root.on('submit',"form[j-data-type='ajax']",function(){
+		//return false;
+	//});
+	event_root.on('click','#checkedAll',function(){
+		if($(this).attr('checked')){
+			$(this).closest('form').find('[name^=id]').attr('checked',true);
+		}else{
+			$(this).closest('form').find('[name^=id]').attr('checked',false);
+		}
+	});
+	
+	//对话框
+	event_root.on('click','[j-data-role=dialog]',function(){
+		var href=$(this).attr('href');
+		var type=$(this).attr('j-data-dialog-type');
+		var width=$(this).attr('width');
+		var height=$(this).attr('height');
+		if(typeof type=='undefined') type='ajax';
+		if(typeof width=='undefined') width=400;
+		if(typeof height=='undefined') height=200;
+		//$.weeboxs.open($('#body_main'), {title:'添加人才分类', width:327, height:210});
+		opendialog({type:type,url:href+'&opentype=dialog'});
+		return false;
+	});
+
+	//tab选择框,ajax 模式下需要
+	event_root.on('click',"[j-data-type='tab'] a",function(){
+		var p=$(this).parent();
+		var ul=$(p).parent();
+		var selectclass=ul.attr('j-data-select-class');
+		selcalss='actived';
+		//console.log(selcalss);
+		if(typeof selectclass!='undefined'&&selectclass!=null) selcalss=selectclass;
+		ul.find('li').removeClass(selcalss);
+		$(p).addClass(selcalss);
+
+		//处理,多个显示问题
+		var j={},length=0,target=null;
+		ul.find('li a').each(function(){
+			target=$(this).attr('j-data-target');
+			if(j[target]==null) length++;
+			j[target]=1;
+		})
+		if(length>1){
+			for(var i in j){$('#'+target).hide();}
+			target=$(this).attr('j-data-target');
+			$('#'+target).show();
+		}
+		
+		
+		return true;
+	});
+	//控制显示
+	event_root.on('click',"[j-data-type='show']",function(){
+		var target=$(this).attr('j-data-target');
+		var display=$('#'+target).css('display');
+		var selectobj=$(this).attr('j-data-target-select');
+		//console.log(target+"--"+display);
+		var select=$(this);
+		if(typeof selectobj!='undefined') select=$(this).find(selectobj);
+		
+
+		var onname=$(this).attr('j-data-on');
+		var closename=$(this).attr('j-data-close');
+		var onclass=$(this).attr('j-data-on-class');
+		if(typeof onclass=='undefined') onclass="on";
+
+		if(display == 'none'){
+			$('#'+target).css('display','block');
+			if(typeof onname!='undefined') $(select).text(onname);
+			if(typeof onclass!='undefined') $(this).addClass(onclass);
+		}else{
+			$('#'+target).css('display','none');
+			if(typeof closename!='undefined') $(select).text(closename);
+			if(typeof onclass!='undefined') $(this).removeClass(onclass);
+		}
+		if(typeof $(this).attr('success')=='function'){
+			var f=$(this).attr('success');
+			f(display);
+		}
+	});
+	
+	
+	event_root.on('click',"input[type=text],textarea",function(){
+		$(this).addClass('inputFocus');
+	});
+	event_root.on('blur',"input[type=text],textarea",function(){
+		$(this).removeClass('inputFocus');
+	});
+
+});
+</script>
+
+<!--组件库-->
+<script>
+//联动选择
+function change_select(param){
+	var rel=param['rel'].split('_');
+	var name=param['name'];
+	var data_rel=param['data_rel'];
+	var success=param['success'];
+
+	//console.log(param);
+	//if(name!='regionid') return ;
+	//console.log(param);
+	
+	var cnt=parseInt(rel[0]),cu=parseInt(rel[1]);
+	if(cu+1>=cnt) return ;
+	
+	//console.log( $('#'+name+'_'+cu).attr('init_c'));
+	//console.log( name+'_'+cu);
+	
+
+	for(i=cu+1;i<cnt;i++){
+		$('#'+name+'_'+i).find('option').remove();
+	}
+	var data_sel=$('#'+name+'_'+(cu+1)).attr('data-sel');
+	var key_value=$('#'+name+'_'+(cu+1)).attr('data-kv');
+	var v=$('#'+name+'_'+cu).val();
+	if(cu==-1) v='';
+	if(typeof data_sel=='undefined') data_sel='';
+
+	var _this=$('#'+name+'_'+(cu+1));
+	$.ajax({
+		url:data_rel+'&sel='+encodeURIComponent(data_sel)+'&k='+encodeURIComponent(v)+'&d='+cu,
+		success:function(data){
+			//console.log(data);
+			$(_this).append(data);
+			if(typeof success=='function') success(data);
+			//console.log( $('#'+name+'_'+(cu+1)).attr('init'));
+			//console.log( name+'_'+(cu+1));
+			if(typeof $('#'+name+'_'+(cu+1)).attr('init_c')=='undefined'){
+				$('#'+name+'_'+cu).attr('init_c','1');
+				param['rel']=cnt+'_'+(cu+1);
+				//console.log('**'+cnt+'_'+(cu+1));
+				change_select(param);
+			}
+		}
+	});
+}
+
+$(document).ready(function(){
+	
+	var event_root=$(document.body);
+	
+	//联动事件，联动
+	event_root.on('change','select[rel]',function(){
+		var m=$(this).attr('rel').split('_');
+		var param={};
+		param['rel']=$(this).attr('rel');
+		param['name']=$(this).attr('data-name');
+		param['data_rel']=$(this).attr('data-rel');
+		param['data_sel']=$(this).attr('data-sel');
+		param['v']		 =$(this).val();	
+		change_select(param);
+	});
+	
+	//清除按钮
+	event_root.on('click','.bclear',function(){
+		var id=$(this).attr('c-rel');
+		$('#'+id+'_0').val('');
+		$('#'+id+'_1').val('');
+	});
+	
+	//选择弹窗框按钮
+	event_root.on('click','.bselect',function(){
+		//e.stopPropagation();
+		var name=$('#'+$(this).attr('c-rel')+'_0').val();
+		var v=$('#'+$(this).attr('c-rel')+'_1').val();
+		dialog($('#'+$(this).attr('c-rel')+'_0').attr('data-rel')+'&inputname='+$(this).attr('c-rel')+'&dialog_success='+$(this).attr('c-success')+'&dialog_name='+name+"&dialog_value="+v,{title:$(this).val()});
+	});
+	
+	
+	
+});
+
+</script>
+
+
+<!--ajax下设置标题-->
+<div style="margin-top:20px;"></div>
+<div class="mission_pop_wrap">
+	<div class="misssion_top">
+		<i class="misssion_triangle"></i>
+		<i class="mission_cancel"></i>
+		任务管理
+	</div>
+	<ul class="mission_nav">
+		<li class="on">
+			<a href="javascript:volid(0);">每日</a>
+		</li>
+		<li>
+			<a href="javascript:volid(0);">每月</a>
+		</li>
+	</ul>
+	<div class="mission_contecnt">
+		<div class="mission_list">
+			<ul>
+				<li>
+					<span class="total">6/10</span>
+					邮箱录入邮箱录入
+				</li>
+				<li>
+					<span class="total gray">6/10</span>
+				</li>
+			</ul>
+		</div>
+		<div class="misssion_detail">
+			
+		</div>
+	</div>
+</div>
+<style>
+.mission_pop_wrap{
+	position:fixed;
+	top:60px;
+	right:30px;
+	width:476px;
+	border:solid 1px #d3d7da;
+	background:#fff;
+	border-radius:6px;
+	box-shadow:-2px 2px 8px 2px #ccc;
+	z-index:999;
+}
+.misssion_top{
+	height:34px;
+	padding-left:10px;
+	line-height:34px;
+	color:#fff;
+	background:#478cf4;
+	border-radius:5px 5px 0 0;
+}
+.misssion_triangle{
+	position:absolute;
+	top:-6px;
+	right:35px;
+	width:11px;
+	height:6px;
+	background:url(images/triangle.png) no-repeat;
+}
+.mission_cancel{
+	position:absolute;
+	top:12px;
+	right:15px;
+	width:11px;
+	height:10px;
+	background:url(images/mission_cancel.png) no-repeat;
+}
+.mission_nav{
+	background:#f8f8f8;
+	height:28px;
+}
+.mission_nav li{
+	float:left;
+	width:82px;
+	border-left:solid 1px #d3d7da;
+	border-right:solid 1px #d3d7da;
+	margin-left:-1px;
+	line-height:28px;
+	text-align:center;
+	cursor:pointer;
+}
+.mission_nav .on{
+	background:#fff;
+}
+.mission_nav li a{
+	color:#4b4b4b;
+}
+.mission_contecnt{
+	border-top:solid 1px #d3d7da;
+	margin-top:-1px;
+}
+.mission_contecnt{
+	padding:10px;
+}
+.mission_list{
+	height:274px;
+	width:208px;
+	border:solid 1px #d3d7da;
+	border-radius:4px;
+	overflow:scroll\9;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+.mission_list li{
+	width:200px;
+	height:44px;
+	line-height:44px;
+	border-bottom:solid 1px #eaeaea;
+}
+.mission_list li:hover{
+	background:#f6f6f6;
+}
+.mission_list .total{
+	display:inline-block;
+	width:46px;
+	line-height:26px;
+	color:#fff;
+	background:#ed4e4e;
+	text-align:center;
+	border-radius:3px;
+}
+</style>
+</body>
+</html>
