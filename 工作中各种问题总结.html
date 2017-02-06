@@ -48,7 +48,7 @@ if(_check.prop('checked')){
 　　window.frames['iframeId'];
 　　getElemmentbyId('iframeId')只能获取该iframe的DOM对象，并不能访问iframe里面	的内容
 　　获取父ifrmae里面的内容：
-　　window.parnet;
+　　window.parent;
 
 13.&#65279;导致页面顶部空白一行的问题，解决方法：
 　　模板文件生成html文件之后会在body开头处加入一个可见的控制符&#65279，导致页面头部会出现一个空白行。原因是页面的编码是UTF-8 + BOM。
@@ -181,6 +181,13 @@ arguments对象包含了所有传递进来的参数以及该函数自身(callee)
    };
    a();//打印出来则是undefined
 
+   b = '2222';
+   function a(){
+   	'use strict';
+   	console.log(this.b);
+   };
+   a();//此时会报错，因为this是undefined而不是window
+
 32.ES5的新特性汇总:https://gold.xitu.io/post/584f9ef7128fe100692e67e2
 	Trailing commas are ok
 	多余的逗号不报错，比如 {a:1,b:2,}
@@ -308,12 +315,218 @@ arguments对象包含了所有传递进来的参数以及该函数自身(callee)
 	String(null)//'null'
 	String(undefined)//'undefined'
 
-39.在我们使用三列布局的时候，一般我们会先使用左右固定端使用float属性，中间自适应端用padding或者margin隔开固定端的距离，但在IE7及以下使用这个布局，病使用padding属性隔开间隔，并且中间的自适应快用到去浮动相关属性的时候，包括overflow:hidden;或者clearfix类去浮动等，自适应块的盒子模型会转化成borderbox，所以会引发bug，解决方法是使用margin属性隔开。
-		
+39.在我们使用三列布局的时候，一般我们会先使用左右固定端使用float属性，中间自适应端用padding或者margin隔开固定端的距离，但在IE7及以下使用这个布局，并使用padding属性隔开间隔，并且中间的自适应快用到去浮动相关属性的时候，包括overflow:hidden;或者clearfix类去浮动等，自适应块的盒子模型会转化成borderbox，所以会引发bug，解决方法是使用margin属性隔开。
 
-		
+40.在微信自带浏览器中，但网站页面滑到最顶部，继续手势向下滑动拉动页面向上滑动时，并不会触发touchend事件(?先保留疑问)，但还是会触发touchstart和touchmove事件。
 
-补充：
-54.柯里化和反柯里化
-55.在函数中return a() 和 a()的区别		
+41.构建一个属于自己的手势库，http://qianduan.guru/2016/08/13/gesture_detection_in_html5/
+
+42.touch事件中，touches、targetTouches、及changedTouches数组的区别：
+	stackoverflow原文地址http://stackoverflow.com/questions/7056026/variation-of-e-touches-e-targettouches-and-e-changedtouches,原文回答如下
+	We have the following lists:
+	(1)touches: A list of information for every finger currently touching the screen
+	(2)targetTouches: Like touches, but is filtered to only the information for finger touches that started out within the same node
+	(3)changedTouches: A list of information for every finger involved in the event (see below) To better understand what might be in these lists, let’s go over some examples quickly
+
+	They vary in the following pattern:
+	(1)When I put a finger down, all three lists will have the same information. It will be in changedTouches because putting the finger down is what caused the event
+	(2)When I put a second finger down, touches will have two items, one for each finger. targetTouches will have two items only if the finger was placed in the same node as the first finger. changedTouches will have the information related to the second finger, because it’s what caused the event
+	(3)If I put two fingers down at exactly the same time, it’s possible to have two items in changedTouches, one for each finger
+	(4.)If I move my fingers, the only list that will change is changedTouches and will contain information related to as many fingers as have moved (at least one).
+	(5)When I lift a finger, it will be removed from touches, targetTouches and will appear in changedTouches since it’s what caused the event
+	(6)Removing my last finger will leave touches and targetTouches empty, and changedTouches will contain information for the last finger
+
+	翻译如下：
+	关于这几个列表信息的解释如下：
+	(1)touches:当前触摸着屏幕的每个手指操作信息的Touch对象的数组;
+	(2)targetTouches:和touches类似，但会经过过滤，仅保存手指（一个或多个）于同一个节点下开始触摸事件的操作信息的Touch对象的数组;
+	(3)changedTouches:当前参与到触摸事件中的每个手指的操作信息的Touch对象的数组;
+
+	为了更好的理解以上三个数组的区别，我们将通过以下例子进行解释：
+	(1)当我放下一个手指接触屏幕时，所有的这三个数组会存放着相同的对象及相关信息。Touch对象会出现在changedTouches数组是因为手指接触屏幕的时候会触发事件;
+	(2)当我放下第二个根手指的手，touches数组将会有两个Touch对象，每个都存放着相对应的手指相对应的操作信息;当且仅当刚放下的第二根手指触摸区域所在的节点和第一根手指相同的时候，targetTouches才会有两个Touch对象;changedTouches数组将只有第二个根手指操作信息的Touch对象，因为是它触发了事件;
+	(3)如果我在同一时间内放下两个手指接触屏幕，changedTouches数组将会有两个Touch对象，每个都存放着相对应的手指相对应的操作信息;
+	(4)当我在屏幕上移动我的手指时，唯一会改变的数组是changedTouches，它存放的Touch对象数量会随着移动的手指数的改变而改变(最少会有一个Touch对象);
+	(5)当我收起我的一根手指(离开屏幕)的时候,该手指对应的Touch对象将会从touches、targetTouches数组中消失，同时会在changedTouches数组中出现，因为是它触发了事件;
+	(6)当我收起我最后一根手指(离开屏幕)的时候，touches、targetTouches数组将会被清空，而此时，changedTouches数组将会存放最后一根手指对应的Touch对象;
+
+	以下是高程的解释：
+	(1)touches:表示当前跟踪的触摸操作的Touch对象的数组;
+	(2)targetTouches:特定于事件目标的Touch对象的数组;
+	(3)changedTouches:表示自上次触摸以来发生了什么改变的Touch对象的数组
+
+43.background-size中cover与contain的区别：
+   cover代表背景铺满整个元素，以背景图的最小边为基准，超出元素的背景图会被截掉;
+   contain代表元素包含整个背景，以背景图的最大边为基准，在以元素能包含整个背景图的前提下，使背景图扩到最大，有可能会留白边;
+
+44.不能在css样式声明块内添加注释，否则ie6,7下回解析异常，造成样式错误，如下为错误示范：
+	.demo{
+		width:100px;
+		height:100px;
+		// 此处是注释
+		border:solid 1px #e5e5e5;
+	}
+
+45.深入了解组件开发：http://www.html-js.com/article/JS-from-zero-single-row-JavaScript-component-development-method
+
+46.对象继承的若干种方法：http://purplebamboo.github.io/2014/07/13/javascript-oo-class/
+
+47.//已证实为错题，忽略之
+	疑问：一道js题目：
+	实现以下代码
+	var  a = "  abcd  ";
+	a.st();
+	console.log(a); //"absd",去掉前后空格
+
+48.事件绑定如下所示
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+		</head>
+		<body>
+		  	<a id="btn1" onclick="fun1();" href="javascript:fun2();">btn</a>
+		  	<script type="text/javascript">
+				function fun1(){
+					console.log("111");
+				}
+				function fun2(){
+					console.log("222");
+				}
+				
+				var btn = document.getElementById("btn1");
+				
+				btn.addEventListener("click",function(){
+					console.log("333");
+				});
+			</script>
+		</body>
+	</html>
+
+	在以上代码中
+	1.a标签的href中的代码总是最后执行，最低的优先级。
+	2.无论是 onclick 还是 addEventListener 的执行顺序是按照 绑定的顺序在执行，就是先绑定的就先执行。
+	3.如果 onclick 事件被重复绑定，则以最后一次的绑定所在的顺序为准。
+	4.如果在DOM中直接使用onclick ，并且没有覆盖，则onclick的绑定是早于 addEventListener 的。
+	5.如果绑定多个 addEventListener 事件，在任意一个事件中 stopPropagation(); 都会阻止事件的冒泡，但不会阻止后续事件的执行。
+
+	详见https://zhuanlan.zhihu.com/p/24620643?refer=dreawer
+
+49.:nth-child可以选择父元素下的字元素，:nth-of-type也可以。但是它们到底有什么区别呢？ 
+	其实区别很简单：:nth-of-type为什么要叫:nth-of-type？因为它是以"type"来区分的。也就是说：ele:nth-of-type(n)是指父元素下第n个ele元素， 
+	而ele:nth-child(n)是指父元素下第n个元素且这个元素为ele，若不是，则选择失败。 
+	详见我学习代码文件夹的测试程序及以下网址：
+	http://www.jb51.net/css/142398.html
+	https://segmentfault.com/q/1010000004100714
+
+50.深入理解instanceof：http://www.ibm.com/developerworks/cn/web/1306_jiangjj_jsinstanceof/
+   var a = 'abc';
+   a instanceof String; //false
+   var b = new String('abc');
+   b instanceof String; //true
+
+   JavaScript instanceof 运算符代码
+	 function instance_of(L, R) {//L 表示左表达式，R 表示右表达式
+	  var O = R.prototype;// 取 R 的显示原型
+	  L = L.__proto__;// 取 L 的隐式原型
+	  while (true) { 
+	    if (L === null) 
+	      return false; 
+	    if (O === L)// 这里重点：当 O 严格等于 L 时，返回 true 
+	      return true; 
+	    L = L.__proto__; 
+	  } 
+	 }
+
+51.css样式加载不出来可能的原因：
+   http://www.cnblogs.com/crizygo/p/5466444.html
+   http://blog.csdn.net/a8761087/article/details/49910435/
+
+	如果你的浏览器加载不上外联css（注意是全部加载不上，这里排除部分样式不兼容问题）：
+	1.首先考虑是否css路径错误。
+	2.在样式最开始有写注释，而当中文注释中的汉字为奇数个数时，会与结尾的“*/”组合成合法字符，以至于注释不能及时关闭，这样后续样式全部被自动注释。
+	3.css文件中指定的编码与页面不统一，浏览器用页面编码解析css，自然会出错。我的IE更新到IE11时遇到了这个问题，html给的gb2312，css文件头给了的@charset"utf-8",css完全加不上。
+	  例：<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	        <link href="join_us.css" type="text/css" rel="stylesheet" charset=“utf-8”>
+	        （1） 外联css文件开头给了@charset "utf-8"
+	        （2）CSS文件中未指定@charset头声明，导致IE默认使用页面编码来解码CSS文件。
+	在这里解释一下，gb2312和gbk都是较早的国标码，主要用于编解码常用汉字。而utf-8更国际化一些，同时适用中文，基于英文的平台使用utf-8。GBK、GB2312等与UTF8之间都必须通过Unicode编码才能相互转换。
+
+	4.IE不支持引入外部的Css文件,并且提示MINE Type类型不匹配。.css文件不是minetype 类型，原因可能是这个.css文件是你创建的其他类型（比如txt）文件然后改的后缀。
+	   （1）那就重建一个css文件，把代码copy过去。
+	   （2）或者下载FilesTypeMan 软件，直接修改文件后缀的minetype类型。
+
+	5.看一下你的HTML头部的DOCTYPE 声明
+	<!DOCTYPE>声明不是 HTML 标签；它是指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。在 HTML 4.01 中，<!DOCTYPE> 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。
+	HTML5 不基于 SGML，所以不需要引用 DTD。
+	<!DOCTYPE html> HTML5声明。
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">这个是dw自动在网页文件页增加了dtd信息(可以删. 删除后，浏览器会使用的默认dtd.)
+	该 DTD 等同于 XHTML 1.0 Transitional，但允许框架集内容。还有很多。。。
+	本地的外联css加不上，把页面头部的 <!DOCTYPE html>  把html去掉 就ok了。
+
+	6.如果使用@import，当css文件发生改动时，客户端IE6将不会刷新该css。
+
+	=================================================================分割线====================================================================
+	微软的官方文档，给出的解释是微软对浏览器的安全机制作了一些修改，会拒绝加载MIME type不匹配的CSS文件。 
+	以此，可分析出原因。你的.css文件并不是minetype 类型的css文件，为什么呢？仔细想想,你的这个.css文件是不是你创建的txt文件然后改的后缀?如果是，那么它虽然后缀是css,但其实不是css文件。解决方式2种。
+
+	## 方法1 ## 
+	把css文件中代码复制出来,重新建个文件,(记住,要用能创建css文件的工具创建,不要创建记事本再改后缀) 然后把复制的代码粘贴进去即可
+
+	## 方法2 ##
+	下载FilesTypeMan 软件。 用于修改文件后缀的minetype类型。
+	下载后打开，会卡顿一会儿,这是软件在获取电脑所有后缀文件信息,等待出现所有后缀文件列表。
+	你找到.css后缀的文件,右键 Properties 选项会出现该后缀的配置信息,找到MIME TYPE 项 ,值改成 text/css 即可
+
+52.String.prototype.indexOf()和String.prototype.lastIndexOf(searchValue,fromIndex)的区别：
+	indexOf是从fromIndex向后搜索，lastIndexOf是从fromIndex向前搜索，但是两者返回的都是searchValue位于string中的位置值，如果搜索不到则返回-1。
+
+53.String.prototype.replace(regexp|substring,newsubString|function)方 法中，如果 第一个参数传的事字符串，那么，它只会替换第一个匹配的子字符串，要想全 部替换，必须使用正则：
+	var text = "cat,bat,sat,fat";
+	var res = text.replace('at','ond');
+	console.log(res); //"cond,bat,sat,fat"
+
+	res = text.replace(/at/g,'ond');
+	console.log(res); //"cond,bond,sond,fond"
+
+54.了解js 中new的运行机制：
+	function Animal(name){
+        this.name = name;
+    }
+    Animal.color = "black";
+    Animal.prototype.say = function(){
+        console.log("I'm " + this.name);
+    };
+    var cat = new Animal("cat");
+
+    console.log(
+       cat.name,  //cat
+       cat.height //undefined
+    );
+    cat.say(); //I'm cat
+
+    console.log(
+       Animal.name, //Animal
+       Animal.color //black
+    );
+    Animal.say(); //Animal.say is not a function
+	
+	JS引擎执行这句代码时，在内部做了很多工作，用伪代码模拟其工作流程如下：
+	new Animal("cat") = {
+	    var obj = {};
+	    obj.__proto__ = Animal.prototype;
+	    var result = Animal.call(obj,"cat");
+	    return typeof result === 'object'? result : obj;
+	}
+
+	（1）创建一个空对象obj;
+	（2）把obj的__proto__ 指向Animal的原型对象prototype，此时便建立了obj对象的原型链：obj->Animal.prototype->Object.prototype->null
+	    【如果你不了解JS原型链，请先阅读：JS原型和原型链】
+	（3）在obj对象的执行环境调用Animal函数并传递参数“cat”。 相当于var result = obj.Animal("cat")。
+	     当这句执行完之后，obj便产生了属性name并赋值为"cat"。【关于JS中call的用法请阅读：JS的call和apply】
+	（4）考察第3步返回的返回值，如果无返回值或者返回一个非对象值，则将obj返回作为新对象；否则会将返回值作为新对象返回。
+
+55.柯里化和反柯里化
+
+56.在函数中return a() 和 a()的区别		
 		
