@@ -637,6 +637,13 @@ arguments对象包含了所有传递进来的参数以及该函数自身(callee)
 
 	函数当作值传递，即所谓的first class对象。就是可以把函数当作一个值来赋值，当作参数传给别的函数，也可以把函数当作一个值 return。一个函数被当作值返回时，也就相当于返回了一个通道，这个通道可以访问这个函数词法作用域中的变量，即函数所需要的数据结构保存了下来，数据结构中的值在外层函数执行时创建，外层函数执行完毕时理因销毁，但由于内部函数作为值返回出去，这些值得以保存下来。而且无法直接访问，必须通过返回的函数。这也就是私有性。
 
+	还有关于闭包常见的误区：
+	https://www.talkingcoder.com/article/6288056735275745639
+	https://www.talkingcoder.com/article/6275079835192328790
+	https://www.talkingcoder.com/article/6273213689070157834
+	https://www.talkingcoder.com/article/6272245251255501201
+	https://www.talkingcoder.com/article/6278037345364738120
+
 
 65.MVC、MVP、MVVM的区别
 
@@ -820,6 +827,36 @@ arguments对象包含了所有传递进来的参数以及该函数自身(callee)
 
 73.浏览器渲染、加载及缓存
 http://www.jianshu.com/p/e141d1543143
-http://mp.weixin.qq.com/s/F5gvzdi6MTwCFXV9LKs9NQ		
-	
+http://mp.weixin.qq.com/s/F5gvzdi6MTwCFXV9LKs9NQ
+
 74.可替换元素
+
+75.DOM0级(其实DOM1级和DOM0级事同一个东西,只是大部分人都说是0级，所以就一般情况下都是默认叫DOM0级),DOM2级,DOM3级：
+   Element.onclick('on' + type),Element.addEventListener(type,fn,boolean),Element.attachEvent('on' + type,fn)都是绑定针对的某个element元素，不能绑在nodelist或者HTMLCollection上，需要对nodelist或者HTMLCollection这种类数组对象进行遍历绑定。
+   现代浏览器事件触发机制是先捕获再冒泡
+   DOM操作：
+   https://gold.xitu.io/post/583cbbfa61ff4b006ccc41fe
+   https://gold.xitu.io/post/583cbc4961ff4b006ccc44fb
+
+76.clientX,clientY,pageX,pageY,offsetX,offsetY的区别
+
+77.event.currentTarget,event.target和srcElement的区别
+   event.currentTarget总是志向被绑定事件句柄的元素,而与之对比的event.target则总是指向触发该事件的元素。srcElement是IE6~8中的event对象中的等价属性
+   var target = e.target || e.srcElement;
+   IE6-8中，事件模型与标准不一样，使用非标准的 element.attachEvent 来绑定事件监听器。该模型中，没有等价于 event.currentTarget 的接口，且 this 指向全局对象。一种模拟 event.currentTarget 功能的方法是：将监听器包在一个函数中，然后使用 Function.prototype.call 调用这个包装函数，并将元素对象作为第一个参数。这样，this 就是想要的值了
+
+
+78.盒子模型：
+   在W3C模型中: 总宽度 = margin-left + border-left + padding-left + width + padding-right + border-right + margin-right
+   在IE模型中: 总宽度 = margin-left + width + margin-right
+   content-box：标准盒模型，CSS定义的宽高只包含content的宽高
+   border-box：IE盒模型，CSS定义的宽高包括了content，padding和border
+
+79.复习布局(除了新的flex、grid布局，还有旧版的双飞翼及圣杯布局，详见学习代码)
+
+80.响应式布局
+   http://www.cnblogs.com/PeunZhang/p/3407453.html
+   http://www.cnblogs.com/lyzg/p/4877277.html
+   https://zhuanlan.zhihu.com/p/25216275
+
+81.url输入到页面渲染发生了什么
