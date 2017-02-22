@@ -81,6 +81,7 @@ function demo(name,data){
 19.Jq在keypress事件中，按下是字符按键时，event.charcode会显示相应的代表字符ACSII编码值,event.keycode为0；按下是操作键时，event.charcode为0，会显示操作键相对应的event.keycode。在keydown事件中，无论按下字符按键还是操作键，都会返回相对应的event.keycode，event.charcode为0。原生环境测试结果一样，测试环境是火狐，ie没测。
 
 20.跨域的各种知识点：jsonp、window.name、window.postMessage(data,url)(而接受方可以使用window.addEventListen(‘message’, receiveMessage, false)对数据进行接受)、websocket、CORS、document.domain等方法进行跨域。
+https://1657413883.github.io/2016/11/28/JS%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E8%AF%A6%E8%A7%A3/（这个不完全）
 
 21.关于setTimeout
 在使用setTimeout(fun,time)方法时，应该只传入方法的function名，而不需要加小括号，否则将会视为立即调用。
@@ -674,6 +675,9 @@ arguments对象包含了所有传递进来的参数以及该函数自身(callee)
    水平居中(同上)
 
 68.了解flex及grid布局
+    https://zhuanlan.zhihu.com/p/25303493
+    https://gold.xitu.io/post/589965c9128fe1006569cc9d
+    https://buzheng.org/2017/20170119-flex-layout-note.html
 
 69.图片base64编码
 以下是一个base64编码图片的例子
@@ -861,3 +865,27 @@ http://mp.weixin.qq.com/s/F5gvzdi6MTwCFXV9LKs9NQ
 
 81.url输入到页面渲染发生了什么
    https://segmentfault.com/a/1190000006879700
+
+82.微信对页面二维码的识别技术：
+   当客户端发现用户在网页的img标签内进行长按操作时，会立刻截屏并且启动二维码识别算法。所以这里用于二维码识别的图片是截屏，而不是之前有人提到的img标签中的图片。
+   故：
+   1.若是需要禁止微信的二维码识别，只需要将二维码通过背景图的形式展现，而不是在img标签里展现就好。
+   2.若是一个页面里存在多个二维码的时候，微信的二维码识别可能会出现问题，因为是截图识别，所以最终识别出来的只会是第一个二维码的结果。
+   http://mp.weixin.qq.com/s?__biz=NzA3OTQ2OTgw&mid=205918916&idx=1&sn=d729ef70ea1e7fc50e649352a63a2564&scene=1&key=c76941211a49ab586ba4831f2f6fa42fbb2525460003fa8e19bc205b9b25facbf60da78977da071ddbc41a5be6a7b9fa&ascene=0&uin=NTE3ODg0NjE1&devicetype=iMac%20MacBookPro12,1%20OSX%20OSX%2010.10.3%20build%2814D136%29&version=11020012&pass_ticket=WPa8XnvIzBrBOA6RHy2RMECcrsuN2QiksK8Y1Z/D3Odk49uIsXOex7EV2NXN9m5X
+
+   https://segmentfault.com/q/1010000002673416
+
+83.css设计模式，或者说是css架构
+   http://ideazhao.com/2016/08/07/css_design_method/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
+
+84.异步编程与promise对象
+	http://xieyufei.com/2017/01/21/FrontEnd-Promise.html
+	http://www.qdfuns.com/notes/17398/8a2084587fbd3f6c170c1bb8a79045c6.html
+	http://purplebamboo.github.io/2014/04/08/nodejs-async/
+	https://www.zhuyingda.com/blog/article.html?id=14&origin=gold
+	https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
+	https://imququ.com/post/promises-when-js.html
+	http://www.tuicool.com/articles/fiMnMv
+
+85.CommonJS、AMD、CMD的介绍及区别
+   http://xieyufei.com/2017/02/19/JS-Standard.html
