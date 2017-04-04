@@ -413,7 +413,7 @@ arguments对象包含了所有传递进来的参数以及该函数自身(callee)
 
 	详见https://zhuanlan.zhihu.com/p/24620643?refer=dreawer
 
-49.:nth-child可以选择父元素下的字元素，:nth-of-type也可以。但是它们到底有什么区别呢？ 
+49.:nth-child可以选择父元素下的子元素，:nth-of-type也可以。但是它们到底有什么区别呢？ 
 	其实区别很简单：:nth-of-type为什么要叫:nth-of-type？因为它是以"type"来区分的。也就是说：ele:nth-of-type(n)是指父元素下第n个ele元素， 
 	而ele:nth-child(n)是指父元素下第n个元素且这个元素为ele，若不是，则选择失败。 
 	详见我学习代码文件夹的测试程序及以下网址：
@@ -438,6 +438,9 @@ arguments对象包含了所有传递进来的参数以及该函数自身(callee)
 	    L = L.__proto__; 
 	  } 
 	 }
+
+	Instanceof运算符的第一个变量是一个对象，暂时称为A；第二个变量一般是一个函数，暂时称为B。
+	Instanceof的判断队则是：沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。
 
 51.css样式加载不出来可能的原因：
    http://www.cnblogs.com/crizygo/p/5466444.html
@@ -889,3 +892,160 @@ http://mp.weixin.qq.com/s/F5gvzdi6MTwCFXV9LKs9NQ
 
 85.CommonJS、AMD、CMD的介绍及区别
    http://xieyufei.com/2017/02/19/JS-Standard.html
+
+86.前端工程化及模块化开发的理解
+
+87.js实现文件上传
+   http://www.ruanyifeng.com/blog/2012/08/file_upload.html
+   http://www.cnblogs.com/yuanlong1012/p/5127497.html
+   https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/FormData
+   https://developer.mozilla.org/zh-CN/docs/Using_files_from_web_applications
+   https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer
+   https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader
+
+88.深入了解原型、原型链及继承
+   王福朋系列：http://www.cnblogs.com/wangfupeng1988/p/3978131.html
+   http://blog.csdn.net/u012468376/article/details/53121081
+   http://leonard-peng.github.io/2017/01/21/proto/
+   http://www.0313.name/2017/01/13/prototype-proto-constructor.html
+   https://gold.xitu.io/post/585953a5128fe10069b5f06b
+   https://gold.xitu.io/post/5835853f570c35005e413b19
+   https://juejin.im/post/5835853f570c35005e413b19
+
+	function Fn() { }
+
+	Fn.prototype.name = '王福朋';
+	Fn.prototype.getYear = function () {
+		return 1988;
+	};
+
+	var fn = new Fn();
+	console.log(fn.name);
+	console.log(fn.getYear());
+
+   每个对象都有一个隐藏的属性——“__proto__”，这个属性引用了创建这个对象的构造函数的prototype。即：fn.__proto__ === Fn.prototype，这里的"__proto__"成为“隐式原型”。
+
+   Instanceof运算符的第一个变量是一个对象，暂时称为A；第二个变量一般是一个函数，暂时称为B。
+   Instanceof的判断队则是：沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回
+   false。
+
+89.favicon
+   https://zhuanlan.zhihu.com/p/19989351
+   https://www.zhihu.com/question/20294979
+
+90.webpack学习
+   一小时包教会webpack：http://www.w2bc.com/Article/50764
+   webpack讲解及入门：https://zhuanlan.zhihu.com/p/24888828
+   超易懂的webpack初级入门：http://blog.guowenfh.com/2016/03/24/vue-webpack-04-custom/
+   webpack的loader列表：http://webpack.github.io/docs/loader-conventions.html
+   webpack的plugins列表：http://webpack.github.io/docs/list-of-plugins.html
+   webpack编译流程漫谈（看评价，插件部分的理解有误）：https://github.com/slashhuang/blog/issues/1
+   挺明白的webpack注意点：http://www.jianshu.com/p/dcb28b582318
+   不错的webpack视频讲解:
+   http://www.jirengu.com/app/watch/1432/1
+   http://www.jirengu.com/app/watch/1433/1
+
+   webpack中的require是nodeJS引入方式的超集，
+   如代码require(vue);
+   ==>则会先在去项目下的node_modules文件夹中找到vue文件夹中的package.json
+   ==>再在package.json中找到main字段
+   ==>最后根据main字段中的目录指向找到相应的文件
+
+   一个普通的webpack配置文件
+   module.exports =  { 
+   		//npm的执行上下文（指向当前配置文件目录？==>这个是自己的理解，还不是很肯定）
+        context:process.cwd(),
+        //修改项目文件时是否实时更新webpack
+        watch: true,
+        //入口文件地址,指向{{context}}/index.js
+        entry: './index.js',
+        //或者以这样的形式写,则ouput字段中的[name].js就会根据key值生成输出文件app.js
+        //entry：{
+        //	app:'.index.js'
+        //}
+		//生成资源映射表，方便开发中调试
+        devtool: 'source-map',
+        //输出文件
+        output: {
+            path: path.resolve(process.cwd(),'dist/'),
+            //[name]这里是webpack提供的根据路口文件自动生成的名字
+            filename: '[name].js'
+        },
+        //一些额外设置
+        resolve: {
+        	//设置别名
+            alias:{ jquery: process.cwd()+'/src/lib/jquery.js', }
+        },
+        //插件
+        plugins: [
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                _: 'underscore',
+                React: 'react'
+            }),
+            new DefinePlugin({
+              'process.env': {
+                'NODE_ENV': JSON.stringify('development')
+              }
+            })
+        ],
+        //loader模块
+        module: {
+            loaders: [{
+            	//正则匹配符合要求的文件，匹配后通过相应的loader模块进行编辑
+                test: /\.js[x]?$/,
+                //排除该目录下的满足以上正则的文件
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            },  {
+                test: /\.less$/,
+                loaders:['style-loader', 'css-loader','less-loader']
+            }, {
+                test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg|swf)$/,
+                //此处的[name]代表原文件名字，[ext]代表文件后缀，中间这块[sha512:hash:base64:7]代表一些处理算法
+                loader: "file-loader?name=[name]_[sha512:hash:base64:7].[ext]"
+            }, {
+                test: /\.html/,
+                loader: "html-loader?" + JSON.stringify({minimize: false })
+            } ]
+        }
+    };
+
+    path: path.resolve(__dirname, './dist')和path.join(__dirname, './dist')的区别：http://www.runoob.com/nodejs/nodejs-path-module.html
+
+    还有个path: path.resolve(process.cwd(),'dist/');
+    这里的process也是node内置对象，process.cwd()与__dirname的区别。前者进程发起时的位置，后者是脚本的位置，两者可能是不一致的。比如，node ./code/program.js，对于process.cwd()来说，返回的是当前目录（.）；对于__dirname来说，返回是脚本所在目录，即./code/program.js
+    http://javascript.ruanyifeng.com/nodejs/process.html
+
+    loaders:['style-loader', 'css-loader','less-loader']等同于
+    loader:'style!css!less' //(short for style-loader!css-loader!less-loader)
+    loader或者loaders数组的解析顺序都是从右到左，因为webpack是用pop方法取出数组里面的loader
+
+91.npm入门
+   http://www.cnblogs.com/fsjohnhuang/p/4178019.html
+   nrm:https://github.com/Pana/nrm
+   cnpm:https://cnpmjs.org/
+
+92.webpack-vue开发
+   http://div.io/topic/1343
+   http://www.jianshu.com/p/a5361bff1cd8
+   阿里的webpack-vue实践：http://frontenddev.org/link/ali-11-11-2015-vue-webpack-technology-practice.html
+   https://www.talkingcoder.com/article/6310080842228107877
+   https://sally-xiao.gitbooks.io/book/content/vuejszu_jian.html
+   https://segmentfault.com/a/1190000008279436
+   http://www.cnblogs.com/keepfool/p/5678427.html
+
+93.vue-router的使用
+   https://router.vuejs.org/zh-cn/
+   http://router.vuejs.org/zh-cn/essentials/nested-routes.html
+
+94.vuex
+   http://vuex.vuejs.org/en/index.html
+
+95.vue插件
+   http://jsfront.org/2017/03/06/vue-pulgin-intro/
+
+96.各种原生DOM操作及API
+   http://www.jianshu.com/p/1e638b7da640
+   http://www.cnblogs.com/fsjohnhuang/p/3819165.html
+   http://www.cnblogs.com/laogao/archive/2012/07/14/2591179.html
