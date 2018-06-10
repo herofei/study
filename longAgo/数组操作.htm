@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>数组找数</title>
+</head>
+<body>
+<!-- 数组操作方法：https://mp.weixin.qq.com/s/qedx5LWXfNeT5aachyBjkA
+js的数组方法
+
+2016-12-14 opelar 1024BT
+1. join()
+
+Array.join() 是 String.split() 的逆向操作
+
+var arr = [1, 2, 3]
+arr.join()// "1,2,3"
+arr.join("")// "123"
+arr.join("  ")// "1  2  3"
+arr.join('-')// "1-2-3"
+arr.join('_')// "1_2_3"
+arr.join('a')// "1a2a3"
+
+var arr1 = [1, 2, 3, {a:1,b:2,c:3}]
+arr1.join('__') // "1__2__3__[object Object]"
+var arr2 = [1, 2, 3, [1,2,3]]
+arr2.join('__')// "1__2__3__1,2,3"
+2. reverse()
+
+数组元素全部倒过来
+
+3.sort()
+
+排序
+
+var arr = [1,3,11,24];arr.sort() // [1, 11, 24, 3]
+arr.sort((a, b) => a-b) // [1, 3, 11, 24]
+
+var arr1 = ['b', 'as', 'c', 'z', 'f'];
+arr1.sort() // ["as", "b", "c", "f", "z"]
+
+var arr2 = ['b', 'as', 'c', [1,2,3] ,'z', 'f']
+arr2.sort() // [[1,2,3], "as", "b", "c", "f", "z"]
+4. concat()
+
+返回一个新的数组(不修改原数组)
+
+var arr = [1, 2, 3];
+arr.concat(4, 5) // [1,2,3,4,5]
+arr.concat([4, 5]) // [1,2,3,4,5]
+arr.concat([1,2,3], [4, 5]) // [1, 2, 3, 1, 2, 3, 4, 5]
+arr.concat([1,[2],3], [4, 5]) //[1, 2, 3, 1, [2], 3, 4, 5]
+5. slice(start, end)
+
+返回数组片段 (不修改原数组) start, end 均是开区间
+
+var arr = [1, 5, 6, 7, 3];
+arr.slice(0) // [1, 5, 6, 7, 3]
+arr.slice(1, 2) // [5]
+arr.slice(1, 3) // [5, 6]
+6. splice()
+
+插入或者删除 (修改数组本身)
+
+var arr = [1, 5, 6, 7, 3];
+arr.splice(1) // [5, 6, 7, 3]
+
+var arr1 = [1, 5, 6, 7, 3];
+arr1.splice(2) // [6, 7, 3]
+
+var arr2 = [1, 5, 6, 7, 3];
+arr2.splice(1,2) // [5, 6]
+
+var arr3 = [1, 5, 6, 7, 3];
+arr3.splice(2,0, 'a')
+
+arr3 //[1, 5, "a", 6, 7, 3]
+7. 把数组当栈使用
+
+push() 尾部添加
+
+unshift() 头部添加
+
+pop() 尾部删除
+
+shift() 头部删除
+
+8 遍历
+
+for...in... (这货他么可以用来遍历 对象{a: 1, b: 2} 中的键值对)...
+
+var obj = {a: 1, b:2}
+for(var x in obj) {  
+  console.log(x)
+  console.log(obj[x])
+}
+
+// a
+// 1
+// b
+// 2
+map()
+
+forEach()
+
+判断是数组还是对象
+
+var o = {};
+try {
+  o.map(i => i) && 'o is arr'} 
+catch(err) {  
+  'o is: obj';
+}
+9. filter()
+
+var arr = [1, 5, 6, 7, 3];
+
+arr.filter((item) => item <= 5 ); // [1, 5, 3]
+10.
+
+every() // 针对所有元素
+
+some() // 存在某个元素
+
+11.
+
+reduce() // 从左到右索引
+
+reduceRight() // 从右到左
+
+var arr = [1,2,2,3,4,54];
+
+// 求和
+arr.reduce((x, y) => x + y) // 66 
+
+// 找出最大值
+arr.reduce((x, y) => x > y ? x : y) // 54
+12. 搜索整个数组中具有给定值的元素
+
+indexOf() // 从左到右索引
+
+lastIndexOf()
+
+用来给数组去重
+
+function uniq(arr) {
+  var _arr = [];
+  arr.map(item => _arr.indexOf(item) === -1 && _arr.push(item))    
+  return _arr;
+}
+var array = [1,2,2,3,1,1,5,2,10, '10'];
+uniq(array);
+
+ -->
+<script>
+	// 数组找数
+	function showIndex(arr,k){
+		var brr = arr.sort(function(a,b){
+			return (a-b);
+		});
+		var index = brr.indexOf(k);
+		console.log(index);
+	}
+	showIndex([4,8,1,11,5,9,4,1,4],5);
+	var b = [4,8,1,11,5,9,4,1,4].sort();
+	console.log(b.length);
+	console.log([4,8,1,11,5,9,4,1,4].indexOf(7));
+	// 数组去重排序
+	function cutArr(a){
+		var anotherArr = [];
+		a.sort(function(a,b){
+			return (a-b);
+		});
+		for(var i = 0;i < a.length;i++){
+			if(anotherArr.indexOf(a[i])===-1){
+				anotherArr.push(a[i])
+			}
+		}
+		console.log(a);
+		console.log(anotherArr);
+		console.log(anotherArr.length);
+	}
+	cutArr([0,22,44,56,4,9,22,9,4,56,4]);
+
+	// 通过一个数组去寻找另一个对象对应的键值
+	var arr = [0,2,3];
+	var obj = {
+		a : "aaa ",
+		b : "bbb" ,
+		c : "ccc" ,
+		d : "ddd"
+	}
+	var obj_arr = [];
+	for(j in obj){
+		obj_arr.push(j);
+	}
+	for(i in arr){
+		var j = arr[i];
+		// console.log(j);
+		var k = obj_arr[j]
+		var x = obj[k];
+		console.log(x);
+	}
+</script>
+</body>
+</html>
