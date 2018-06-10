@@ -13,7 +13,7 @@ nodeJs入门
 https://www.nodebeginner.org/index-zh-cn.html
 
 
-如何学习node.js 
+如何学习node.js
 https://cnodejs.org/topic/5ab3166be7b166bb7b9eccf7
 
 
@@ -24,7 +24,7 @@ nodeJs包教不包会：
 https://github.com/alsotang/node-lessons
 
 require:
-https://github.com/nswbmw/N-blog/blob/master/book/2.1%20require.md  
+https://github.com/nswbmw/N-blog/blob/master/book/2.1%20require.md
 1.require 可加载 .js、.json 和 .node 后缀的文件
 2.require 的过程是同步的
 3.require 目录的机制是:
@@ -55,6 +55,16 @@ https://github.com/nswbmw/N-blog/blob/master/book/2.4%20%E7%8E%AF%E5%A2%83%E5%8F
 
 
 npm:
+npm 模块安装机制：
+http://www.ruanyifeng.com/blog/2016/01/npm-install.html
+
+模块安装过程：
+1.发出npm install命令
+2.npm 向 registry 查询模块压缩包的网址
+3.下载压缩包，存放在~/.npm目录
+4.解压压缩包到当前项目的node_modules目录
+
+
 直接使用 npm i 安装的模块是不会写入 package.json 的 dependencies (或 devDependencies)，需要额外加个参数:
 npm i express --save/npm i express -S (安装 express，同时将 "express": "^4.14.0" 写入 dependencies )
 npm i express --save-dev/npm i express -D (安装 express，同时将 "express": "^4.14.0" 写入 devDependencies )
@@ -86,7 +96,28 @@ npm i -g moduleName 命令
 (3)之后运行npm install命令时，会自动安装msbuild到node_modules目录中
 (4)之后运行npm install --production或者注明NODE_ENV变量值为production时，不会自动安装msbuild到node_modules目录中
 
-5.关于PATH 与 NODE_PATH
+4.1
+npm install moduleName # 安装模块到项目目录下
+
+npm install -g moduleName # -g 的意思是将模块安装到全局，具体安装到磁盘哪个位置，要看 npm config prefix 的位置。
+
+npm install -save moduleName # -save 的意思是将模块安装到项目目录下，并在package文件的dependencies节点写入依赖。
+
+npm install -save-dev moduleName # -save-dev 的意思是将模块安装到项目目录下，并在package文件的devDependencies节点写入依赖。
+
+5.npm link的功能
+    npm link是用来链接全局包的命令，npm link主要是为模块开发者使用的一个命令，设想这样的一个情景：你开发了一个模块a并发布了（npm public），并在项目中引入这个模块，在使用过程中发现了a有bug，你改动了a，于是需要重新npm public，发布完你又要回到自己的项目中用npm update命令来更新模块，如果只是小改动还好，如果是开发初期的频繁更新，那么就很浪费时间，毕竟自己开发的模块在本机还要更新，这个步骤明显很多余。npm link命令就是用来同步模块更新的，一般应用场景如下：
+
+    自己开发的包名为appy，放在src/appy文件夹——cd to src/appy——npm link，将会把src/appy这个包复制到npm的全局模块安装文件夹node_modules内，并创建符号链接（symbolic link，应该是一个软链接）——自己的项目放在src/mysite文件夹——cd to src/mysite——npm link appy，那么项目中的appy包就会和src/appy相关联，每次npm publish后，项目文件夹里面的appy包都会随之更新。
+
+    有时候这个包并不是你开发的，但是你想contribute这个包时，也可以在自己的项目文件夹中直接用npm link <package>，这个包同样会被安装到全局，并和此项目中的包相关联。
+
+    总结：npm link命令通过链接目录和可执行文件，实现npm包命令的全局可执行
+    https://blog.csdn.net/juhaotian/a
+
+
+
+6.关于PATH 与 NODE_PATH
 npm NODE_PATH 是干什么的呢？ 操作系统中都会有一个PATH环境变量，想必大家都知道，当系统调用一个命令的时候，就会在PATH变量中注册的路径中寻找，如果注册的路径中有就调用，否则就提示命令没找到。
 
 -> export PATH=$PATH: # 将 /usr/bin 追加到 PATH 变量中 -> export NODE_PATH="/usr/lib/node_modules;/usr/local/lib/node_modules" #指定 NODE_PATH 变量 那 NODE_PATH 就是NODE中用来寻找模块所提供的路径注册环境变量。我们可以使用上面的方法指定NODE_PATH环境变量。并且用;分割多个不同的目录。
@@ -95,10 +126,10 @@ npm NODE_PATH 是干什么的呢？ 操作系统中都会有一个PATH环境变�
 
 npm root -g 查看在你的系统中全局的路径,例如返回结果如下：C:\users\pc\AppData\Roaming\npm\node_modules npm config get prefix 查看全局路径,prefix 字段就是全局base path,例如返回结果如下：C:\users\pc\AppData\Roaming\npm npm config set prefix C:\Users\pc\global 设置全局路径
 
-6.node 调试 
+7.node 调试 
 https://www.cnblogs.com/tzyy/p/5028348.html https://cnodejs.org/topic/58f376fec749f63d48fe9548
 
-7.在window 10系统中无法创建.gitignore文件的解决方案
+8.在window 10系统中无法创建.gitignore文件的解决方案
 方法一：
 1.在本地仓库目录下创建文本文件，文件名称随意
 2.打开powershell命令窗口，输入以下命令
@@ -112,6 +143,19 @@ https://www.cnblogs.com/tzyy/p/5028348.html https://cnodejs.org/topic/58f376fec7
 3.修改另存为的默认设置，保存类型为所有文件，文件编码为utf-8.
 
 
+9.macrotask 和 microtask
+
+
+
+
+
+
+
+
+
+
+
+#more
 https://yq.aliyun.com/articles/36217
 https://www.cnblogs.com/EasonJim/p/6207201.html
 
@@ -142,4 +186,3 @@ node调试技巧汇总：
 https://github.com/nswbmw/node-in-debugging
 
 
-macrotask 和 microtask
