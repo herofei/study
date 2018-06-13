@@ -380,7 +380,7 @@ The border-radius properties do apply to table, inline-table, and table-cell box
     https://imququ.com/post/four-ways-to-post-data-in-http.html
     推荐博客：https://imququ.com/post/archives.html
 
-58.http2.0了解一下
+58.http2.0 和 https 了解一下
 
 59.文件上传,假如上传的是图片,实现图片预览(此时未传到后台)
     拓展：多个文件上传
@@ -486,3 +486,38 @@ The border-radius properties do apply to table, inline-table, and table-cell box
     对比 TCP 建立连接的时候，区别大概就是第二步拆成了两步。“三次握手”的时候确认 ACK 和同步 SYN 是一块返回的，断开连接则是分开发送，先发送 ACK 确认，再发送 FIN。这里主要是因为 B 端是被动断开的一方，A 发送完数据了，发送 FIN 表示我已经完事了，但是 B 不一定，也能还有数据会发送给 A。所以 B 会先 ACK 确认，然后当它真的没有数据要发送了，才会执行 FIN。
 
     这种情况主要是由于 TCP 全双工传输的特性决定的。什么是全双工？先说一下半双工吧，举个栗子，有一条很窄的道路，只有单通道，但是却两个方向的车都可以走。当有一个方向的车进入，另一个方向的车就只能等待它通过才能进入。而全双工就是互不影响，你走你的，我走我的。所以 TCP 的数据传输也是这样，两端同时可以向对方发送数据，所以当 A 要断开连接的时候，B 接收到 FIN 表示没有数据会发来了，但是我还可以继续发送数据，可能还有数据要发，为了数据不丢失，即采用先确定后断开的方式。
+    
+    
+69.http协议服务器一般默认使用80端口,https一般默认使用443端口
+
+70.了解一下HSTS：
+    https://www.jianshu.com/p/caa80c7ad45c
+
+71.文件下载的若干种方式以及文件上传，了解一下
+    https://www.jianshu.com/p/e0a9e697594c
+    https://www.jianshu.com/p/f1b89c98e5b5?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
+
+72.设置路由
+  要添加目标为 10.41.0.0，子网掩码为 255.255.0.0，下一个跃点地址为 10.27.0.1 的路由 (就是说在访问10.41.0.0之前会先访问10.27.0.1,通过 10.27.0.1进行代理或者数据包处理什么的)
+  route add 10.41.0.0 mask 255.255.0.0 10.27.0.1
+
+73.DOM Event模型
+    preventDefault( )：如果此事件没有需要显式处理，那么它默认的动作也不要做（因为默认是要做的）。此事件还是继续传播，除非碰到事件侦听器调用stopPropagation() 或stopImmediatePropagation()，才停止传播。
+    stopPropagation()：阻止捕获和冒泡阶段中当前事件的进一步传播。
+    stopImmediatePropagation()：如果某个元素有多个相同类型事件的事件监听函数,则当该类型的事件触发时,多个事件监听函数将按照顺序依次执行。如果某个监听函数执行了 event.stopImmediatePropagation()方法,则除了该事件的冒泡行为被阻止之外(event.stopPropagation方法的作用),该元素绑定的后序相同类型事件的监听函数的执行也将被阻止。
+
+
+74.MVC、MVP、MVVM的区别和各自优缺点了解一下
+
+
+******************************************************************************************************************************
+项目总结：
+1.尽量不要讲数据赋值到dom中，然后通过触发交互拿dom中的数据触发后续交互逻辑，因为过多的dom操作会导致app性能低下
+  而是应该将数据缓存起来，根据dom判断数据位置，获取相关数据
+
+2.尽量使用Ext框架原来的layout布局,而不要使用Tpl的CSS布局,因为这样如果是包含items的情况下,不会递归触发items的 doLayout()方法
+
+3.Ext父组件往组件传递数据一般用属性传递,子组件向父组件传数据一般用抛出事件的方法(观察者模式),如果是要向兄弟组件传递数据,则需靠父组件作为中转传递。
+  但过多过复杂的数据共享的情况,目前还没优秀的解决方案,需要探讨。
+
+4.若是同一个内页多个地方使用,共享一个store,需要特别留意共享参数的问题,各个参数会保存共享到同一个store对象里,如果有些请求不需要这些多余参数,必须请求前处理掉
