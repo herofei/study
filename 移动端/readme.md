@@ -9,3 +9,6 @@ http://blog.csdn.net/freshlover/article/details/42528643
 
 Vue + webpack项目的调试方式：
 http://blog.csdn.net/liyijun4114/article/details/73863228
+
+司徒正美大大移动端开发遇到的坑总结
+https://github.com/RubyLouvre/mobileHack

@@ -1,15 +1,3 @@
-## 研发必看
-
-  # 解决windows代码路径太长报错
-  git config --global core.longpaths true
-
-  # windows下没有显示链接文件属性
-  git config --global core.symlinks true
-
-  # windows下默认安装，下载代码会转换换行，关掉
-  git config --global core.autocrlf false
-
-
 ## 一、项目说明
 * 项目以master作为主线，个人分支合并master
 
@@ -187,6 +175,15 @@
 - 主程序员权限： 有保护分支合并权限的人，一般是项目经理、技术指导经理  
 - 开发人员权限： 普通开发人员，无法直接修改master代码，只能新建分支，通过合并请求申请合入  
 - 报告者权限： 只能看代码权限，无法提交（包括个人分支）
+
+## 解决windows代码路径太长报错
+git config --global core.longpaths true
+
+## windows下没有显示链接文件属性
+git config --global core.symlinks true
+
+## windows下默认安装，下载代码会转换换行，关掉
+git config --global core.autocrlf false
 
 
 
