@@ -328,6 +328,8 @@ The border-radius properties do apply to table, inline-table, and table-cell box
 45.词法分析与语法分析
 
 46.了解DNS以及DNS缓存
+    http://www.ruanyifeng.com/blog/2016/06/dns.html
+    https://tojohnonly.github.io/68-DNS%E5%8E%9F%E7%90%86%E5%8F%8A%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B.html
 
 47.深入了解XMLHttpRequest：https://segmentfault.com/a/1190000004322487
 
@@ -508,6 +510,36 @@ The border-radius properties do apply to table, inline-table, and table-cell box
 
 
 74.MVC、MVP、MVVM的区别和各自优缺点了解一下
+
+75.URL命名规范
+http://www.cnblogs.com/wangsen/p/5890995.html
+
+76.浏览器模式以及文档模式
+http://www.cnblogs.com/fsjohnhuang/p/3817418.html
+
+设置文档模式的常用方式：
+1. 开发者工具中的“文档模式”；
+2. 通过在head标签内加入如<meta http-equiv="X-UA-Compatible" content="IE=7">的元数据标签（该例子将文档模式设置为IE7标准模式）；
+3. 通过<!DOCTYPE>的增删，在标准模式和怪异模式（Quirks）间切换；
+4. 通过Web服务器配置(让http response header 带上 X-UA-Compatible: IE=edge)
+
+http://www.cnblogs.com/fsjohnhuang/p/3817418.html
+
+77.获得IE文档模式的方法：
+  document.compatMode
+  https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/jj676915(v%3dvs.85)
+
+
+78.IE技术文档：
+  https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/index
+
+
+79.Chrome 里的请求报错 "CAUTION: Provisional headers are shown" 是什么意思?
+    代表请求没成功。原因有多种多样，有可能被某个网络节点拦截 (如在项目开发过程中好遇到的一种情况就是请求触发了AF的拦截规则，把请求拦截了),
+    也有可能CORS跨域请求中后台没设置 Access-Control-Allow-Origin 等
+
+    https://segmentfault.com/q/1010000000364871
+    https://stackoverflow.com/questions/21177387/caution-provisional-headers-are-shown-in-chrome-debugger
 
 
 ******************************************************************************************************************************

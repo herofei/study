@@ -114,8 +114,31 @@ npm install -save-dev moduleName # -save-dev 的意思是将模块安装到项�
 
     总结：npm link命令通过链接目录和可执行文件，实现npm包命令的全局可执行
     https://blog.csdn.net/juhaotian/a
+    
+5.1 npx
+    https://zhuanlan.zhihu.com/p/27840803
+
+5.2 npm script
+    http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html
 
 
+5.3 关于PATH 与 NODE_PATH
+npm NODE_PATH 是干什么的呢？ 操作系统中都会有一个PATH环境变量，想必大家都知道，当系统调用一个命令的时候，就会在PATH变量中注册的路径中寻找，如果注册的路径中有就调用，否则就提示命令没找到。
+
+-> export PATH=$PATH: # 将 /usr/bin 追加到 PATH 变量中
+-> export NODE_PATH="/usr/lib/node_modules;/usr/local/lib/node_modules" #指定 NODE_PATH 变量
+    那 NODE_PATH 就是NODE中用来寻找模块所提供的路径注册环境变量。我们可以使用上面的方法指定NODE_PATH环境变量。并且用;分割多个不同的目录。
+
+    加载时机 NODE_PATH中的路径被遍历是发生在从项目的根位置递归搜寻 node_modules 目录，直到文件系统根目录的 node_modules，如果还没有查找到指定模块的话，就会去 NODE_PATH中注册的路径中查找。
+
+    npm root -g 查看在你的系统中全局的路径,例如返回结果如下：C:\users\pc\AppData\Roaming\npm\node_modules
+    npm config get prefix 查看全局路径,prefix 字段就是全局base path,例如返回结果如下：C:\users\pc\AppData\Roaming\npm
+    npm config set prefix C:\Users\pc\global 设置全局路径
+
+5.4 设置 process.env.NODE_ENV
+    dev-mac: " export NODE_ENV=development"
+    dev-win: " set NODE_ENV=development"
+    https://cnodejs.org/topic/57a409657a922d6f358cd22d
 
 6.关于PATH 与 NODE_PATH
 npm NODE_PATH 是干什么的呢？ 操作系统中都会有一个PATH环境变量，想必大家都知道，当系统调用一个命令的时候，就会在PATH变量中注册的路径中寻找，如果注册的路径中有就调用，否则就提示命令没找到。
@@ -128,6 +151,14 @@ npm root -g 查看在你的系统中全局的路径,例如返回结果如下：C
 
 7.node 调试 
 https://www.cnblogs.com/tzyy/p/5028348.html https://cnodejs.org/topic/58f376fec749f63d48fe9548
+
+https://github.com/nswbmw/node-in-debugging/blob/master/4.2%20Chrome%20DevTools.md
+https://www.cnblogs.com/tzyy/p/5028348.html
+https://cnodejs.org/topic/58f376fec749f63d48fe9548
+
+
+https://yq.aliyun.com/articles/36217
+https://www.cnblogs.com/EasonJim/p/6207201.html
 
 8.在window 10系统中无法创建.gitignore文件的解决方案
 方法一：
