@@ -541,6 +541,32 @@ http://www.cnblogs.com/fsjohnhuang/p/3817418.html
     https://segmentfault.com/q/1010000000364871
     https://stackoverflow.com/questions/21177387/caution-provisional-headers-are-shown-in-chrome-debugger
 
+80. 跨域总结
+    https://segmentfault.com/a/1190000011145364
+
+81. 很全的ajax相关知识体系汇总（方便查漏补缺）
+    https://juejin.im/post/58c883ecb123db005311861a?utm_source=gold_browser_extension
+
+
+82. DNS递归查询以及迭代查询
+    http://www.ruanyifeng.com/blog/2016/06/dns.html
+    https://blog.csdn.net/wuchuanpingstone/article/details/6720723
+
+83. robots 协议
+   robots.txt是一个协议，而不是一个命令。robots.txt是搜索引擎中访问网站的时候要查看的第一个文件。robots.txt文件告诉蜘蛛程序在服务器上什么文件是可以被查看的。
+    User-agent: * 这里的*代表的所有的搜索引擎种类，*是一个通配符
+    Disallow: /admin/ 这里定义是禁止爬寻admin目录下面的目录
+    https://baike.baidu.com/item/robots%E5%8D%8F%E8%AE%AE/2483797?fr=aladdin&fromid=9518761&fromtitle=robots.txt
+
+84. 大数四则运算
+    在处理超越js极限的数字时(Number.MAX_SAFE_INTEGER的值为2^53-1)时，以及浮点数运算是，建议使用大数运算的相关函数库，原理是转化成字符串之后再进行相关运算处理。
+
+    js数字极限问题 ： http://www.qiutianaimeili.com/html/page/2017/12/jpksnywepj.html
+    https://www.zhihu.com/question/19678341
+    https://github.com/MikeMcl/bignumber.js
+    http://www.cnblogs.com/maliya871115/archive/2012/02/21/2361547.html
+    https://blog.csdn.net/sinat_34353062/article/details/70768963
+
 
 ******************************************************************************************************************************
 项目总结：

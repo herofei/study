@@ -254,6 +254,8 @@ initComponent : function(){
     etc...
   }
 
+25. Ext.Window的关闭按钮的关闭事件默认是close,Window.prototype.close方法是会销毁Window的dom和其内部组件的。要是想复用Window,而不想销毁Window的话,应该设置closeAction属性为'hide',这样的话,window就只会是隐藏而不会进行销毁处理,可以继续复用。
+
 
 相关学习网址：
 1.Ext3.4 API : http://200.200.151.26/docs/extjs/3.4.0/docs/index.html

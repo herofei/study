@@ -1,3 +1,15 @@
+## 注意事项
+
+  # 解决windows代码路径太长报错
+  git config --global core.longpaths true
+
+  # windows下没有显示链接文件属性
+  git config --global core.symlinks true
+
+  # windows下默认安装，下载代码会转换换行，关掉
+  git config --global core.autocrlf false
+
+
 ## 一、项目说明
 * 项目以master作为主线，个人分支合并master
 
@@ -138,18 +150,65 @@
 `#6、提交代码分4步`
 
     #查看有那些文件是被你修改，以防修改不必要文件（有改动文件，显示红色）
-    git status    
-    
+    git status
+
     #添加准备要提交的代码到暂存区（暂存区概念学习git时候查一下。 有改动文件，这时候显示绿色）
     git add xxx.c
     #再次查看添加了什么，确保正确
     git status
-    
+
     #提交代码到本地仓库（注意这个时候还未上传代码到git服务器）
-    git commit -m "[ADD]: 提交新代码xxx.c"   
-    
+    git commit -m "[ADD]: 提交新代码xxx.c"
+
      #真正提交代码到远程仓库，这里提交到个人分支
-    git push origin feature-wdw-login  
+    git push origin feature-wdw-login
+
+`#7、查看本地分支以及远程分支`
+
+    $ git branch -a
+      dev
+    * dev-threat-hjf
+      ls
+      master
+      remotes/origin/dev
+      remotes/origin/dev-hjf
+      remotes/origin/dev-threat-hjf
+      remotes/origin/master
+
+`#8、删除远程分支和tag`
+
+    #删除远程分支
+    git push origin --delete <branchName>
+
+    #删除tag
+    git push origin --delete tag <tagname>
+
+    #推送一个空分支到远程分支，其实就相当于删除远程分支
+    git push origin :<branchName>
+
+    #删除tag的另一种方法，推送一个空tag到远程tag
+    git tag -d <tagname>
+    git push origin :refs/tags/<tagname>
+
+`#9、重命名远程分支`
+    # 重命名本地分支
+    git branch -m old_branch new_branch
+
+    # 重命名远程分支则是将旧远程分支删除,再推送新分支
+    git push --delete origin old_branch
+    git branch -m old_branch new_branch
+    git push origin new_branch
+
+    git push --delete origin old_branch
+    remote: error: refusing to delete the current branch: refs/heads/devel
+    To git@github.com:zrong/quick-cocos2d-x.git
+     ! [remote rejected] devel (deletion of the current branch prohibited)
+    error: failed to push some refs to 'git@github.com:zrong/quick-cocos2d-x.git'
+
+    如果报以上错误，是由于在 github 中, old_branch 是项目的默认分支. 要解决此问题, 这样操作：
+    进入 github 中该项目的 Settings 页面；
+    设置 Default Branch 为其他的分支（例如 master）；
+    重新执行删除远程分支命令。
 
 
 ## 术语说明
@@ -176,19 +235,6 @@
 - 开发人员权限： 普通开发人员，无法直接修改master代码，只能新建分支，通过合并请求申请合入  
 - 报告者权限： 只能看代码权限，无法提交（包括个人分支）
 
-## 解决windows代码路径太长报错
-git config --global core.longpaths true
-
-## windows下没有显示链接文件属性
-git config --global core.symlinks true
-
-## windows下默认安装，下载代码会转换换行，关掉
-git config --global core.autocrlf false
-
-
-
-
-
 
 
 
@@ -205,8 +251,3 @@ https://blog.csdn.net/zshlclzsh/article/details/50434404
 
 4.git .gitignore文件进行文件提交忽略
 https://www.cnblogs.com/jingtyu/p/6831772.html
-
-
-
-
-

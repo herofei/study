@@ -114,7 +114,7 @@ npm install -save-dev moduleName # -save-dev 的意思是将模块安装到项�
 
     总结：npm link命令通过链接目录和可执行文件，实现npm包命令的全局可执行
     https://blog.csdn.net/juhaotian/a
-    
+
 5.1 npx
     https://zhuanlan.zhihu.com/p/27840803
 
@@ -149,7 +149,7 @@ npm NODE_PATH 是干什么的呢？ 操作系统中都会有一个PATH环境变�
 
 npm root -g 查看在你的系统中全局的路径,例如返回结果如下：C:\users\pc\AppData\Roaming\npm\node_modules npm config get prefix 查看全局路径,prefix 字段就是全局base path,例如返回结果如下：C:\users\pc\AppData\Roaming\npm npm config set prefix C:\Users\pc\global 设置全局路径
 
-7.node 调试 
+7.node 调试
 https://www.cnblogs.com/tzyy/p/5028348.html https://cnodejs.org/topic/58f376fec749f63d48fe9548
 
 https://github.com/nswbmw/node-in-debugging/blob/master/4.2%20Chrome%20DevTools.md
@@ -175,6 +175,18 @@ https://www.cnblogs.com/EasonJim/p/6207201.html
 
 
 9.macrotask 和 microtask
+
+10. package.json, package.lock.json以及npm-shrinkwrap.json的区别
+    package.lock.json : https://docs.npmjs.com/files/package-lock.json
+                        https://www.zhihu.com/question/62331583
+
+    npm-shrinkwrap.json : https://docs.npmjs.com/files/shrinkwrap.json
+                          https://zhuanlan.zhihu.com/p/22934066
+
+    https://www.zhihu.com/question/65536076/answer/233193833
+
+11. 为什么不能在服务器上 npm install ？
+    https://zhuanlan.zhihu.com/p/39209596
 
 
 
