@@ -567,6 +567,27 @@ http://www.cnblogs.com/fsjohnhuang/p/3817418.html
     http://www.cnblogs.com/maliya871115/archive/2012/02/21/2361547.html
     https://blog.csdn.net/sinat_34353062/article/details/70768963
 
+85. less中使用calc属性有坑
+    问题描述
+    在less中 calc(100% -4rem) 等带单位混合运算会被less解析忽略单位，全部按照百分比计算，此例中的计算被less编译成calc(96%)。
+
+    原因分析
+    less的计算方式跟calc方法有重叠，两者在一起有冲突
+
+    解决方案
+    width:e("calc(100% - 4rem)");
+    width:calc(~"100% - 4rem");
+
+86. IE网页中嵌入iframe文档模式继承的问题：
+    https://www.cnblogs.com/xakoy/p/9304429.html
+
+    (1) 顶级页面设置了Compatible, IE=Edge。 你会发现原来系统iframe能正常的网页，在你新的页面中运行不正常了，即便开启了兼容模式，或者iframe里面的网页设置了 Compatible, IE=EmulateIE7。你的页面依然浏览不正常。
+    (2)要解决上面的问题，就是顶级页面不能设置Compatible, IE=Edge，你可以设置顶级页面的Compatible, IE=EmulateIE8或IE=EmulateIE7，则可以让iframe里面的网页浏览正常。
+    (3)使用了第2步骤的解决方案，你会发现，当你新做的网页，里面用到了css3或者高版本的脚本库如（vue.js），在测试IE9中很正常，但是将网页签入到iframe中后，页面不正常，或者脚本报错。这是因为当顶级页面设置为IE=EmulateIE8或IE=EmulateIE7，iframe里面的页面设置IE=edge不起作用，它的文档模式显示的是IE8。
+
+    综上，总结来说：
+    在IE中不允许IE9+的模式和旧模式混合，如果顶级页面的文档模式是IE7，则你在iframe中的页面最高级的文档模式是IE8，同样，顶级页面的模式是IE9+，则iframe中的页面文档模式不可能低于IE9 以下。
+
 
 ******************************************************************************************************************************
 项目总结：
