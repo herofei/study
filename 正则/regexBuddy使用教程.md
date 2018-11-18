@@ -19,10 +19,24 @@ RegexBuddy是个十分强大的正则表达式学习、记录及分析工具。�
 
 ### 4. 创建你的第一个正则
 
-### 5. 使用RegexBuddy的Create功能
+为了方便使用，可以在布局设置那里将布局设置成Side by Side Layout。
 
-### 6. 使用RegexBuddy的Debug功能
+在正则输入区输入你的正则regex1，查看Create面板，就会发现面板上显示了正则的创建过程(或者说是匹配规则)，在Test面板区域输入你的测试文本，满足regex1匹配规则的部分会高亮显示，如下图所示。
 
-### 7. 使用RegexBuddy的Library功能
+![Regex create](./imgs/create.png)
 
-### 8. more
+### 5. 使用RegexBuddy的Debug功能
+
+选中测试文本，点击debug就可以进入RegexBuddy的debug模式，个人觉得这是RegexBuddy最强大地方，因为它可以让你清楚地知道你输入的正则对测试文本的匹配过程，执行了多少步，哪里发生了回溯，哪里需要优化，你都能一目了然。
+
+![Regex debug](./imgs/debug.png)
+
+### 6. 使用RegexBuddy的Library功能
+
+RegexBuddy的正则库内置了很多常用正则，日常编码过程中需要的很多正则表达式都能在该正则库中找到。
+
+![Regex library](./imgs/library.png)
+
+### 7. More
+
+除开了以上介绍之外，RegexBuddy还有Convert（转换成别的编程语言的正则语法）等等强大的功能，更多功能请查看[官网文档](https://www.regexbuddy.com/manual.html)
