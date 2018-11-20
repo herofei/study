@@ -325,7 +325,6 @@ module.exports = {
 ### 测试
 
 * eslint-loader：校验代码规范
-* 
 ```
 // 基本配置
 module.exports = {
