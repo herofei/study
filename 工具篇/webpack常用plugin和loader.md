@@ -34,6 +34,9 @@ new webpack.DefinePlugin({
 
 定义的环境变量的值被代入到了源码中，process.env.NODE_ENV === 'production' 被直接替换成了 true。 并且由于此时访问 process 的语句被替换了而没有了，Webpack 也不会打包进 process 模块了。
 
+
+
+
 *  CommonsChunkPlugin：用于提取多个 Chunk 中公共部分
 
 ```
@@ -52,6 +55,10 @@ new CommonsChunkPlugin({
 每个 CommonsChunkPlugin 实例都会生成一个新的 Chunk，这个新 Chunk 中包含了被提取出的代码，在使用过程中必须指定 name 属性，以告诉插件新生成的 Chunk 的名称。 其中 chunks 属性指明从哪些已有的 Chunk 中提取，如果不填该属性，则默认会从所有已知的 Chunk 中提取。
 
 >Chunk 是一系列文件的集合，一个 Chunk 中会包含这个 Chunk 的入口文件和入口文件依赖的文件
+
+
+
+
 
 * DllPlugin：用于打包出一个个单独的动态链接库文件。为了极大减少构建时间，进行分离打包
 
@@ -93,9 +100,15 @@ module.exports = {
 };
 ```
 
+
+
+
+
 * DllReferencePlugin：用于在主要配置文件中去引入 DllPlugin 插件打包好的动态链接库文件。
 
 构建出的动态链接库文件用于给其它地方使用，在这里也就是给执行入口使用。
+
+webpack 内置的DllPlugin和DllReferencePlugin相互配合，前置第三方包的构建，只构建业务代码，同时能解决Externals多次引用问题。DllReferencePlugin引用DllPlugin配置生成的manifest.json文件，manifest.json包含了依赖模块和module id的映射关系
 
 用于输出 main.js 的主 Webpack 配置文件内容如下：
 
@@ -141,11 +154,55 @@ module.exports = {
 
 
 * HtmlWebpackPlugin：简单创建 HTML 文件，用于服务器访问
+
 * OccurrenceOrderPlugin：根据模块调用次数，给模块分配ids，常被调用的ids分配更短的id，使得ids可预测，降低文件大小
+
 * ignore-plugin：用于忽略部分文件
+
 * UglifyJsPlugin：可以控制项目中 UglifyJS 的版本
+
 * webpack-spritesmith：用插件制作雪碧图。
+
 * HotModuleReplacementPlugin：内置插件，其实就是webpack实现热替换的插件，只要命令行执行"webpack-dev-server --hot"就会默认注入此插件，生成 .hot-update.json 文件
+
+1. 添加HotModuleReplacementPlugin
+2. entry中添加 "webpack-dev-server/client?http://localhost:8080/",
+3. entry中添加 "webpack/hot/dev-server"
+
+(热更新还可以直接用webpack_dev_server --hot --inline,原理也是在entry中添加了上述代码)
+
+* optimize-css-assets-webpack-plugin：不同组件中重复的css可以快速去重
+  
+* happypack：通过多进程模型，来加速代码构建
+```
+      const os = require('os');
+      let HappyPack = require('happypack');
+      let happyThreadPool = HappyPack.ThreadPool({size: os.cpus().length});
+      exports.plugins = [
+        new HappyPack({
+          id: 'jsx',
+          threadPool: happyThreadPool,
+          loaders: [ 'babel-loader' ]
+        }),
+
+        new HappyPack({
+          id: 'coffeescripts',
+          threadPool: happyThreadPool,
+          loaders: [ 'coffee-loader' ]
+        })
+      ];
+
+      exports.module.loaders = [
+        {
+          test: /\.js$/,
+          loaders: [ 'happypack/loader?id=jsx' ]
+        },
+        {
+          test: /\.coffee$/,
+          loaders: [ 'happypack/loader?id=coffeescripts' ]
+        },
+      ]
+```
 
 ## 常用loaders
 
@@ -325,6 +382,8 @@ module.exports = {
 ### 测试
 
 * eslint-loader：校验代码规范
+
+
 ```
 // 基本配置
 module.exports = {
