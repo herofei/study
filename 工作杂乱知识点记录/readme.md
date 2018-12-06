@@ -612,6 +612,10 @@ http://www.cnblogs.com/fsjohnhuang/p/3817418.html
 88. 大型网站的 HTTPS 实践
     https://openweb.baidu.com/doc/security/https-pratice-1.html
 
+89.爬虫自动识别破解验证码：
+    [知识库 : 使用Tesseract识别弱验证码](https://doc.yonyoucloud.com/doc/ae/920457.html)
+    [代码分享|使用Python和Tesseract来识别图形验证码](https://www.freebuf.com/sectool/163621.html)
+
 
 ******************************************************************************************************************************
 项目总结：

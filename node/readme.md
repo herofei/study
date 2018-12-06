@@ -189,7 +189,22 @@ https://www.cnblogs.com/EasonJim/p/6207201.html
     https://zhuanlan.zhihu.com/p/39209596
 
 
+12. npm install 报错
 
+    npm ERR! code EINTEGRITY
+    npm ERR! sha1-ceXsBUUBVsAav1oheDUdgvM6e8s= integrity checksum failed when using                                                                                                                                                                                                
+    sha1: wanted sha1-ceXsBUUBVsAav1oheDUdgvM6e8s= but got sha1-A+SXPrTrFdcCxh6R5ixF                                                                                                                                                                                               zlGThWY=. (6158071 bytes)
+
+    解决方案如下：
+    1. 先确定安装源有没有问题，输入命令 npm get registry，查看返回的npm源是否为一个可访问的的npm源
+    2. 如果你npm源有问题，则修改npm源地址，可以通过命令行npm set registry进行设置或者项目根目录下的.npmrc(yarn对应的是.yarnrc)配置文件进行配置
+    3. 如果npm源没问题，尝试删掉仓库的package-lock.json (yarn对应的是yarn.lock)文件，然后重新安装
+    4. OR，尝试更新你的npm，npm i -g npm
+    5. OR，校验npm缓存，npm cache verify
+    6. OR，清空npm缓存，npm cache clean
+    7. OR，npm cache clear --force && npm install --no-shrinkwrap --update-binary
+
+    详情请参考：https://stackoverflow.com/questions/47545940/when-i-run-npm-install-it-returns-with-err-code-eintegrity-npm-5-3-0/47922056
 
 
 
