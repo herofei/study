@@ -27,7 +27,7 @@
 - 如果是Vue的项目的话，可以通过以下方式开启调试模式
 ```
 步骤如下：
-1. 找到Vue构造函数如window.Vue
+1. 找到Vue构造函数如window.Vue(可以通过搜索Vue的某个实例方法，然后打个断点，将this(此时的this指向Vue)挂载到window上。Vue实例化挂载的元素节点的__vue__属性指向它的vue实例，也可以通过该实例去找Vue构造函数)
 2. Vue.config.devtools=true
 3. __VUE_DEVTOOLS_GLOBAL_HOOK__.emit('init', Vue)
 ```
@@ -143,3 +143,47 @@ prop 是单向数据流， 传进来的值，子组件不能改动，否则会�
 // 子组件
 this.$emit('update:title', newTitle)
 ```
+
+9. git 设置对文件大小写敏感`
+
+git 会根据操作系统的默认配置设置是否区分文件大小写, Windows和mac默认不区分文件名大小写的, linux默认区分大小写. 在Windows中, 当你创建一个文件后, 叫 readme.md 写入内容后 提交到线上代码仓库. 然后你在本地修改文件名为 Readme.md 接着你去提交, 发现代码没有变化.
+
+为了避免这种情况，可以通过改变git的默认设置：
+
+```bash
+### 默认是true
+git config --get core.ignorecase
+
+## 更给设置
+git config core.ignorecase false
+```
+
+10. RPC、HTTP服务的区别
+
+RPC是远端过程调用，其调用协议通常包含传输协议和序列化协议。RPC的协议可以多种，包括TCP或者HTTP等形式都可以。RPC框架会在普通的协议传输上进一步面向服务进行封装。HTTP服务则只是一个狭义的某种协议的传输请求。
+
+[既然有 HTTP 请求，为什么还要用 RPC 调用？](https://www.zhihu.com/question/41609070)
+[深入理解 RPC](https://juejin.im/entry/57c866230a2b58006b204712)
+[聊聊 Node.js RPC（一）— 协议](https://www.yuque.com/egg/nodejs/dklip5)
+[聊聊 Node.js RPC（二）— 服务发现](https://www.yuque.com/egg/nodejs/mhgl9f)
+
+11. peerDependencies
+
+peerDependencies的目的是提示宿主环境去安装满足插件peerDependencies所指定依赖的包，然后在插件import或者require所依赖的包的时候，永远都是引用宿主环境统一安装的npm包，最终解决插件与所依赖包不一致的问题。
+
+[探讨npm依赖管理之peerDependencies](https://www.cnblogs.com/wonyun/p/9692476.html)
+[Peer Dependencies](https://nodejs.org/zh-cn/blog/npm/peer-dependencies/)
+[peerDependencies介绍及简析](https://arayzou.com/2016/06/23/peerDependencies%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%AE%80%E6%9E%90/)
+
+12. 前端路由的原理
+
+要想改变url并且页面不刷新，有以下方式：
+1. 改变location的hash
+2. 使用history的相关接口(pushState, replaceState, go, back, forward)
+
+根据以上原理，通过监听hashchange事件(hash模式的路由)即可实现前端路由
+
+通过监听popstate事件(history模式的路由)也可实现前端路由, 但有一点需要注意的是, popstate 事件只能监听除 history.pushState() 和 history.replaceState() 外 url 的变化, 所以还得对pushState和replaceState进行额外封装处理
+
+[彻底搞懂路由跳转：location 和 history 接口](https://segmentfault.com/a/1190000014120456)
+[MDN history](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)

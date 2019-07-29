@@ -210,6 +210,19 @@
     设置 Default Branch 为其他的分支（例如 master）；
     重新执行删除远程分支命令。
 
+`#10、git 设置对文件大小写敏感`
+
+git 默认不区分文件名大小写的.当你创建一个文件后,叫 readme.md 写入内容后 提交到线上代码仓库.然后你在本地修改文件名为 Readme.md 接着你去提交,发现代码没有变化.
+
+为了避免这种情况，可以通过改变git的默认设置：
+
+```bash
+### 默认是true
+git config --get core.ignorecase
+
+## 更给设置
+git config core.ignorecase false
+```
 
 ## 术语说明
 
