@@ -187,3 +187,38 @@ peerDependencies的目的是提示宿主环境去安装满足插件peerDependenc
 
 [彻底搞懂路由跳转：location 和 history 接口](https://segmentfault.com/a/1190000014120456)
 [MDN history](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
+
+13. 前端大文件上传、切片上传(主要基于FileReader和Blob实现)、并行上传
+
+14. npm script和npm钩子的关系
+[也许你不知道的npm-scripts](https://juejin.im/post/5caeffc6f265da03587bea9f)
+[npm文档](https://docs.npmjs.com/misc/scripts)
+[npm 相关知识点汇总](https://juejin.im/post/5d08d3d3f265da1b7e103a4d)
+
+15. 用 githook、husky 和 lint-staged 构建代码检查工作流
+[官方文档 - 自定义 Git 钩子](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
+[使用 Githook 实现团队 Coding Review 流程](https://www.jianshu.com/p/935409ce4c9a)
+[用 Git 钩子进行简单自动部署](https://aotu.io/notes/2017/04/10/githooks/index.html)
+[用 husky 和 lint-staged 构建超溜的代码检查工作流](https://segmentfault.com/a/1190000009546913)
+[【工具推荐】使用 husky 避免糟糕的 git commit](https://zhuanlan.zhihu.com/p/35913229)
+[手牵手使用Husky & Nodejs自定义你的Git钩子 ](https://github.com/PaicFE/blog/issues/10)
+
+husky是一个npm包，安装后，可以快速的根据package.json配置创建git hook 脚本。yorkie是尤大从husky项目fork过来的进一步修改，并集成于vue-cli中，两者用法上的区别在以下：
+
+Before
+```json
+{
+  "scripts": {
+    "precommit": "foo"
+  }
+}
+```
+
+After
+```json
+{
+  "gitHooks": {
+    "pre-commit": "foo"
+  }
+}
+```
