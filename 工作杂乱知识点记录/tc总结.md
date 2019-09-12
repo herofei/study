@@ -222,3 +222,35 @@ After
   }
 }
 ```
+
+16. 快速打平数组的方法： join
+
+对于多维数组，join会递归调用数组的toString方法将数组转换成字符串，再用分隔符隔开(没传分隔符默认是',')，但分隔符只对最开始的第一维有效
+
+```javascript
+
+[[1,2, [7,8]], [3,4]].join() // 1,2,7,8,3,4
+
+[[1,2, [7,8]], [3,4]].join('-') // 1,2,7,8-3,4
+
+[[1,2, [7,8]], [3,4]].join().replace(/,/g, '-') // 1-2-7-8-3-4
+
+[[1,2, [7,8]], [3,4]].toString() // 1,2,7,8,3,4
+```
+
+详见： 
+
+[ES5/标准 ECMAScript 内置对象](https://www.w3.org/html/ig/zh/wiki/ES5/%E6%A0%87%E5%87%86_ECMAScript_%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1#Array.prototype.join_.28separator.29)
+
+17. nginx server_name的作用
+
+在server_name这个配置中，nginx仅仅检查请求的“Host”头以决定该请求应由哪个虚拟主机来处理。如果Host头没有匹配任意一个虚拟主机，或者请求中根本没有包含Host头，那nginx会将请求分发到定义在此端口上的默认虚拟主机。在以上配置中，第一个被列出的虚拟主机即nginx的默认虚拟主机——这是nginx的默认行为。而且，可以显式地设置某个主机为默认虚拟主机，即在"listen"指令中设置"default_server"参数。
+
+如果nginx中只配置一个server域的话，则nginx是不会去进行server_name的匹配的。因为只有一个server域，也就是这有一个虚拟主机，那么肯定是发送到该nginx的所有请求均是要转发到这一个域的，即便做一次匹配也是没有用的。还不如干脆直接就省了。如果一个http域的server域有多个，nginx才会根据$hostname去匹配server_name进而把请求转发到匹配的server域中。此时的匹配会按照匹配的优先级进行，一旦匹配成功进不会再进行匹配。
+
+详见以下链接：
+- [Nginx如何处理一个请求](https://tengine.taobao.org/nginx_docs/cn/docs/http/request_processing.html)
+- [nginx 中通过server_name listen的方式配置多个服务器](https://blog.csdn.net/thlzjfefe/article/details/84489311)
+- [理解Nginx中Server和Location的匹配逻辑](https://juejin.im/post/5c89f96f518825573a5e630b)
+- [谁说前端不需要懂-Nginx反向代理与负载均衡](https://juejin.im/post/5b01336af265da0b8a67e5c9)
+- [官方文档 - server_name](http://nginx.org/en/docs/http/server_names.html)

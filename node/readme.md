@@ -237,10 +237,11 @@ ESlint(熟悉配置、规则编写及插件开发)：
 http://eslint.cn/docs/user-guide/getting-started
 http://eslint.cn/docs/user-guide/configuring
 
-mongoDB中间间以及实现原理：
-https://zhuanlan.zhihu.com/p/24308524
+[mongoDB中间间以及实现原理](https://zhuanlan.zhihu.com/p/24308524)
 
-node调试技巧汇总：
-https://github.com/nswbmw/node-in-debugging
+[node调试技巧汇总](https://github.com/nswbmw/node-in-debugging)
+
+[nodejs 进阶](https://cnodejs.org/topic/58ad76db7872ea0864fedfcc)
+
 
 
