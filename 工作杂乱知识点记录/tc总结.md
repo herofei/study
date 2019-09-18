@@ -6,9 +6,8 @@
 
     详见：
     
-    [每天都在用的Ping命令，它到底是什么？](https://zhuanlan.zhihu.com/p/45110873)
-
-    [ICMP协议与ping原理](https://www.s0nnet.com/archives/icmp-ping)
+- [每天都在用的Ping命令，它到底是什么？](https://zhuanlan.zhihu.com/p/45110873)
+- [ICMP协议与ping原理](https://www.s0nnet.com/archives/icmp-ping)
 
 2. telnet命令
 
@@ -16,9 +15,8 @@
 
     详见：
 
-    [利用Telnet进行HTTP访问过程的协议分析](https://zhuanlan.zhihu.com/p/61352013)
-
-    [win10系统下用telnet完成一次简单的HTTP请求](https://blog.csdn.net/Mr_DouDo/article/details/79771303)
+- [利用Telnet进行HTTP访问过程的协议分析](https://zhuanlan.zhihu.com/p/61352013)
+- [win10系统下用telnet完成一次简单的HTTP请求](https://blog.csdn.net/Mr_DouDo/article/details/79771303)
 
 3. 调试线上代码的技巧
 
@@ -110,7 +108,7 @@
 
 4. 利用Traceroute定位网络问题
 
-[路由追踪程序Traceroute分析与科普](https://www.freebuf.com/articles/network/118221.html)
+- [路由追踪程序Traceroute分析与科普](https://www.freebuf.com/articles/network/118221.html)
 
 5. 前端权限管理机制
 
@@ -162,18 +160,18 @@ git config core.ignorecase false
 
 RPC是远端过程调用，其调用协议通常包含传输协议和序列化协议。RPC的协议可以多种，包括TCP或者HTTP等形式都可以。RPC框架会在普通的协议传输上进一步面向服务进行封装。HTTP服务则只是一个狭义的某种协议的传输请求。
 
-[既然有 HTTP 请求，为什么还要用 RPC 调用？](https://www.zhihu.com/question/41609070)
-[深入理解 RPC](https://juejin.im/entry/57c866230a2b58006b204712)
-[聊聊 Node.js RPC（一）— 协议](https://www.yuque.com/egg/nodejs/dklip5)
-[聊聊 Node.js RPC（二）— 服务发现](https://www.yuque.com/egg/nodejs/mhgl9f)
+- [既然有 HTTP 请求，为什么还要用 RPC 调用？](https://www.zhihu.com/question/41609070)
+- [深入理解 RPC](https://juejin.im/entry/57c866230a2b58006b204712)
+- [聊聊 Node.js RPC（一）— 协议](https://www.yuque.com/egg/nodejs/dklip5)
+- [聊聊 Node.js RPC（二）— 服务发现](https://www.yuque.com/egg/nodejs/mhgl9f)
 
 11. peerDependencies
 
 peerDependencies的目的是提示宿主环境去安装满足插件peerDependencies所指定依赖的包，然后在插件import或者require所依赖的包的时候，永远都是引用宿主环境统一安装的npm包，最终解决插件与所依赖包不一致的问题。
 
-[探讨npm依赖管理之peerDependencies](https://www.cnblogs.com/wonyun/p/9692476.html)
-[Peer Dependencies](https://nodejs.org/zh-cn/blog/npm/peer-dependencies/)
-[peerDependencies介绍及简析](https://arayzou.com/2016/06/23/peerDependencies%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%AE%80%E6%9E%90/)
+- [探讨npm依赖管理之peerDependencies](https://www.cnblogs.com/wonyun/p/9692476.html)
+- [Peer Dependencies](https://nodejs.org/zh-cn/blog/npm/peer-dependencies/)
+- [peerDependencies介绍及简析](https://arayzou.com/2016/06/23/peerDependencies%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%AE%80%E6%9E%90/)
 
 12. 前端路由的原理
 
@@ -185,23 +183,27 @@ peerDependencies的目的是提示宿主环境去安装满足插件peerDependenc
 
 通过监听popstate事件(history模式的路由)也可实现前端路由, 但有一点需要注意的是, popstate 事件只能监听除 history.pushState() 和 history.replaceState() 外 url 的变化, 所以还得对pushState和replaceState进行额外封装处理
 
-[彻底搞懂路由跳转：location 和 history 接口](https://segmentfault.com/a/1190000014120456)
-[MDN history](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
+- [彻底搞懂路由跳转：location 和 history 接口](https://segmentfault.com/a/1190000014120456)
+- [MDN history](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
 
-13. 前端大文件上传、切片上传(主要基于FileReader和Blob实现)、并行上传
+13. 如果想要改变页面url的query或者path而不引起刷新，可以使用history对象的相关接口，使用pushState和replaceState
 
-14. npm script和npm钩子的关系
+- [MDN 在history中跳转]()
+
+14. 前端大文件上传、切片上传(主要基于FileReader和Blob实现)、并行上传
+
+15. npm script和npm钩子的关系
 [也许你不知道的npm-scripts](https://juejin.im/post/5caeffc6f265da03587bea9f)
 [npm文档](https://docs.npmjs.com/misc/scripts)
 [npm 相关知识点汇总](https://juejin.im/post/5d08d3d3f265da1b7e103a4d)
 
-15. 用 githook、husky 和 lint-staged 构建代码检查工作流
-[官方文档 - 自定义 Git 钩子](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
-[使用 Githook 实现团队 Coding Review 流程](https://www.jianshu.com/p/935409ce4c9a)
-[用 Git 钩子进行简单自动部署](https://aotu.io/notes/2017/04/10/githooks/index.html)
-[用 husky 和 lint-staged 构建超溜的代码检查工作流](https://segmentfault.com/a/1190000009546913)
-[【工具推荐】使用 husky 避免糟糕的 git commit](https://zhuanlan.zhihu.com/p/35913229)
-[手牵手使用Husky & Nodejs自定义你的Git钩子 ](https://github.com/PaicFE/blog/issues/10)
+16. 用 githook、husky 和 lint-staged 构建代码检查工作流
+- [官方文档 - 自定义 Git 钩子](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
+- [使用 Githook 实现团队 Coding Review 流程](https://www.jianshu.com/p/935409ce4c9a)
+- [用 Git 钩子进行简单自动部署](https://aotu.io/notes/2017/04/10/githooks/index.html)
+- [用 husky 和 lint-staged 构建超溜的代码检查工作流](https://segmentfault.com/a/1190000009546913)
+- [【工具推荐】使用 husky 避免糟糕的 git commit](https://zhuanlan.zhihu.com/p/35913229)
+- [手牵手使用Husky & Nodejs自定义你的Git钩子 ](https://github.com/PaicFE/blog/issues/10)
 
 husky是一个npm包，安装后，可以快速的根据package.json配置创建git hook 脚本。yorkie是尤大从husky项目fork过来的进一步修改，并集成于vue-cli中，两者用法上的区别在以下：
 
@@ -223,7 +225,7 @@ After
 }
 ```
 
-16. 快速打平数组的方法： join
+17. 快速打平数组的方法： join
 
 对于多维数组，join会递归调用数组的toString方法将数组转换成字符串，再用分隔符隔开(没传分隔符默认是',')，但分隔符只对最开始的第一维有效
 
@@ -240,9 +242,9 @@ After
 
 详见： 
 
-[ES5/标准 ECMAScript 内置对象](https://www.w3.org/html/ig/zh/wiki/ES5/%E6%A0%87%E5%87%86_ECMAScript_%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1#Array.prototype.join_.28separator.29)
+- [ES5/标准 ECMAScript 内置对象](https://www.w3.org/html/ig/zh/wiki/ES5/%E6%A0%87%E5%87%86_ECMAScript_%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1#Array.prototype.join_.28separator.29)
 
-17. nginx server_name的作用
+18. nginx server_name的作用
 
 在server_name这个配置中，nginx仅仅检查请求的“Host”头以决定该请求应由哪个虚拟主机来处理。如果Host头没有匹配任意一个虚拟主机，或者请求中根本没有包含Host头，那nginx会将请求分发到定义在此端口上的默认虚拟主机。在以上配置中，第一个被列出的虚拟主机即nginx的默认虚拟主机——这是nginx的默认行为。而且，可以显式地设置某个主机为默认虚拟主机，即在"listen"指令中设置"default_server"参数。
 
@@ -254,3 +256,4 @@ After
 - [理解Nginx中Server和Location的匹配逻辑](https://juejin.im/post/5c89f96f518825573a5e630b)
 - [谁说前端不需要懂-Nginx反向代理与负载均衡](https://juejin.im/post/5b01336af265da0b8a67e5c9)
 - [官方文档 - server_name](http://nginx.org/en/docs/http/server_names.html)
+- [8分钟带你深入浅出搞懂Nginx](https://zhuanlan.zhihu.com/p/34943332)
