@@ -257,3 +257,10 @@ After
 - [谁说前端不需要懂-Nginx反向代理与负载均衡](https://juejin.im/post/5b01336af265da0b8a67e5c9)
 - [官方文档 - server_name](http://nginx.org/en/docs/http/server_names.html)
 - [8分钟带你深入浅出搞懂Nginx](https://zhuanlan.zhihu.com/p/34943332)
+
+
+19. 当用户最小化浏览器窗口或者切换到其他标签，可以通过Page Visibility API进行判断，这个 API 会发送一个 `visibilitychange` 事件，这样事件监听器就能感知到状态的变化了。对于一些页面定时请求，可以给予这个API进行判断，但页面切换和缩小的时候减小定时请求数，提高性能。不少视频网站也会根据这个API禁止防止用户进行切换。详见以下链接：
+
+- [MDN Page Visibility API](https://developer.mozilla.org/zh-CN/docs/Web/API/Page_Visibility_API)
+- [ifvisible.js, 对Visibility API的封装](https://github.com/serkanyersen/ifvisible.js)
+
