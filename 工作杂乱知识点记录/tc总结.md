@@ -264,3 +264,112 @@ After
 - [MDN Page Visibility API](https://developer.mozilla.org/zh-CN/docs/Web/API/Page_Visibility_API)
 - [ifvisible.js, 对Visibility API的封装](https://github.com/serkanyersen/ifvisible.js)
 
+20. Symbol
+
+Symbol 主要的两个作用是：
+- (1)防止属性名冲突
+- (2)模拟私有属性
+
+详见以下链接：
+[JavaScript 为什么要有 Symbol 类型？](https://juejin.im/post/5c9042036fb9a070eb266fd6)
+[ES6入门 - Symbol](http://es6.ruanyifeng.com/#docs/symbol)
+[深入浅出 ES6（八）：Symbols](https://www.infoq.cn/article/es6-in-depth-symbols)
+
+
+21. 生成水印的方式(为了防止水印被上层的元素遮住，水印一般设置在顶层)
+
+- (1) 通过canvas 对水印的文字生成图片,然后通过canvas.toDataURL将图片转换成base64的dataURL, 设为顶层水印元素的背景图(由于小程序中的canvas没有toDataURL方法, 可使用wx.canvasGetImageData接口获取其Uint8ClampedArray图像像素点数据, 然后通过upng.js库将其转换成base64)
+- (2) 通过dom节点生成，即在顶层水印元素那里添加文字，设置成半透明显示
+
+- 还有一要点是顶层元素需设置pointer-events:none
+
+```javascript
+// 常见的水印生成的canvas代码
+let canvas
+let ctx
+
+// merge the default value
+function mergeOptions(options) {
+  return Object.assign({
+    width: 250,
+    height: 80,
+    color: '#a0a0a0',
+    alpha: 0.8,
+    font: '10px Arial'
+  }, options)
+}
+
+/**
+   *  alimask( text, options ) -> string
+   *  - text (String): this text on water mask.
+   *  - options(Object): water mask options.
+   *    With keys:
+      {
+        width: 250,
+        height: 80,
+        color: '#ebebeb',
+        alpha: 0.8,
+        font: '10px Arial'
+      }
+   *
+   *  return base64 of background water mask image.
+  * */
+export default function(text, options) {
+  if (!canvas || !ctx) {
+    canvas = document.createElement('canvas')
+    ctx = canvas && canvas.getContext && canvas.getContext('2d')
+    if (!canvas || !ctx) return '' // if not exist also, then return blank.
+  }
+  const opts = mergeOptions(options)
+  const { width } = opts
+  const { height } = opts
+
+  canvas.width = width
+  canvas.height = height
+
+  ctx.clearRect(0, 0, width, height) // clear the canvas
+  // ctx.globalAlpha = 0 // backgroud is alpha
+
+  ctx.fillStyle = 'white' // no need because of alipha = 0;
+  ctx.fillRect(0, 0, width, height)
+
+  ctx.globalAlpha = opts.alpha // text alpha
+  ctx.fillStyle = opts.color
+  ctx.font = opts.font
+
+  ctx.textAlign = 'left'
+  ctx.textBaseline = 'bottom'
+
+  ctx.translate(width * 0.1, height * 0.9) // margin: 10
+  ctx.rotate(-Math.PI / 12) // 15 degree
+  ctx.fillText(text, 0, 0)
+
+  return canvas.toDataURL()
+}
+```
+
+```css
+/* canvas中的css代码 */
+.watermark {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9;
+    opacity: .1;
+}
+```
+
+详见：
+
+- [小程序--页面添加水印](https://juejin.im/post/5c8c8384e51d4509942b9249)
+- [MDN - HTMLCanvasElement.toDataURL()](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL)
+- [mdn - pointer-events](https://developer.mozilla.org/zh-CN/docs/Web/CSS/pointer-events)
+- [CSS3 pointer-events:none应用举例及扩展](https://www.zhangxinxu.com/wordpress/2011/12/css3-pointer-events-none-javascript/)
+- [小程序官方文档 - wx.canvasGetImageData](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.canvasGetImageData.html)
+
+22. 实现类似element UI的固定列
+- [一起来聊聊table组件的固定列](https://blog.kaolafed.com/2017/12/25/%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%81%8A%E8%81%8Atable%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9B%BA%E5%AE%9A%E5%88%97/)
+
