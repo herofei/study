@@ -61,15 +61,27 @@ function version(){
 
 > [企业微信开发者文档 - access_token获取](https://work.weixin.qq.com/api/doc#10013/%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E8%8E%B7%E5%8F%96access_token)
 
-1. 开发者工具中在本地设置中勾选使用npm还不能完全使用npm，还得在点击左上方的[工具] -> [构建npm]按钮才可以使用npm模块
+6. 开发者工具中在本地设置中勾选使用npm还不能完全使用npm，还得在点击左上方的[工具] -> [构建npm]按钮才可以使用npm模块
 
-2. ios中拖动到最底或者最顶层会有类似弹簧的动效，这类动效在某些场景体验并不是很好，可以在page的json文件禁止：
+7. ios中拖动到最底或者最顶层会有类似弹簧的动效，这类动效在某些场景体验并不是很好，可以在page的json文件禁止：
 ```json
 
 {
   "disableScroll": true
 }
 
+```
+
+8. 当不同的page都使用到一个component的时候，切换page，component的执行上下文不会重新初始化，但是会重新触发component的attached事件，故如果初始化过程中将执行上下文中的变量的值改变了，后面attached事件触发的回调中拿到的该变量的值是已经改变后的。(猜测component初始化后，小程序底层会用堆缓存下component初始化实例，方便后面使用，当切换page时，触发component的生命周期，但执行上下文的由于闭包的原因保存了下来)
+```javascript
+let a = 0
+Component({
+  attached() {
+    // 初次打印出来的值是0, 切换page触发attached事件打印出来是111
+    console.log(a)
+    a = 111
+  }
+})
 ```
 
 ## 官方工具
