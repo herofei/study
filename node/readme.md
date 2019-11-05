@@ -206,7 +206,14 @@ https://www.cnblogs.com/EasonJim/p/6207201.html
 
     详情请参考：https://stackoverflow.com/questions/47545940/when-i-run-npm-install-it-returns-with-err-code-eintegrity-npm-5-3-0/47922056
 
+13. cluster
 
+- [Node.js进阶：cluster模块深入剖析](https://juejin.im/entry/5ad3eb536fb9a028d375db4e)
+- [node中文文档 - cluster](http://nodejs.cn/api/cluster.html)
+
+14. stream
+
+- [stream handbook](https://github.com/jabez128/stream-handbook)
 
 
 
