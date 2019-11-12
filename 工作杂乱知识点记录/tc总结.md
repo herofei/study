@@ -450,7 +450,7 @@ document.body.addEventListener('copy', function(e) {
   const warningText = '数据管理内容禁止复制粘贴！'
   let clipboardData = (e.clipboardData || window.clipboardData)
   clipboardData.setData('text/plain', warningText)
-  this.$message.warning(warningText)
+  console.warn(warningText)
   e.preventDefault()
 })
 ```
