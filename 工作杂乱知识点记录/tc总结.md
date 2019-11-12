@@ -401,3 +401,63 @@ webpack 提供一种解析文件的高级的机制。sass-loader 使用 Sass 的
 - [webpack中文文档 sass-loader](https://webpack.docschina.org/loaders/sass-loader/)
 
 24. 禁止复制(或者修改复制的内容)
+
+禁止操作：
+
+```javascript
+// 禁止右键菜单
+document.body.oncontextmenu = e => {
+    console.log(e, '右键');
+    return false;
+    // e.preventDefault();
+};
+// 禁止文字选择
+document.body.onselectstart = e => {
+    console.log(e, '文字选择');
+    return false;
+    // e.preventDefault();
+};
+// 禁止复制
+document.body.oncopy = e => {
+    console.log(e, 'copy');
+    return false; 
+    // e.preventDefault();
+}
+// 禁止剪切
+document.body.oncut = e => {
+    console.log(e, 'cut');
+    return false;
+    // e.preventDefault();
+};
+// 禁止粘贴
+document.body.onpaste = e => {
+    console.log(e, 'paste');
+    return false;
+    // e.preventDefault();
+};
+// css 禁止文本选择 这样不会触发js
+body {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+```
+
+修改操作：
+```javascript
+document.body.addEventListener('copy', function(e) {
+  const warningText = '数据管理内容禁止复制粘贴！'
+  let clipboardData = (e.clipboardData || window.clipboardData)
+  clipboardData.setData('text/plain', warningText)
+  this.$message.warning(warningText)
+  e.preventDefault()
+})
+```
+
+读取操作：
+```javascript
+let copyFont = window.getSelection(0).toString(); // 被复制的文字
+```
+
+* 详见[前端er怎样操作剪切复制以及禁止复制+破解等](https://juejin.im/post/5b66993ee51d451924734c35)
