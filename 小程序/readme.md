@@ -84,6 +84,14 @@ Component({
 })
 ```
 
+9. 小程序对事件派发的时候会默认使用节流处理，可添加属性throttle="{{false}}"关掉默认节流
+
+- 详见[scroll-view的bindscroll获取到的scrollTop不为0](https://developers.weixin.qq.com/community/develop/doc/0008eeba9e0f9062b27780d9856c00?_at=1560441776584)
+
+10. 小程序中固定头和列的表格实现
+
+- 详见[固定头和列的表格实现 —— 小程序](https://github.com/JChehe/mini-program-table)
+
 ## 官方工具
 
 - [企业微信错误码查询工具](https://open.work.weixin.qq.com/devtool/query?e=40073)

@@ -373,3 +373,31 @@ export default function(text, options) {
 22. 实现类似element UI的固定列
 - [一起来聊聊table组件的固定列](https://blog.kaolafed.com/2017/12/25/%E4%B8%80%E8%B5%B7%E6%9D%A5%E8%81%8A%E8%81%8Atable%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9B%BA%E5%AE%9A%E5%88%97/)
 
+23. sass-loader的导入
+
+webpack 提供一种解析文件的高级的机制。sass-loader 使用 Sass 的 custom importer 特性，将所有的 query 传递给 webpack 的解析引擎(resolving engine)。只要它们前面加上 ~，告诉 webpack 它不是一个相对路径，这样就可以 import 导入 node_modules 目录里面的 sass 模块：
+```javascript
+@import "~bootstrap/dist/css/bootstrap";
+```
+
+重要的是，只在前面加上 ~，因为 ~/ 会解析到主目录(home directory)。webpack 需要区分 bootstrap 和 ~bootstrap，因为 CSS 和 Sass 文件没有用于导入相关文件的特殊语法。@import "file" 与 @import "./file"; 这两种写法是相同的
+
+```javascript
+@import "~@/bootstrap/dist/css/bootstrap";
+```
+
+```javascript
+{
+  resolve: {
+    alias: {
+      '@': resolve('src')
+    }
+  }
+}
+```
+在以上例子中, @代表在webpack配置alias中的src目录, ~代表着项目根目录。
+
+- [vue scss加载配置以及~@的使用](https://www.yuque.com/yiruans/qdnote/ur7d9q?language=en-us)
+- [webpack中文文档 sass-loader](https://webpack.docschina.org/loaders/sass-loader/)
+
+24. 禁止复制(或者修改复制的内容)
