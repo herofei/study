@@ -34,6 +34,28 @@ function version(){
 }
 ```
 
+7. 小程序实现类原生APP下一条无限刷体验(适用于卡片式切换)
+
+- 详见[如何用小程序实现类原生APP下一条无限刷体验](https://developers.weixin.qq.com/community/develop/article/doc/0000645ae8cf882129c8b471951c13)
+
+8. 使用官方trace工具跟踪小程序在真机运行时的性能
+
+> 1. PC 上需要先安装 adb 工具，可以参考一些主流教程进行安装，Mac 上可使用 brew 直接安装。
+> 2. 确定 adb 工具已成功安装后，在开发者工具上打开 Trace Panel，将 Android 手机通过 USB 连接上 PC，点击「Choose Devices」，此时手机上可能弹出连接授权框，请点击「允许」。(手机要开启USB调试模式，不同手机的开启方式不一样，请根据机型自行开启)
+> 3. 选择设备后，在手机上打开你需要调试的开发版小程序，通过右上角菜单，打开性能监控面板，重启小程序；
+> 4. 重启后，在小程序上进行操作，完成操作后，通过右上角菜单，导出 Trace 数据；
+> 5. 此时开发者工具 Trace Panel 上会自动拉取 Trace 文件，选择你要分析的 Trace 文件即可；
+
+- [微信文档 - 性能trace工具](https://developers.weixin.qq.com/miniprogram/dev/framework/performance/tools.html)
+- [adb安装](https://pa.ci/52.html)
+- [安卓文档 - adb命令行工具](https://developer.android.com/studio/command-line/adb?hl=zh-cn)
+- [ADB 操作命令详解及用法大全](https://juejin.im/post/5b5683bcf265da0f9b4dea96)
+
+9. 小程序中固定头和列的表格实现
+
+- 详见[固定头和列的表格实现 —— 小程序](https://github.com/JChehe/mini-program-table)
+
+
 ## 踩坑记录
 
 1. IOS中, 当容器的display设置成inline-block的时候，就算设置了高度，如果里面内容为空，依然会高度不生效.
@@ -88,9 +110,6 @@ Component({
 
 - 详见[scroll-view的bindscroll获取到的scrollTop不为0](https://developers.weixin.qq.com/community/develop/doc/0008eeba9e0f9062b27780d9856c00?_at=1560441776584)
 
-10. 小程序中固定头和列的表格实现
-
-- 详见[固定头和列的表格实现 —— 小程序](https://github.com/JChehe/mini-program-table)
 
 ## 官方工具
 
