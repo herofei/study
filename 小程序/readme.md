@@ -47,6 +47,7 @@ function version(){
 > 5. 此时开发者工具 Trace Panel 上会自动拉取 Trace 文件，选择你要分析的 Trace 文件即可；
 
 - [微信文档 - 性能trace工具](https://developers.weixin.qq.com/miniprogram/dev/framework/performance/tools.html)
+- [小程序性能测试](https://zhuanlan.zhihu.com/p/42213056)
 - [adb安装](https://pa.ci/52.html)
 - [安卓文档 - adb命令行工具](https://developer.android.com/studio/command-line/adb?hl=zh-cn)
 - [ADB 操作命令详解及用法大全](https://juejin.im/post/5b5683bcf265da0f9b4dea96)

@@ -461,3 +461,12 @@ let copyFont = window.getSelection(0).toString(); // 被复制的文字
 ```
 
 * 详见[前端er怎样操作剪切复制以及禁止复制+破解等](https://juejin.im/post/5b66993ee51d451924734c35)
+
+25.  计算指数时，可以使用 ** 运算符。
+```javascript
+// bad
+const binary = Math.pow(2, 10);
+
+// good
+const binary = 2 ** 10;
+```

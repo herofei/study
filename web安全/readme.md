@@ -36,3 +36,10 @@
 
 
 ### DDos攻击
+
+### 盗链以及Referrer-Policy介绍
+[MDN Referrer-Policy](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Referrer-Policy)
+
+[Referrer Policy 介绍](https://imququ.com/post/referrer-policy.html)
+
+[Referer伪造，防盗链与反盗链，5分钟科普文](https://zhuanlan.zhihu.com/p/33359713)
