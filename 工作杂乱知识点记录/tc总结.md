@@ -470,3 +470,64 @@ const binary = Math.pow(2, 10);
 // good
 const binary = 2 ** 10;
 ```
+
+26. webview中的input框被弹起的键盘遮挡的问题
+
+```JavaScript
+// 简单的判断
+ listenerKeyboardChange() {
+    if (IS_ANDROID) {
+
+        const originHeight = document.documentElement.clientHeight;
+
+        window.addEventListener('resize', (event) => {
+
+            const resizeheight = document.documentElement.clientHeight;
+
+            console.log('resize documentElement.clientHeight:', document.documentElement.clientHeight);
+
+            if (resizeheight < originHeight) {
+                console.log('Android 键盘已打开', event);
+                this.props.onKeyboardOpen(event);
+            } else {
+                console.log('Android 键盘已收起', event);
+                this.props.onKeyboardClose(event);
+            }
+
+        }, false);
+
+    }
+
+    if (IS_IOS) {
+
+        this.inputEle.current.addEventListener('focus', (event) => {
+            console.log('iOS 键盘已打开', event);
+            this.props.onKeyboardOpen(event);
+        }, false);
+
+        this.inputEle.current.addEventListener('blur', (event) => {
+            console.log('iOS 键盘已收起', event);
+            this.props.onKeyboardClose(event);
+        }, false);
+
+    }
+}
+```
+
+更多参考：
+
+* [如何用 js 获取虚拟键盘高度？（适用所有平台）](https://segmentfault.com/a/1190000010693229)
+* [搜遍整个谷歌, 只有我是在认真解决安卓端hybrid app键盘遮挡输入框的问题](https://zhuanlan.zhihu.com/p/86582914)
+
+27. CSS多行文字省略号
+```css
+overflow:hidden;
+text-overflow:ellipsis;
+display:-webkit-box;
+-webkit-line-clamp:2; (两行文字)
+-webkit-box-orient:vertical;
+```
+
+更多参考：
+
+* [CSS单行、多行文本溢出显示省略号](https://segmentfault.com/a/1190000009262433)
