@@ -111,6 +111,8 @@ Component({
 
 - 详见[scroll-view的bindscroll获取到的scrollTop不为0](https://developers.weixin.qq.com/community/develop/doc/0008eeba9e0f9062b27780d9856c00?_at=1560441776584)
 
+10. 小程序用npm时，更改npm包后一定要重新构建npm生成新的miniprogram_npm, 否则上传包的时候还是用的是旧的npm依赖包
+
 
 ## 官方工具
 

@@ -61,6 +61,60 @@
 > 
 > [兼容iphone x刘海的正确姿势](https://juejin.im/post/5be95fbef265da61327ed8e0)
 
+3. 前端 WebView 指南之 Android 交互篇
+
+客户端调用 JS
+
+(1) loadUrl
+
+(2) evaluateJavascript
+
+JS 调用客户端
+
+(1) addJavascriptInterface
+
+(2) URL劫持
+
+(3) 方法劫持
+
+> 详见:
+> 
+> [前端 WebView 指南之 Android 交互篇](https://75team.com/post/android-webview-and-js.html)
+
+4. 前端 WebView 指南之 iOS 交互篇
+
+客户端调用 JS
+
+(1) evaluateScript
+
+(2) stringByEvaluatingJavaScriptFromString
+
+JS 调用客户端
+
+(1) JavascriptCore
+
+(2) WKScriptMessageHandler
+
+(3) URL劫持
+
+(4) 方法劫持
+
+
+> 详见:
+> 
+> [前端 WebView 指南之 iOS 交互篇](https://75team.com/post/ios-webview-and-js.html)
+>
+> [移动开发中的Web:WebView、WebKit、JSCore、Web 优化、热修复…](http://www.cocoachina.com/articles/29740)
+>
+> [深入剖析 iOS 与 JS 交互](https://zhuanlan.zhihu.com/p/31368159)
+>
+> [深入理解JSCore](https://tech.meituan.com/2018/08/23/deep-understanding-of-jscore.html)
+
+5. 前端 WebView 指南之调试篇
+
+> 详见:
+> 
+> [前端 WebView 指南之调试篇](https://75team.com/post/webview-debug.html)
 
 
 ## more
