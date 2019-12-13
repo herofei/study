@@ -113,6 +113,32 @@ Component({
 
 10. 小程序用npm时，更改npm包后一定要重新构建npm生成新的miniprogram_npm, 否则上传包的时候还是用的是旧的npm依赖包
 
+11. wx.redirectTo: 关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面。返回的话不能返回原页面, 会返回到上一个没有关闭的页面。
+
+    wx.navigateTo：保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面。使用 wx.navigateBack 可以返回到原页面。小程序中页面栈最多十层。
+
+12. 当一个页面(或者组件)被销毁(即onUnload事件已触发), 当其代码的执行环境并不会销毁, 其作用域内的变量的值都会保存, 下次页面(或者组件)重新初始化也是在当前执行环境初始化
+```js
+let isShow = true
+
+Page({
+  onLoad() {
+    // 下次初始化后会发现isShow打印出来是false, 并没有重新初始化运行环境, 只是重新初始化生命周期, 运行环境中的变量的值还是保留销毁之前的状态
+    console.log(isShow)
+  },
+
+  onUnload() {
+
+  },
+  
+  changeIsShow() {
+    // 在页面运行过程中改变作用域内的变量
+    isShow = false 
+  }
+})
+
+```
+
 
 ## 官方工具
 
