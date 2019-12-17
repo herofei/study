@@ -215,6 +215,46 @@ https://www.cnblogs.com/EasonJim/p/6207201.html
 
 - [stream handbook](https://github.com/jabez128/stream-handbook)
 
+15. linux安装nodejs
+
+(1) Node 官网已经把 linux 下载版本更改为已编译好的版本了，我们可以直接下载解压后使用：
+
+```bash
+# wget https://nodejs.org/dist/v10.9.0/node-v12.13.1-linux-x64.tar.xz    // 下载
+# tar xf  node-v12.13.1-linux-x64.tar.xz       // 解压
+# cd node-v12.13.1-linux-x64/                  // 进入解压目录
+# ./bin/node -v                               // 执行node命令 查看版本
+v10.9.0
+```
+
+(2) 将/usr/local/src/nodejs/bin配置到用户环境变量中
+```bash
+# 切换当前工作目录到用户根目录
+cd ~
+
+# 查看所有文件，包含隐藏的文件
+ls -a
+
+# 修改用户环境变量文件
+vi .bash_profile 
+```
+
+输入i 切换到insert模式,找到 PATH变量,在其右边的赋值区追加冒号和/usr/local/nodejs/bin 路径。按esc键盘退出输出模式,切换到命令模式输入:wq,保存并退出
+```bash
+PATH=$PATH:<PATH 1>:<PATH 2>:/usr/local/nodejs/bin
+```
+
+立即执行这个更改
+```
+source .bash_profile
+```
+
+(3) 测试结果
+```
+node -v
+npm -v
+```
+
 
 
 
