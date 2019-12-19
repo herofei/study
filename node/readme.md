@@ -227,7 +227,13 @@ https://www.cnblogs.com/EasonJim/p/6207201.html
 v10.9.0
 ```
 
-(2) 将/usr/local/src/nodejs/bin配置到用户环境变量中
+(2) 解压文件的 bin 目录底下包含了 node、npm 等命令，我们可以使用 ln 命令来设置软连接：
+```bash
+ln -s /usr/software/nodejs/bin/npm   /usr/local/bin/ 
+ln -s /usr/software/nodejs/bin/node   /usr/local/bin/
+```
+
+(3) 将/usr/local/src/nodejs/bin配置到用户环境变量中
 ```bash
 # 切换当前工作目录到用户根目录
 cd ~
@@ -236,7 +242,7 @@ cd ~
 ls -a
 
 # 修改用户环境变量文件
-vi .bash_profile 
+vim .bash_profile 
 ```
 
 输入i 切换到insert模式,找到 PATH变量,在其右边的赋值区追加冒号和/usr/local/nodejs/bin 路径。按esc键盘退出输出模式,切换到命令模式输入:wq,保存并退出
@@ -249,7 +255,23 @@ PATH=$PATH:<PATH 1>:<PATH 2>:/usr/local/nodejs/bin
 source .bash_profile
 ```
 
-(3) 测试结果
+(4) 解决linux中使用npm全局安装的命令无法运行
+```bash
+# 修改用户环境变量文件
+vim /etc/profile 
+```
+
+在文件末尾添加以下内容
+```bash
+export PATH="$PATH:/usr/local/node-v8.11.3-linux-x64/bin"
+```
+
+立即执行这个更改
+```
+source /etc/profile
+```
+
+(5) 测试结果
 ```
 node -v
 npm -v
