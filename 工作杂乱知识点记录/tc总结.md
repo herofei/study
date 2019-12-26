@@ -531,3 +531,43 @@ display:-webkit-box;
 更多参考：
 
 * [CSS单行、多行文本溢出显示省略号](https://segmentfault.com/a/1190000009262433)
+
+28. js库实现按需加载的实现
+
+```
+import { Button } from 'antd';
+```
+像这样的形式导入某个组件, 通常情况下会加载整个antd组件库, 再从整个库中导入其中的Button组件, 这会影响应用的网络性能
+
+所以一般可通过这种形式实现按需加载
+```
+import Button from 'antd/lib/button';
+import 'antd/es/button/style'; // 或者 antd/es/button/style/css 加载 css 文件
+```
+
+但是如果你使用了 babel，那么可以使用 babel-plugin-import 来进行按需加载，加入这个插件后。你可以仍然这么写：
+```
+import { Button } from 'antd';
+```
+
+这个插件的作用是, 会帮你转换成 antd/lib/xxx 的写法。另外此插件配合 style 属性可以做到模块样式的按需自动加载。
+
+详见如下：
+
+* [官方文档 - antd 按需加载](https://ant.design/docs/react/getting-started-cn#%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD)
+* [实现antd的按需加载](https://segmentfault.com/a/1190000016430794)
+* [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+* [你的Tree-Shaking并没什么卵用](https://zhuanlan.zhihu.com/p/32831172)
+
+29. sideEffects
+
+在一个纯粹的 ESM 模块世界中，识别出哪些文件有副作用很简单。然而，我们的项目无法达到这种纯度，所以，此时有必要向 webpack 的 compiler 提供提示哪些代码是“纯粹部分”。 —— 《webpack 文档》
+
+注意：样式部分是有副作用的！即不应该被 tree-shaking！
+
+若是直接声明 sideEffects 为 false，那么打包时将不包括样式！所以应该像下面这样配置：
+```json
+{
+    "sideEffects": [ "*.sass", "*.scss", "*.css" , "*.vue"]
+}
+```
