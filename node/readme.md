@@ -151,14 +151,13 @@ npm root -g 查看在你的系统中全局的路径,例如返回结果如下：C
 
 7.node 调试
 https://www.cnblogs.com/tzyy/p/5028348.html https://cnodejs.org/topic/58f376fec749f63d48fe9548
-
 https://github.com/nswbmw/node-in-debugging/blob/master/4.2%20Chrome%20DevTools.md
 https://www.cnblogs.com/tzyy/p/5028348.html
 https://cnodejs.org/topic/58f376fec749f63d48fe9548
 
 
-https://yq.aliyun.com/articles/36217
-https://www.cnblogs.com/EasonJim/p/6207201.html
+* [npm install —— 从一个简单例子，看本地安装与全局安装的区别](https://yq.aliyun.com/articles/36217)
+* [npm全局安装和本地安装和本地开发安装（npm install --g/--save/--save-dev）](https://www.cnblogs.com/EasonJim/p/6207201.html)
 
 8.在window 10系统中无法创建.gitignore文件的解决方案
 方法一：
@@ -283,34 +282,31 @@ npm -v
 
 
 #more
-https://yq.aliyun.com/articles/36217
-https://www.cnblogs.com/EasonJim/p/6207201.html
-
-
-详见：
-https://github.com/nswbmw/N-blog/blob/master/book/2.6%20npm%20%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.md
-https://docs.npmjs.com/cli/install
-npm scripts：
-https://docs.npmjs.com/misc/scripts
-npm shrinkwrap
-
 
 project:
 项目部分移到F:\FE-study\node
 
-
 express:
-学习express：http://www.expressjs.com.cn/guide/using-middleware.html
+
+- [学习express](http://www.expressjs.com.cn/guide/using-middleware.html)
 
 ESlint(熟悉配置、规则编写及插件开发)：
-http://eslint.cn/docs/user-guide/getting-started
-http://eslint.cn/docs/user-guide/configuring
 
-[mongoDB中间间以及实现原理](https://zhuanlan.zhihu.com/p/24308524)
+- [ESlint起步](http://eslint.cn/docs/user-guide/getting-started)
+- [ESlint配置](http://eslint.cn/docs/user-guide/configuring)
 
-[node调试技巧汇总](https://github.com/nswbmw/node-in-debugging)
+更多:
 
-[nodejs 进阶](https://cnodejs.org/topic/58ad76db7872ea0864fedfcc)
-
-
-
+- [node 实战](https://github.com/nswbmw/N-blog/tree/master/book)
+- [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
+- [《深入理解Node.js：核心思想与源码分析》](https://github.com/yjhjstz/deep-into-node)
+- [如何通过饿了么 Node.js 面试](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
+- [eggjs技术团队node博客](https://zhuanlan.zhihu.com/eggjs)
+- [npm scripts](https://docs.npmjs.com/misc/scripts)
+- [mongoDB中间间以及实现原理](https://zhuanlan.zhihu.com/p/24308524)
+- [node调试技巧汇总](https://github.com/nswbmw/node-in-debugging)
+- [nodejs 进阶](https://cnodejs.org/topic/58ad76db7872ea0864fedfcc)
+- [Node.js 应用线上/线下故障、压测问题和性能调优指南手册](https://github.com/aliyun-node/Node.js-Troubleshooting-Guide)
+- [高质量 Node.js 微服务的编写和部署](https://segmentfault.com/a/1190000006166385)
+- [NodeJS express框架核心原理全揭秘](https://zhuanlan.zhihu.com/p/56947560)
+- [How express.js works - Understanding the internals of the express library](https://www.sohamkamani.com/blog/2018/05/30/understanding-how-expressjs-works/)

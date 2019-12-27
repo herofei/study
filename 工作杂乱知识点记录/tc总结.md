@@ -571,3 +571,7 @@ import { Button } from 'antd';
     "sideEffects": [ "*.sass", "*.scss", "*.css" , "*.vue"]
 }
 ```
+
+29. nginx配置总结
+
+* [Linux运维 | nginx访问控制与参数调优](https://segmentfault.com/a/1190000018505993)
