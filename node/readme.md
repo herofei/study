@@ -276,7 +276,12 @@ node -v
 npm -v
 ```
 
+16. node --harmany
 
+用于开启node.js中的一些es6+的非稳定特性
+
+- [what-does-node-harmony-do](https://stackoverflow.com/questions/13351965/what-does-node-harmony-do)
+- [nodejs docs](https://nodejs.org/en/docs/es6/)
 
 
 
