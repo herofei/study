@@ -315,3 +315,4 @@ ESlint(熟悉配置、规则编写及插件开发)：
 - [高质量 Node.js 微服务的编写和部署](https://segmentfault.com/a/1190000006166385)
 - [NodeJS express框架核心原理全揭秘](https://zhuanlan.zhihu.com/p/56947560)
 - [How express.js works - Understanding the internals of the express library](https://www.sohamkamani.com/blog/2018/05/30/understanding-how-expressjs-works/)
+- [深入理解 Node Stream 内部机制](https://www.barretlee.com/blog/2017/06/06/dive-to-nodejs-at-stream-module/)

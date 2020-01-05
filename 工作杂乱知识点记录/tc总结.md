@@ -575,3 +575,4 @@ import { Button } from 'antd';
 29. nginx配置总结
 
 * [Linux运维 | nginx访问控制与参数调优](https://segmentfault.com/a/1190000018505993)
+* [Nginx 配置简述](https://www.barretlee.com/blog/2016/11/19/nginx-configuration-start/)
