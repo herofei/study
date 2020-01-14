@@ -576,3 +576,16 @@ import { Button } from 'antd';
 
 * [Linux运维 | nginx访问控制与参数调优](https://segmentfault.com/a/1190000018505993)
 * [Nginx 配置简述](https://www.barretlee.com/blog/2016/11/19/nginx-configuration-start/)
+
+30. vscode 源码开发及调试
+
+* [让 VSCode 在本地 Run 起来](https://www.barretlee.com/blog/2019/10/23/vscode-study-01-start/)
+* [带你开发和调试 VS Code 源码](https://www.barretlee.com/blog/2019/11/01/vscode-study-02-debugging/)
+
+31. nodejs 断点调试的原理
+
+* [解密 VS Code 断点调试的原理](https://www.barretlee.com/blog/2019/11/15/vscode-study-03-debug-protocol/)
+
+32. 检测项目中 dependencies 和 devdependencies 无用的依赖
+
+* [depcheck 工具](https://www.npmjs.com/package/depcheck)
