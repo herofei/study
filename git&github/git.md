@@ -249,6 +249,52 @@ git config core.ignorecase false
 - 报告者权限： 只能看代码权限，无法提交（包括个人分支）
 
 
+**【git rebase [branch]、git rebase、git merge --squash [branch]的区别】**
+
+#### git rebase [branch]
+```bash
+# 假设当前为feature1分支, 而且master分支领先该feature若干的提交
+git rebase master
+```
+* 首先，git 会找到 feature1 分支和master的共同源节点, 从该节点开始的feature1 分支 里面的每个 commit 取消掉;
+* 其次，把上面的操作临时保存成 patch 文件，存在 .git/rebase 目录下;
+* 然后，把 feature1 分支更新到最新的 master 分支;
+* 最后，把上面保存的 patch 文件应用到 feature1 分支上;
+* 中间如果有冲突需要处理完冲突再输入git rebase --continue完成最终合并
+
+#### git rebase
+```bash
+git rebase -i h78df3
+```
+git rebase -i [log hashID]可以将当前分支中的多次提交合并成一个提交记录, 可以保持分支提交记录的整洁性.
+
+#### git merge --squash [branch]
+```bash
+# 假设当前为master分支, 需要合并feature1的若干次提交
+git merge --squash feature1
+```
+* 首先，git 会将feature1的所有改动迁移过来，但是并不迁移提交记录
+* 输入git status, 会发现一堆来自feature1的新增改动
+* 这个时候需要你手动输入git add和git commit完成提交, 提交记录和提交信息来源于你, 而不是feature1的owner
+
+#### 总结
+
+(1) git rebase 可以尽可能保持 master 分支干净整洁，并且易于识别 author
+
+(2) git merge --squash 也可以保持 master 分支干净，但是 master 中 author 都是 maintainer，而不是原 owner
+
+(3) merge 不能保持 master 分支干净，但是保持了所有的 commit history，大多数情况下都是不好的，个别情况挺好
+
+(4) git rebase 会改写提交历史, 是个很危险的操作, 如果分支已经push到线上的话, 切记要慎重使用, 否则很容易引起代码冲突
+
+参考:
+
+- [merge squash 和 merge rebase 区别](https://liqiang.io/post/difference-between-merge-squash-and-rebase)
+- [彻底搞懂 Git-Rebase](http://jartto.wang/2018/12/11/git-rebase/)
+- [Learn Version Control with Git - Rebase 代替合并](https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase)
+- [git merge –squash介绍](https://www.cnblogs.com/lookphp/p/5799533.html)
+
+
 ## 问题记录
 
 
