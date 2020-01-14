@@ -283,8 +283,131 @@ npm -v
 - [what-does-node-harmony-do](https://stackoverflow.com/questions/13351965/what-does-node-harmony-do)
 - [nodejs docs](https://nodejs.org/en/docs/es6/)
 
+17. node大文件IO操作
+
+node大文件复制(IO操作), 推荐使用Buffer和Stream, 因为这样不占用node的V8的堆内存, 提高性能。
+
+由于在数据处理过程中会出现一个叫做[背压](https://en.wikipedia.org/wiki/Back_pressure#Backpressure_in_information_technology)的常见问题，它描述了数据传输过程中缓冲区后面数据的累积，当传输的接收端具有复杂的操作时，或者由于某种原因速度较慢时，来自传入源的数据就有累积的趋势，就像阻塞一样。
+
+对于这种情况, 在使用Stream的过程中, 推荐使用pipe方法, 因为pipe方法内部对背压做了平衡优化.
+
+以下是利用Stream实现的一个简单的复制文件的代码：
+
+* (1) 监听来自可读流中的数据
+* (2) 将数据写进可写流
+* (3) 跟踪文件复制进度
 
 
+```js
+/*
+    A file copy with streams and events - Author: Naren Arya
+*/
+
+const stream = require('stream');
+const fs = require('fs');
+
+let fileName = process.argv[2];
+let destPath = process.argv[3];
+
+const readabale = fs.createReadStream(fileName);
+const writeable = fs.createWriteStream(destPath || "output");
+
+fs.stat(fileName, (err, stats) => {
+    this.fileSize = stats.size;
+    this.counter = 1;
+    this.fileArray = fileName.split('.');
+    
+    try {
+        this.duplicate = destPath + "/" + this.fileArray[0] + '_Copy.' + this.fileArray[1];
+    } catch(e) {
+        console.exception('File name is invalid! please pass the proper one');
+    }
+    
+    process.stdout.write(`File: ${this.duplicate} is being created:`);
+    
+    readabale.on('data', (chunk)=> {
+        let percentageCopied = ((chunk.length * this.counter) / this.fileSize) * 100;
+        process.stdout.clearLine();  // clear current text
+        process.stdout.cursorTo(0);
+        process.stdout.write(`${Math.round(percentageCopied)}%`);
+        writeable.write(chunk);
+        this.counter += 1;
+    });
+    
+    readabale.on('end', (e) => {
+        process.stdout.clearLine();  // clear current text
+        process.stdout.cursorTo(0);
+        process.stdout.write("Successfully finished the operation");
+        return;
+    });
+    
+    readabale.on('error', (e) => {
+        console.log("Some error occured: ", e);
+    });
+    
+    writeable.on('finish', () => {
+        console.log("Successfully created the file copy!");
+    });
+    
+});
+```
+
+用以上代码去复制一个7G大小的文件, 就会发现一个问题, 该node进程的内存占用达到了4.2G. 那是因为进程的读数据速度(约50MB/s)远快于数据的写数据速度(约15MB/s), 导致产生大量数据挤压在内存当中.
+
+接下来, 我们优化一下以上代码:
+
+```js
+/*
+    A file copy with streams and piping - Author: Naren Arya
+*/
+
+const stream = require('stream');
+const fs = require('fs');
+
+let fileName = process.argv[2];
+let destPath = process.argv[3];
+
+const readabale = fs.createReadStream(fileName);
+const writeable = fs.createWriteStream(destPath || "output");
+
+fs.stat(fileName, (err, stats) => {
+    this.fileSize = stats.size;
+    this.counter = 1;
+    this.fileArray = fileName.split('.');
+    
+    try {
+        this.duplicate = destPath + "/" + this.fileArray[0] + '_Copy.' + this.fileArray[1];
+    } catch(e) {
+        console.exception('File name is invalid! please pass the proper one');
+    }
+    
+    process.stdout.write(`File: ${this.duplicate} is being created:`);
+    
+    readabale.on('data', (chunk) => {
+        let percentageCopied = ((chunk.length * this.counter) / this.fileSize) * 100;
+        process.stdout.clearLine();  // clear current text
+        process.stdout.cursorTo(0);
+        process.stdout.write(`${Math.round(percentageCopied)}%`);
+        this.counter += 1;
+    });
+    
+    readabale.pipe(writeable); // Auto pilot ON!
+    
+    // In case if we have an interruption while copying
+    writeable.on('unpipe', (e) => {
+        process.stdout.write("Copy has failed!");
+    });
+    
+});;
+```
+
+优化的核心是将 writeable.write(chunk) 修改成 readabale.pipe(writeable), 此时node进程的内存占用情况为61.9MB. 而读数据速度 ≈ 写数据速度 ≈ 35MB, 达到了背压平衡的目的. 
+
+参考来源：
+
+- [Writing memory efficient software applications in Node.js](https://medium.com/dev-bits/writing-memory-efficient-software-applications-in-node-js-5575f646b67f)
+- [数据流中的积压问题](https://nodejs.org/zh-cn/docs/guides/backpressuring-in-streams/)
+- [Backpressuring in Streams](https://nodejs.org/en/docs/guides/backpressuring-in-streams/)
 
 #more
 
