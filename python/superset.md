@@ -39,7 +39,7 @@ pip install --upgrade setuptools pip
 
 ```bash
 # Install superset
-pip install apache-superset
+pip install apache-superset -i https://mirrors.aliyun.com/pypi/simple/
 
 # Initialize the database
 superset db upgrade
