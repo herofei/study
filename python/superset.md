@@ -42,20 +42,21 @@ pip install --upgrade setuptools pip
 pip install apache-superset -i https://mirrors.aliyun.com/pypi/simple/
 
 # Initialize the database
-superset db upgrade
+python env\Script\superset db upgrade
 
 # Create an admin user (you will be prompted to set a username, first and last name before setting a password)
-$ export FLASK_APP=superset
+export FLASK_APP=superset # linux中输入这句，好像不输入也能运行
+set FLASK_APP=superset # windows中输入这句，好像不输入也能运行
 flask fab create-admin
 
 # Load some data to play with
-python superset load_examples
+python env\Script\superset load_examples
 
 # Create default roles and permissions
-python superset init
+python env\Script\superset init
 
 # To start a development web server on port 8088, use -p to bind to another port
-python superset run -p 8088 --with-threads --reload --debugger
+python env\Script\superset run -p 8088 --with-threads --reload --debugger
 ```
 
 7. 安装后，通过浏览器访问http:// localhost：8088，使用在创建admin帐户时输入的凭据登录，并导航至 Menu-> Admin-> Refresh Metadata。此操作应该为Superset引入所有数据源，并且应该在Menu- > Datasources中显示它们.
