@@ -1,4 +1,14 @@
-# 知识点杂项
+# nodejs
+
+## 一些不错的包
+
+- fs-extra: node fs核心模块的补充, 支持move, copy等API
+- commander: 编写命令行工具需要的包, 能大大减少开发量
+- inquirer: 一个让命令行工具能与用户进行问答、选择等操作的包
+- shelljs: 一个可以让你执行shell 命令的包
+- chalk: 可以让你的命令行中的console输出带上颜色
+
+## 知识点杂项
 
 1. require:
 
@@ -248,7 +258,7 @@ fs.stat(fileName, (err, stats) => {
 - [数据流中的积压问题](https://nodejs.org/zh-cn/docs/guides/backpressuring-in-streams/)
 - [Backpressuring in Streams](https://nodejs.org/en/docs/guides/backpressuring-in-streams/)
 
-# 主路线：
+## 主路线
 
 - [一起学 Node.js - 用nodeJs搭建一个个人博客](https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb)
 
@@ -265,7 +275,7 @@ fs.stat(fileName, (err, stats) => {
 - [nodeJs包教不包会](https://github.com/alsotang/node-lessons)
 
 
-# more
+## more
 
 project:
 项目部分移到F:\FE-study\node
