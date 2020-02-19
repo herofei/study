@@ -7,6 +7,9 @@
 - inquirer: 一个让命令行工具能与用户进行问答、选择等操作的包
 - shelljs: 一个可以让你执行shell 命令的包
 - chalk: 可以让你的命令行中的console输出带上颜色
+- gulp:  基于流(stream)的自动化构建工具
+- gulp-cli: 在命令行操作gulp相关指令就需要安装此包
+- eslint: 静态代码扫描
 
 ## 知识点杂项
 

@@ -636,3 +636,6 @@ git merge --squash feature1
 - [git merge –squash介绍](https://www.cnblogs.com/lookphp/p/5799533.html)
 
 
+34. yaml配置文件教程
+
+详见: [YAML 语言教程](http://www.ruanyifeng.com/blog/2016/07/yaml.html)
