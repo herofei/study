@@ -228,3 +228,33 @@ file ~/.bashrc
 file /var/lib/mlovate/mlocate.db
 /var/lib/mlovate/mlocate.db: data # 这是data文件
 ```
+
+### 命令与文件查找
+
+#### 相关的常见命令
+
+- which: 用于查找命令, 这个命令是根据【PATH】这个环节变量所规范的路径, 去查找执行文件的文件名, 只能找出执行文件
+- whereis: 在特定目录(主要针对/bin、/sbin下面的执行文件以及/usr/share/man下面的man page文件)中查找文件
+- locate：查找文件, locate寻找的数据是由已建立的数据库/var/lib/mlocate/里面的数据所查找到的, 所以不用直接再去找硬盘, 速度很快
+- find: 搜索硬盘内的文件名, 查找过程的时候非常消耗硬盘资源, 速度会很慢, 不过能找到的文件比较全, 这个是查找文件的兜底命令, 应该优先使用更快的查找命令
+
+#### where
+
+```bash
+# 查找ls可执行命令
+which ls
+alias ls='ls --color=auto'
+/bin/ls
+
+# 查找history, 因为history是bash内置命令, which默认是找PATH内所置目录, 所以找不到
+which history
+/usr/bin/which: no history in (/sbin:/bin/:/usr/sbin:/usr/bin)
+```
+
+#### locate
+
+locate命令的相关数据库的建立默认是在每天执行一次, 所以新建的文件在数据库建立之前可能找不到, 需要更细数据库.
+
+- updatedb: 根据etc/updatedb.conf的设置去查找系统硬盘内的文件, 并更新/var/lib/mlocate内的数据库文件;
+- locate: 依据/var/lib/mlocate/内的数据库记录, 找出用户所输入关键词的文件名
+- 
