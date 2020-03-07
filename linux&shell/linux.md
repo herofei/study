@@ -1316,3 +1316,88 @@ SELinux根据启动与否, 共有三种模式, 分别是:
 - 重新启动: /etc/init.d/daemon restart
 - 查看状态: /etc/init.d/daemon status
 
+## 15. 认识与分析日志文件
+
+### 15.1 什么是日志文件
+
+#### 15.1.1 CentOS 7 日志文件简易说明
+
+日志的重要性:
+
+- 解决系统方面的错误
+- 解决网络服务的问题
+- 过往事件记事本
+
+#### 15.1.2 日志文件内容的一般格式
+
+- 事件发生的日期与时间
+- 发生此事件的主机名
+- 启动此事件的服务名称(如systemd、crond等)或命令与函数名称(如su、login..);
+- 该信息的实际内容
+
+### 15.2 rsyslog.service: 记录日志文件的服务
+
+Linux的日志文件主要是由rsyslog.service负责的, rsyslog.service是开机就启动的daemon;
+
+#### 15.2.1 rsylog.service的配置文件: /etc/rsyslog.conf
+
+#### 15.2.2 日志文件的安全设置
+
+我们可以通过chattr这个命令将日志文件设置成【只可以增加, 但是不能被删除】的状态.
+
+```bash
+# 添加【只可以增加, 但是不能被删除】的状态
+chattr +a /var/log/admin.log
+
+# 查看相关状态
+lsattr /var/log/admin.log
+-----a--------- /var/log/admin.log
+
+# 去掉【只可以增加, 但是不能被删除】的状态
+chattr -a /var/log/admin.log
+```
+
+#### 15.2.3 日志文件服务器的设置
+
+当你有多台Linux主机, 你可以将其中一台设置成【日志文件服务器】, 用它来记录所有Linux主机的日志信息. 主要是通过配置/ext/rsyslog.conf文件进行相关设置.
+
+### 15.3 日志文件的轮循(logrotate)
+
+对日志文件的轮循主要是为了定时对日志文件进行压缩备份, 默认每周进行一次轮循任务, 针对每个日志文件最多保留4个文件备份.
+
+### 15.4 systemd-journald.service简介
+
+### 15.5 分析日志文件
+
+要了解系统的状态, 还是得要分析整个日志文件才行, 事实上, 目前已经有相当多的日志文件分析工具, 例如CentOS 7.X 上面默认的logwatch所提供的分析工具, 它会每天分析一次日志文件, 并且将数据以email的格式寄送给root.
+
+## 16. 启动流程、模块管理与loader
+
+### 16.1 Linux的启动流程分析
+
+#### 16.1.1 启动流程一览
+
+简单来说, Linux操作系统启动的经过可以集合成下面的流程:
+
+- 加载BIOS的硬件信息与进行自我检测(自测), 并根据设置取得第一个可启动的设备;
+- 读取并执行第一个启动设备内MBR的启动引导程序(亦即使grub2、spfdisk等程序);
+- 根据启动引导程序的设置加载Kernel, Kernel会开始检测硬件与加载驱动程序;
+- 在硬件驱动成功后, Kernel会主动调用systemd程序, 并以default.target流程启动;
+  - systemd执行sysinit.target初始化系统及basic.target准备操作系统;
+  - systemd启动multi-user.target 下的本机与服务器服务;
+  - systemd执行multi-user.target 下的/etc/rc.d/rc.local文件;
+  - systemd执行multi-user.target 下的getty.target及登录服务;
+  - systemd执行graphical需要的服务;
+
+
+#### 16.1.2 BIOS、boot loader与kernel加载
+
+- BIOS: 不论传统BIOS还是UFEI BIOS都会被简称为BIOS;
+- MBR: 虽然分区表有传统MBR以及新式GPT, 不过GPT也有保留一块兼容MBR的区块. 总之, MBR就代表该磁盘的最前面可安装boot loader的那个区块;
+
+## 17. 基础系统设置与备份策略
+
+### 17.1 系统的基本设置
+
+#### 17.1.1 网络设置(手动设置与DHCP自动获取)
+
