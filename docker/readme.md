@@ -1,36 +1,65 @@
-查看docker有哪些镜像
 
-docker images
-删除docker镜像
+## 安装流程
 
-docker rmi [镜像名|镜像id]
-批量删除名称为<none>的镜像
+### 安装docker
 
-docker rmi $(docker images | grep '<none>' | awk '{print $3}' )
-给镜像打tag（别名）
+- windows7及10专业版操作系统(或者mac), 可以直接去官网下载[docker桌面工具](https://hub.docker.com/editions/community/docker-ce-desktop-windows/), 详见官网对应的[安装指南](https://docs.docker.com/docker-for-windows/install/)
+- 而windows7及10家庭版(即非专业版)操作系统由于缺少Hyper-V虚拟化工具, 只能使用Docker Toolbox的方式安装docker, 详见[安装指南](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-docker tag 镜像名 新的镜像名
-查看镜像的构建历史：查看镜像历史可以知道此镜像是如何构建的
+### 设置国内镜像
 
-docker history [镜像名|镜像id]
-查看当前正在运行中的容器
+国内比较多人使用的docker仓库有:
 
-docker ps
-查看所有容器，包括已经停止的
+- [DaoCloud](https://hub.daocloud.io/)
+- [阿里云](https://promotion.aliyun.com/)
+- [网易云](https://id.163yun.com/)
 
-docker ps -a
-前台运行容器
+可直接配置加速的站点:
 
-docker run -ti 镜像名 运行的命令
-在指定的容器环境执行容器内的命令，执行完命令后销毁容器
+- https://registry.docker-cn.com
+- http://hub-mirror.c.163.com
+- https://3laho3y3.mirror.aliyuncs.com
+- http://f1361db2.m.daocloud.io
+- https://mirror.ccs.tencentyun.com
 
-docker run -ti --rm 镜像名 运行的命令
-后台运行容器：若不指定运行的命令则会执行Dockerfile中CMD或者ENTRYPOINT的命令
-
-docker run -d 镜像名 运行的命令
-指定容器运行的network模式
-
+```bash
+docker-machine ssh defaultsudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g" /var/lib/boot2docker/profileexitdocker-machine restart default
 ```
+
+## 相关指令
+
+```bash
+
+# 查看docker有哪些镜像
+docker images
+
+# 删除docker镜像
+docker rmi [镜像名|镜像id]
+
+# 批量删除名称为<none>的镜像
+docker rmi $(docker images | grep '<none>' | awk '{print $3}')
+
+# 给镜像打tag（别名）
+docker tag 镜像名 新的镜像名
+
+# 查看镜像的构建历史：查看镜像历史可以知道此镜像是如何构建的
+docker history [镜像名|镜像id]
+
+# 查看当前正在运行中的容器
+docker ps
+
+# 查看所有容器，包括已经停止的
+docker ps -a
+
+# 前台运行容器
+docker run -ti 镜像名 运行的命令
+
+# 在指定的容器环境执行容器内的命令，执行完命令后销毁容器
+docker run -ti --rm 镜像名 运行的命令
+
+# 后台运行容器：若不指定运行的命令则会执行Dockerfile中CMD或者ENTRYPOINT的命令
+docker run -d 镜像名 运行的命令
+
 # bridge模式运行：容器使用的网络与宿主机隔离，容器通过veth、bridge与宿主机连接，通过iptables做端口映射，默认的的模式
 docker run -d --net bridge 镜像名
 
@@ -51,29 +80,31 @@ docker run -d -v /root:/root -v /sf/data:/sf 镜像名
 
 # 在正在运行的容器中启动bash
 docker exec -ti [容器名|容器ID] /bin/bash
+
 # 直接进入正在运行的容器的控制台
 docker attach -ti [容器名|容器ID]
-停止容器
 
+# 停止容器
 docker stop [容器名|容器ID]
-删除容器
 
+# 删除容器
 docker rm [容器名|容器ID]
-导出容器镜像
 
+# 导出容器镜像
 docker save [镜像名|镜像ID] > 导出的文件名.tar
-导入镜像
 
+# 导入镜像
 docker load -i 镜像文件名.tar
-导出容器
 
+# 导出容器
 # 容器导出跟镜像导出的区别在于：镜像的导出是存在多个layer的，容器的导出只是当前正在运行的容器的那个layer
 docker export [容器名|容器ID] > 导出的文件名.tar
-导入镜像
 
+# 导入镜像
 docker import 容器文件名.tar - 镜像名
-实用技巧
-自制docker镜像
+
+# 实用技巧
+# 自制docker镜像
 
 # $target为需要制作的镜像的根文件系统目录（比如chroot的目录）
 # $name:$version为制作的镜像名
@@ -105,3 +136,13 @@ Type=notify
 # for containers run by docker
 ExecStart=/usr/bin/dockerd -g /sf/docker --experimental=true
 ```
+
+## 相关参考
+
+- [Docker中文文档](http://www.dockerinfo.net/document)
+- [github docker toolbox 发布包](https://github.com/docker/toolbox/releases)
+- [docker 官方文档](https://docs.docker.com/)
+- [DaoCloud Docker 文档](http://guide.daocloud.io/dcs/daocloud-services-9152632.html)
+- [docker 配置国内镜像源 linux/mac/windows](https://www.jianshu.com/p/9fce6e583669)
+- [docker toolbox镜像加速](https://blog.csdn.net/tjsahwj/article/details/88181779)
+- [Docker 国内仓库和镜像](https://www.cnblogs.com/wushuaishuai/p/9984228.html#_label0)
