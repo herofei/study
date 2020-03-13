@@ -1,8 +1,8 @@
 
 
-## model
+## 1. model
 
-### meta 选项
+### 1.1 meta 选项
 
 #### app_label
 app_label这个选项只在一种情况下使用，就是你的模型类不在默认的应用程序包下的models.py文件中，这时候你需要指定你这个模型类是那个应用程序的。比如你在其他地方写了一个模型类，而这个模型类是属于myapp的，那么你这是需要指定为：
@@ -38,3 +38,74 @@ get_latest_by = "order_date"
 
 更多详见: 
 - [Django model中的meta选项](https://www.jianshu.com/p/dd7f4a11a7bb)
+
+### 1.2 数据库查询
+
+1. 数据聚合处理:
+
+```py
+
+# 假设有这么个model
+class MessageTab(models.Model):
+    msg_sn = models.CharField(max_lenth=20, verbose_name=u'编号')
+    msg_name = models.CharField(max_length=50, verbose_name=u'消息名称')
+    message_time = models.DateTimeField(verbose_name=u'消息出现时间')
+    msg_status = models.CharField(max_length=50, default='未处理', verbose_name=u'消息状态')
+    class Meta:
+        db_table = 'message_tab'
+
+# 通过annotate进行group by聚合
+ msgS = MessageTab.objects.values_list('msg_status').annotate(Count('id'))
+
+ # 可以通过query方法查询他对应的sql查询语句
+ print msgS.query
+
+ # 打印结果
+ SELECT `message_tab`.`msg_status`, COUNT(`message_tab`.`id`) AS `id__count` FROM `message_tab` GROUP BY `message_tab`.`msg_status` ORDER BY 
+```
+
+详见:
+
+- [django文档-执行查询](https://docs.djangoproject.com/zh-hans/3.0/topics/db/queries/#falling-back-to-raw-sql)
+- [django文档-聚合](https://docs.djangoproject.com/zh-hans/3.0/topics/db/aggregation/)
+- [django中聚合aggregate和annotate GROUP BY的使用方法](https://blog.csdn.net/AyoCross/article/details/68951413)
+
+2. 当model自带查询语句不满足复杂语句查询时, 可以通过extra方法:
+```py
+# 例子一
+Goods.objects.all().extra(
+    select={'reputation': 'shop.reputation'},
+    tables=['shop'],
+    where=['goods.shop_id=shop.id']
+)
+.order_by(['-num', '-reputation'])
+.values('id', 'num', 'reputation')
+```
+这里有个大坑, 当extra查询语句中用到string format语句(就是类似%s)时, 得用params传参.
+
+```py
+# bad, 直接这样使用会报错
+Some_model.extra(
+            tables=['tme_staff'],
+            where=['username=tme_staff.en_name', 'tme_staff.department like "%s%%"' % [platform_map[platform]],
+          )
+
+# good, 要改成通过params方法传参
+Some_model.extra(
+              tables=['tme_staff'],
+              where=['username=tme_staff.en_name', 'tme_staff.department like "%s%%"'],
+              params=[platform_map[platform]]
+            )
+```
+
+详见:
+
+- [django查询中extra的应用](https://blog.csdn.net/weixin_42143550/article/details/88955477)
+- [Django 高级技巧之Queryset修改机制-extra()](https://yandenghong.github.io/2019/03/06/django_extra/)
+- [Django-model进阶(中介模型，查询优化，extra,整体插入)](https://www.cnblogs.com/huchong/p/7787036.html)
+
+
+## 总参考
+
+- [Django 文档内容](https://docs.djangoproject.com/zh-hans/3.0/contents/)
+- [Django 教程](https://www.liujiangblog.com/course/django/132)
