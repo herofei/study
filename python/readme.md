@@ -67,6 +67,44 @@ pip install flask -i https://mirrors.aliyun.com/pypi/simple/
 - [python文档 - 安装 Python 模块](https://docs.python.org/zh-cn/3.7/installing/index.html#installing-index)
 - [python文档 - 分发 Python 模块](https://docs.python.org/zh-cn/3.7/distributing/index.html#distributing-python-modules)
 
+### 2.2 搜索路径与PYTHONPATH 变量
+
+当你导入一个模块，Python 解析器对模块位置的搜索顺序是：
+
+1. 当前目录
+2. 如果不在当前目录，Python 则搜索在 shell 变量 PYTHONPATH 下的每个目录。
+3. 如果都找不到，Python会察看默认路径。UNIX下，默认路径一般为/usr/local/lib/python/。
+
+模块搜索路径存储在 system 模块的 sys.path 变量中。变量里包含当前目录，PYTHONPATH和由安装过程决定的默认目录。
+
+作为环境变量，PYTHONPATH 由装在一个列表里的许多目录组成. PYTHONPATH 的语法和 shell 变量 PATH 的一样。
+
+```py
+# 打印PYTHONPATH
+import os
+print sys.path
+>['', '/usr/local/lib/python2.7/dist-packages/dlib-19.4.0-py2.7-linux-x86_64.egg', '/home/ershisui',...]
+
+# 新增PYTHONPATH变量
+sys.path.append('/home/ershisui/')
+```
+
+在 Windows 系统，典型的 PYTHONPATH 如下：
+
+```bash
+# 设置PYTHONPATH
+set PYTHONPATH=c:\python27\lib;
+```
+
+在 UNIX 系统，典型的 PYTHONPATH 如下：
+
+```bash
+# 设置PYTHONPATH
+set PYTHONPATH=/usr/local/lib/python
+
+# 新增PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:/home/ershisui
+```
 
 ## 3. 多个python版本共存
 
