@@ -104,6 +104,19 @@ Some_model.extra(
 - [Django 高级技巧之Queryset修改机制-extra()](https://yandenghong.github.io/2019/03/06/django_extra/)
 - [Django-model进阶(中介模型，查询优化，extra,整体插入)](https://www.cnblogs.com/huchong/p/7787036.html)
 
+2. 排序
+
+使用order_by方法对查询数据进行排序.
+
+```py
+# 升序
+ msgS = MessageTab.objects.values_list('msg_status').annotate(msg_count=Count('id')).order_by('msg_count')
+
+ # 降序
+  msgS = MessageTab.objects.values_list('msg_status').annotate(msg_count=Count('id')).order_by('msg_count')
+```
+
+
 
 ## 总参考
 
