@@ -67,6 +67,21 @@
 - [Vue.js最佳实践（五招让你成为Vue.js大师）](https://mp.weixin.qq.com/s/cVYtYWOB2mie-bjZmSw9AQ)
 - [https://juejin.im/post/5ae4288a5188256712784787](https://juejin.im/post/5ae4288a5188256712784787)
 
+9. 当vue-router配置成history模式的时候, nginx路由在没有找到对应路由页面的时候, 应该默认返回首页, 配置如下:
+
+```
+location / {
+  try_files $uri $uri/ /index.html;
+}
+```
+
+同时, 由于这样配置的情况下, nginx后台总是能在找不到路由的情况下返回index.html, 那对应于真正需要404的页面需要交由前端部分处理, 前端需要自己在vue-router路由表配置404的路由及404页面.
+
+详见:
+
+- [Nginx 的 try_files 指令使用实例](https://www.hi-linux.com/posts/53878.html)
+- [vue-router文档-HTML5 History 模式](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
+
 ## 参考
 
 - [大白话 Vue 源码系列](http://www.cnblogs.com/iovec/p/vue_01.html)

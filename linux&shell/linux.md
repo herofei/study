@@ -1557,3 +1557,8 @@ Linux发行版发布安装的软件大多是在/usr里面, 而用户自行安装
 - sha256sum: 通过SHA-256加密算法获得文件特征值;
 
 ### 19. 软件安装RPM、SRPM与YUM
+
+
+## 更多参考
+
+- [Linux学习笔记和经验技巧](http://c.biancheng.net/skill/skill/linux/list_210_1.html)

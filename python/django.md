@@ -122,3 +122,4 @@ Some_model.extra(
 
 - [Django 文档内容](https://docs.djangoproject.com/zh-hans/3.0/contents/)
 - [Django 教程](https://www.liujiangblog.com/course/django/132)
+- [一个很不错的Django教程](https://github.com/pythonzhichan/django-beginners-guide)

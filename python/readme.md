@@ -1,6 +1,8 @@
 # python
 
-## 1. 虚拟环境
+## 大纲
+
+### 1. 虚拟环境
 
 Python应用程序通常会使用不在标准库内的软件包和模块。应用程序有时需要特定版本的库，因为应用程序可能需要修复特定的错误，或者可以使用库的过时版本的接口编写应用程序。
 
@@ -21,7 +23,7 @@ virtualenv 是 venv 的第三方替代（及其前身）。 它允许在 Python 
 - [python文档 - 虚拟环境和包](https://docs.python.org/zh-cn/3.7/tutorial/venv.html)
 - [Python虚拟环境介绍](https://www.jianshu.com/p/a7979ac3b226)
 
-## 2. python 包安装
+### 2. python 包安装
 
 pip 是首选的安装程序。从Python 3.4开始，它默认包含在Python二进制安装程序中。
 
@@ -43,7 +45,7 @@ pip install SomePackage>=1.0.4     # minimum version
 pip install -r requirements.txt
 ```
 
-### 2.1 修改pip镜像源（安装源）
+#### 2.1 修改pip镜像源（安装源）
 
 ```bash
 # 下载时用-i指定镜像源
@@ -67,7 +69,7 @@ pip install flask -i https://mirrors.aliyun.com/pypi/simple/
 - [python文档 - 安装 Python 模块](https://docs.python.org/zh-cn/3.7/installing/index.html#installing-index)
 - [python文档 - 分发 Python 模块](https://docs.python.org/zh-cn/3.7/distributing/index.html#distributing-python-modules)
 
-### 2.2 搜索路径与PYTHONPATH 变量
+#### 2.2 搜索路径与PYTHONPATH 变量
 
 当你导入一个模块，Python 解析器对模块位置的搜索顺序是：
 
@@ -82,11 +84,11 @@ pip install flask -i https://mirrors.aliyun.com/pypi/simple/
 ```py
 # 打印PYTHONPATH
 import os
-print sys.path
+print os.sys.path
 >['', '/usr/local/lib/python2.7/dist-packages/dlib-19.4.0-py2.7-linux-x86_64.egg', '/home/ershisui',...]
 
 # 新增PYTHONPATH变量
-sys.path.append('/home/ershisui/')
+os.sys.path.append('/home/ershisui/')
 ```
 
 在 Windows 系统，典型的 PYTHONPATH 如下：
@@ -106,13 +108,13 @@ set PYTHONPATH=/usr/local/lib/python
 export PYTHONPATH=$PYTHONPATH:/home/ershisui
 ```
 
-## 3. 多个python版本共存
+### 3. 多个python版本共存
 
-### 3.1 windows下共存
+#### 3.1 windows下共存
 
 [windows配置Python多版本共存](https://www.cnblogs.com/yinzhengjie/p/9106558.html)
 
-## 4. python 字符串格式化
+### 4. python 字符串格式化
 
 %s    字符串 (采用str()的显示)
 
@@ -148,9 +150,9 @@ export PYTHONPATH=$PYTHONPATH:/home/ershisui
 
 - [Python补充05 字符串格式化 (%操作符)](https://www.cnblogs.com/vamei/archive/2013/03/12/2954938.html)
 
-## 5. 函数
+### 5. 函数
 
-### 5.1 函数参数
+#### 5.1 函数参数
 
 - **name参数: python函数中, 当存在一个形式为 **name 的最后一个形参时, 它会接收一个字典 (参见 映射类型 --- dict)，其中包含除了与已有形参相对应的关键字参数以外的所有关键字参数。 
 - *name参数: 接收一个包含除了与已有形参列表以外的位置参数的元组的形参组合,  (*name 必须出现在 **name 之前。) 
@@ -209,7 +211,7 @@ def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
 
 - [python函数 - 特殊参数](https://docs.python.org/zh-cn/3/tutorial/controlflow.html#special-parameters)
 
-### 5.2 Lambda 表达式
+#### 5.2 Lambda 表达式
 
 可以用 lambda 关键字来创建一个小的匿名函数。这个函数返回两个参数的和： lambda a, b: a+b 。Lambda函数可以在需要函数对象的任何地方使用。它们在语法上限于单个表达式。从语义上来说，它们只是正常函数定义的语法糖。与嵌套函数定义一样，lambda函数可以引用所包含域的变量:
 ```py
@@ -231,9 +233,9 @@ def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
 [(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
 ```
 
-## 6. 模块
+### 6. 模块
 
-### 6.1 包
+#### 6.1 包
 
 from package import * 会找到包中存在哪些子模块，并将它们全部导入. 这可能需要很长时间, 全部导入子模块可能会产生不必要的副作用, 会导致隐藏bug, 故不建议这么使用. import 语句使用下面的规范：如果一个包的 __init__.py 代码定义了一个名为 __all__ 的列表，它会被视为在遇到 from package import * 时应该导入的模块名列表。在发布该包的新版本时，包作者可以决定是否让此列表保持更新。包作者如果认为从他们的包中导入 * 的操作没有必要被使用，也可以决定不支持此列表。例如，文件 package/__init__.py 可以包含以下代码:
 
@@ -246,6 +248,19 @@ __all__ = ["echo", "surround", "reverse"]
 详见文档:
 
 - [python模块 - 包](https://docs.python.org/zh-cn/3/tutorial/modules.html#packages)
+
+### 7. with 语句
+
+详见:
+
+- [浅谈 Python 的 with 语句](https://www.ibm.com/developerworks/cn/opensource/os-cn-pythonwith/index.html)
+- [Python中的with-as用法](https://www.jianshu.com/p/c00df845323c)
+
+### 8. 时间处理
+
+详见:
+
+- [Python-基础-时间日期处理小结](http://wklken.me/posts/2015/03/03/python-base-datetime.html)
 
 
 ## 杂项
@@ -301,18 +316,21 @@ t.r
 t.prt()
 ```
 
-## 7. with 语句
+3. python的字典在使用中如果访问不存在的键时, 会报错, 使用前最好是使用has_key方法判断一下.
 
-详见:
+```py
+dic_a = {}
 
-- [浅谈 Python 的 with 语句](https://www.ibm.com/developerworks/cn/opensource/os-cn-pythonwith/index.html)
-- [Python中的with-as用法](https://www.jianshu.com/p/c00df845323c)
+# 访问不存在的key, 此时会报错
+dic_a['test_key']
 
-# 8. 时间处理
+# 推荐访问之前使用has_key判断一下
+if dic_a.has_key('test_key'):
+  # do sth
+else:
+  # do sth
+```
 
-详见:
-
-- [Python-基础-时间日期处理小结](http://wklken.me/posts/2015/03/03/python-base-datetime.html)
 
 ## 总参考
 

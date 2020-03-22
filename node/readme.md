@@ -261,6 +261,20 @@ fs.stat(fileName, (err, stats) => {
 - [数据流中的积压问题](https://nodejs.org/zh-cn/docs/guides/backpressuring-in-streams/)
 - [Backpressuring in Streams](https://nodejs.org/en/docs/guides/backpressuring-in-streams/)
 
+10. 构建稳定的多进程服务器
+
+一般我们做单机集群时，我们fork的进程数量是机器的CPU数量。虽然可以创建更多，但并不推荐，因为太多进程时，进程上下文切换的花销会很大，进程数量等于CPU数量是个比较推荐的数量值。
+
+```js
+// cpus().length拿到的数量是部署机器的CPU数量*CPU核数, 即服务器的总核数
+const { cpus } = require('os');
+let cpusNum = cpus().length;
+```
+
+详见:
+
+- [如何创建一个可靠稳定的Web服务器](https://juejin.im/post/5c0cf55c51882530544f22e2)
+
 ## 主路线
 
 - [一起学 Node.js - 用nodeJs搭建一个个人博客](https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb)
