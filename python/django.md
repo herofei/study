@@ -104,7 +104,7 @@ Some_model.extra(
 - [Django 高级技巧之Queryset修改机制-extra()](https://yandenghong.github.io/2019/03/06/django_extra/)
 - [Django-model进阶(中介模型，查询优化，extra,整体插入)](https://www.cnblogs.com/huchong/p/7787036.html)
 
-2. 排序
+3. 排序
 
 使用order_by方法对查询数据进行排序.
 
@@ -116,6 +116,31 @@ Some_model.extra(
   msgS = MessageTab.objects.values_list('msg_status').annotate(msg_count=Count('id')).order_by('msg_count')
 ```
 
+4. django查询不等于的操作
+
+在django中查询不等于用!=是一个错误的语法, 正确应该使用exclude或者Q操作.
+
+详见:
+
+- [python - 如何在Django查询集过滤中做不相等的操作？](https://www.itranslater.com/qa/details/2105351896851547136)
+- [我怎么做不等于在Django queryset过滤？](http://www.suchcode.com/topic/3381/%E6%88%91%E6%80%8E%E4%B9%88%E5%81%9A%E4%B8%8D%E7%AD%89%E4%BA%8E%E5%9C%A8Django%20queryset%E8%BF%87%E6%BB%A4%EF%BC%9F)
+- [django orm 常用查询筛选](https://www.jianshu.com/p/923b89ec18eb)
+
+5. Django的事务操作
+
+详见:
+
+- [Django 数据库事务](https://www.jianshu.com/p/275b08096cf9)
+
+## 2. session
+
+### 2.1 用户关联
+
+django在开发过程中, 可以通过request.user拿到用户相关的信息, 主要是通过项目初始化的时候用django内置的authenticate()和login()方法, 将user关联到session中(前端的表现则是cookies), user的模型是继承AbstractUser拓展而来.
+
+详见:
+
+- [Django用户认证系统(二)Web请求中的认证](https://www.cnblogs.com/linxiyue/p/4060434.html)
 
 
 ## 总参考
@@ -123,3 +148,4 @@ Some_model.extra(
 - [Django 文档内容](https://docs.djangoproject.com/zh-hans/3.0/contents/)
 - [Django 教程](https://www.liujiangblog.com/course/django/132)
 - [一个很不错的Django教程](https://github.com/pythonzhichan/django-beginners-guide)
+- [Django Web 框架(python)](https://developer.mozilla.org/zh-CN/docs/Learn/Server-side/Django)
