@@ -116,21 +116,22 @@ JS 调用客户端
 > 
 > [前端 WebView 指南之调试篇](https://75team.com/post/webview-debug.html)
 
+6. 更多jsBridgeX相关
+
+- [移动开发中的Web:WebView、WebKit、JSCore、Web 优化、热修复…](http://www.cocoachina.com/articles/29740)
+- [深入理解JSCore](https://tech.meituan.com/2018/08/23/deep-understanding-of-jscore.html)
+- [深入剖析 iOS 与 JS 交互](https://zhuanlan.zhihu.com/p/31368159)
+
 
 ## more
 
-Hbuilder打包成app的方法：
-https://www.cnblogs.com/yizhilin/p/7479166.html
+- [Hbuilder打包成app的方法]https://www.cnblogs.com/yizhilin/p/7479166.html
 
-Hbuilder用夜神模拟器及谷歌联调：
-http://blog.csdn.net/xuelang532777032/article/details/52268878
+- [Hbuilder用夜神模拟器及谷歌联调](http://blog.csdn.net/xuelang532777032/article/details/52268878)
 
-移动端chrome远程联调（Inspect Devices）：
-http://blog.csdn.net/freshlover/article/details/42528643
+- [移动端chrome远程联调（Inspect Devices）](http://blog.csdn.net/freshlover/article/details/42528643)
 
-Vue + webpack项目的调试方式：
-http://blog.csdn.net/liyijun4114/article/details/73863228
+- [Vue + webpack项目的调试方式](http://blog.csdn.net/liyijun4114/article/details/73863228)
 
-司徒正美大大移动端开发遇到的坑总结
-https://github.com/RubyLouvre/mobileHack
+- [司徒正美大大移动端开发遇到的坑总结](https://github.com/RubyLouvre/mobileHack)
 

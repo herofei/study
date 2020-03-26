@@ -125,6 +125,7 @@ Some_model.extra(
 - [python - 如何在Django查询集过滤中做不相等的操作？](https://www.itranslater.com/qa/details/2105351896851547136)
 - [我怎么做不等于在Django queryset过滤？](http://www.suchcode.com/topic/3381/%E6%88%91%E6%80%8E%E4%B9%88%E5%81%9A%E4%B8%8D%E7%AD%89%E4%BA%8E%E5%9C%A8Django%20queryset%E8%BF%87%E6%BB%A4%EF%BC%9F)
 - [django orm 常用查询筛选](https://www.jianshu.com/p/923b89ec18eb)
+- [Django QuerySet API文档](https://www.cnblogs.com/linxiyue/p/4040262.html)
 
 5. Django的事务操作
 

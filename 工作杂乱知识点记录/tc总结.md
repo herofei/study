@@ -639,3 +639,28 @@ git merge --squash feature1
 34. yaml配置文件教程
 
 详见: [YAML 语言教程](http://www.ruanyifeng.com/blog/2016/07/yaml.html)
+
+35. js、css加载监控与重试
+
+- [CSS文件动态加载（续）—— 残酷的真相](https://www.cnblogs.com/chyingp/archive/2013/03/03/how-to-judge-if-stylesheet-loaded-successfully.html)
+- [谈一谈CDN的JS，CSS文件加载出错主域名重试的问题](https://imweb.io/topic/5923bf009d67101c034e77ea)
+
+36. 关于CDN、CDN回源、DNS、CNAME以及GSLB的一系列知识点
+
+- [DNS 原理入门](http://www.ruanyifeng.com/blog/2016/06/dns.html)
+- [关于 cdn、回源等问题一网打尽](https://juejin.im/post/5af46498f265da0b8d41f6a3#comment)
+- [面向前端的CDN原理介绍](https://github.com/renaesop/blog/issues/1)
+- [CDN工作原理（CNAME）](https://blog.csdn.net/heluan123132/article/details/73331511)
+- [CDN与DNS知识汇总](http://hpoenixf.com/DNS%E4%B8%8ECDN%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB.html)
+- [工程师最容易搞错的域名知识](https://juejin.im/post/5d37cf70e51d4510664d17d3)
+- [这就是CDN回源原理和CDN多级缓存啊！](https://cloud.tencent.com/developer/article/1439913)
+- [全局负载均衡GSLB学习笔记](https://jjayyyyyyy.github.io/2017/05/17/GSLB.html)
+- [GSLB概要和实现原理](https://chongit.github.io/2015/04/15/GSLB%E6%A6%82%E8%A6%81%E5%92%8C%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/)
+
+37. 持续集成、持续交付、持续部署
+
+- [持续集成是什么？](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
+
+38. 网站全站升级https的流程:
+
+- [HTTPS 升级指南](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)

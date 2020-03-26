@@ -1561,4 +1561,6 @@ Linux发行版发布安装的软件大多是在/usr里面, 而用户自行安装
 
 ## 更多参考
 
+- [Linux基础教程](https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/index.html)
 - [Linux学习笔记和经验技巧](http://c.biancheng.net/skill/skill/linux/list_210_1.html)
+- [linux里source、sh、bash、./有什么区别](https://www.cnblogs.com/pcat/p/5467188.html)
