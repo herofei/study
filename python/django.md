@@ -147,6 +147,7 @@ django在开发过程中, 可以通过request.user拿到用户相关的信息, �
 ## 总参考
 
 - [Django 文档内容](https://docs.djangoproject.com/zh-hans/3.0/contents/)
-- [Django 教程](https://www.liujiangblog.com/course/django/132)
+- [The Django Book](http://djangobook.py3k.cn/2.0/)
+- [Django 教程](https://www.liujiangblog.com/course/django/)
 - [一个很不错的Django教程](https://github.com/pythonzhichan/django-beginners-guide)
 - [Django Web 框架(python)](https://developer.mozilla.org/zh-CN/docs/Learn/Server-side/Django)

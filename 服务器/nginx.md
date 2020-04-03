@@ -18,6 +18,20 @@ location / {
 }
 ```
 
+3. Nginx的几种负载均衡策略
+
+- 加权轮询（weighted round robin）
+- ip hash
+- fair
+- 通用hash、一致性hash
+- session_sticky
+
+详见：
+
+- [nginx负载均衡的5种策略](https://segmentfault.com/a/1190000014483200)
+- [Nginx负载均衡](https://juejin.im/post/5821c24e570c350060bef4c3)
+
+
 详见:
 
 - [Nginx 的 try_files 指令使用实例](https://www.hi-linux.com/posts/53878.html)
