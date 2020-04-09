@@ -719,7 +719,7 @@ unalias lm
 
 相关命令:
 
-- source: 读入环境配置文件的命令;
+- source: 在当前shell读入环境配置文件的命令;
 
 ```bash
 # 将家目录~/.bashrc的设置读入目前的bash环境中
