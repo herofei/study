@@ -664,3 +664,13 @@ git merge --squash feature1
 38. 网站全站升级https的流程:
 
 - [HTTPS 升级指南](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)
+
+39. 唤端(唤起app)的实现及相关原理
+
+- [H5唤起APP指南(附开源唤端库)](https://juejin.im/post/5b7efb2ee51d45388b6af96c)
+- [Web 唤起 Android app 的实现及原理](https://johnnyshieh.me/posts/web-evoke-app/)
+- [Android 上玩转 DeepLink：如何最大程度的向 App 引流](https://medium.com/@zhoulujue/android-%E4%B8%8A%E7%8E%A9%E8%BD%AC-deeplink-%E5%A6%82%E4%BD%95%E6%9C%80%E5%A4%A7%E7%A8%8B%E5%BA%A6%E7%9A%84%E5%90%91-app-%E5%BC%95%E6%B5%81-5da646402c29)
+
+40. 浅析a标签的download属性
+
+- [浅析 HTML5 中的 download 属性](https://zhuanlan.zhihu.com/p/58888918)

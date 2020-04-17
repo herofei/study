@@ -83,11 +83,13 @@ npm link是用来链接全局包的命令，npm link主要是为模块开发者�
 
 6. npx的用法
 
+主要作用是调用项目安装的模块, 避免全局安装模块
+
 - [npx 使用教程](http://www.ruanyifeng.com/blog/2019/02/npx.html)
 - [npx](https://zhuanlan.zhihu.com/p/27840803)
 
 
-7. 关于PATH 与 NODE_PATH
+1. 关于PATH 与 NODE_PATH
 
 npm NODE_PATH 是干什么的呢？ 操作系统中都会有一个PATH环境变量，想必大家都知道，当系统调用一个命令的时候，就会在PATH变量中注册的路径中寻找，如果注册的路径中有就调用，否则就提示命令没找到。
 

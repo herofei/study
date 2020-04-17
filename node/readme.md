@@ -71,50 +71,27 @@
 (1) Node 官网已经把 linux 下载版本更改为已编译好的版本了，我们可以直接下载解压后使用：
 
 ```bash
-# wget https://nodejs.org/dist/v10.9.0/node-v12.13.1-linux-x64.tar.xz    // 下载
-# tar xf  node-v12.13.1-linux-x64.tar.xz       // 解压
-# cd node-v12.13.1-linux-x64/                  // 进入解压目录
-# ./bin/node -v                               // 执行node命令 查看版本
-v10.9.0
+wget https://nodejs.org/dist/v12.13.1/node-v12.13.1-linux-x64.tar.xz    # 下载
+tar xf  node-v12.13.1-linux-x64.tar.xz       # 解压
+mkdir /usr/software                          # 新建相关文件夹
+mv node-v12.13.1-linux-x64 /usr/software/nodejs # 剪切文件至新目录
 ```
 
 (2) 解压文件的 bin 目录底下包含了 node、npm 等命令，我们可以使用 ln 命令来设置软连接：
 ```bash
-ln -s /usr/software/nodejs/bin/npm   /usr/local/bin/ 
+ln -s /usr/software/nodejs/bin/npm   /usr/local/bin/
 ln -s /usr/software/nodejs/bin/node   /usr/local/bin/
 ```
 
-(3) 将/usr/local/src/nodejs/bin配置到用户环境变量中
+(3) 解决linux中使用npm全局安装的命令无法运行
 ```bash
-# 切换当前工作目录到用户根目录
-cd ~
-
-# 查看所有文件，包含隐藏的文件
-ls -a
-
-# 修改用户环境变量文件
-vim .bash_profile 
-```
-
-输入i 切换到insert模式,找到 PATH变量,在其右边的赋值区追加冒号和/usr/local/nodejs/bin 路径。按esc键盘退出输出模式,切换到命令模式输入:wq,保存并退出
-```bash
-PATH=$PATH:<PATH 1>:<PATH 2>:/usr/local/nodejs/bin
-```
-
-立即执行这个更改
-```
-source .bash_profile
-```
-
-(4) 解决linux中使用npm全局安装的命令无法运行
-```bash
-# 修改用户环境变量文件
+# 修改linux环境变量文件
 vim /etc/profile 
 ```
 
 在文件末尾添加以下内容
 ```bash
-export PATH="$PATH:/usr/local/node-v8.11.3-linux-x64/bin"
+export PATH="$PATH:/usr/software/nodejs/bin"
 ```
 
 立即执行这个更改
@@ -122,7 +99,7 @@ export PATH="$PATH:/usr/local/node-v8.11.3-linux-x64/bin"
 source /etc/profile
 ```
 
-(5) 测试结果
+(4) 测试结果
 ```
 node -v
 npm -v

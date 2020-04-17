@@ -1,3 +1,10 @@
+## mysql安装
+
+### linux下安装mysql
+
+- [Linux下载MySQL详细步骤](https://juejin.im/post/5d77442e6fb9a06ae43a1da1)
+- [mysql安装 for Linux](https://juejin.im/post/5c76500ae51d453ed47d7555)
+
 ## 表添加修改字段
 
 ```sql
