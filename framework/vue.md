@@ -82,6 +82,8 @@ location / {
 - [Nginx 的 try_files 指令使用实例](https://www.hi-linux.com/posts/53878.html)
 - [vue-router文档-HTML5 History 模式](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
 
+## Vue + ts进行项目开发
+
 ## 参考
 
 - [大白话 Vue 源码系列](http://www.cnblogs.com/iovec/p/vue_01.html)

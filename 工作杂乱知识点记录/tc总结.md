@@ -674,3 +674,14 @@ git merge --squash feature1
 40. 浅析a标签的download属性
 
 - [浅析 HTML5 中的 download 属性](https://zhuanlan.zhihu.com/p/58888918)
+
+41. 关于https、HSTS和mixed content
+
+- [关于启用 HTTPS 的一些经验分享（一）](https://imququ.com/post/sth-about-switch-to-https.html)
+- [MDN - MixedContent](https://developer.mozilla.org/zh-CN/docs/Security/MixedContent)
+- [什么是混合内容？](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content?hl=zh-cn)
+
+42. lerna管理前端packages
+
+- [lerna管理前端packages的最佳实践](http://www.sosout.com/2018/07/21/lerna-repo.html)
+- [Lerna 中文教程详解](https://juejin.im/post/5ced1609e51d455d850d3a6c)
