@@ -35,3 +35,7 @@ source ./myfuns.sh
 # 或者简写成
 . ./myfuns.sh
 ```
+
+## 参考
+
+- [Bash 脚本教程](https://wangdoc.com/bash/intro.html)

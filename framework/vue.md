@@ -82,7 +82,54 @@ location / {
 - [Nginx 的 try_files 指令使用实例](https://www.hi-linux.com/posts/53878.html)
 - [vue-router文档-HTML5 History 模式](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
 
+10. ue项目自动转换 px 为 rem，高保真还原设计图
+
+- [Vue项目自动转换 px 为 rem，高保真还原设计图](https://juejin.im/post/5a716c4c6fb9a01cb42cac4b)
+
+11. Vue 中使用 CSS Modules
+
+详见：
+
+- [如何在 Vue 中优雅地使用 CSS Modules？](https://juejin.im/post/5ac5fd7f5188257cc20d854e)
+- [[译] Vue: scoped 样式与 CSS Module 对比](https://juejin.im/post/5b9556446fb9a05d1b2e3613)
+
+## vue jsx
+
+详见：
+
+- [Babel Preset JSX](https://github.com/vuejs/jsx)
+- [vue jsx 不完全指北](https://www.w3ctech.com/topic/2130)
+- [Vue 组件开发实践之 scopedSlot 的传递](https://cloud.tencent.com/developer/article/1004962)
+- [Vue.js 你需要知道的 scopedSlots](https://juejin.im/post/5c65511ce51d457fd23cf56b)
+- [用jsx写vue组件，怎样监听.sync修饰符的事件？](https://forum.vuejs.org/t/jsx-vue-sync/22680)
+
 ## Vue + ts进行项目开发
+
+详见以下文章:
+
+- [由 shims-vue.d.ts 引发的思考](https://juejin.im/post/5d22b12251882509057e11e9)
+- [使用vue-cli3搭建Vue+TypeScript项目](https://juejin.im/post/5d312bf9f265da1bd04f1a62)
+- [vue-property-decorator使用手册](https://juejin.im/post/5d31907a51882557af271be2)
+- [vue + typescript 项目起手式](https://segmentfault.com/a/1190000011744210)
+- [一起来拥抱强大的TypeScript吧--Ts+Vue完全教程（附Demo项目）](https://juejin.im/entry/5a373fecf265da4311204d51#comment)
+- [Vue Property Decorator](https://github.com/kaorun343/vue-property-decorator)
+- [Vue Class Component](https://class-component.vuejs.org/guide/class-component.html#methods)
+- [vue-property-decorator使用指南](https://juejin.im/post/5c173a84f265da610e7ffe44)
+- [【源码探秘】vue-class-component](https://zhuanlan.zhihu.com/p/48371638)
+- [Vue & TypeScript 初体验 - 使用Vuex (vuex-module-decorators)](https://juejin.im/post/5dda2a0d6fb9a07a9f72e930)
+- [如何使用 vue + typescript 编写页面 ( vuex装饰器补充部分--store装饰器 )](https://juejin.im/post/5c6b7e07f265da2dd638ea58)
+
+## Vue-cli使用指南
+
+1. 在vue-cli的项目中, css引入图片的路径前需要添加~, 如'~@/assets/logo.png', 详见如下:
+
+- [vue-cli3 图片路径](https://blog.csdn.net/qq_31126175/article/details/99550889)
+
+2. 浅谈 vue-cli 扩展性和插件设计
+
+详见:
+
+- [浅谈 vue-cli 扩展性和插件设计](https://juejin.im/post/5cedb26451882566477b7235)
 
 ## 参考
 

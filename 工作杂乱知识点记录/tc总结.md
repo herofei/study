@@ -34,7 +34,7 @@
 
 在使用Vue源码的生命周期lifecycle.js代码中，Vue会将vm实例保存在$el元素的 __vue__ 对象上
 
-```
+```js
 // @name         Vue调试
 // @description  在生产环境开启Vue.js devtools调试
 
@@ -685,3 +685,36 @@ git merge --squash feature1
 
 - [lerna管理前端packages的最佳实践](http://www.sosout.com/2018/07/21/lerna-repo.html)
 - [Lerna 中文教程详解](https://juejin.im/post/5ced1609e51d455d850d3a6c)
+
+43. Vue项目自动转换 px 为 rem，高保真还原设计图
+
+- [Vue项目自动转换 px 为 rem，高保真还原设计图](https://juejin.im/post/5a716c4c6fb9a01cb42cac4b)
+
+
+44. 解决 canvas 在高清屏中绘制模糊的问题
+
+基础知识点：
+
+- 要设置canvas的画布大小，使用的是 canvas.width 和 canvas.height；
+- 要设置画布的实际渲染大小，使用的 style 属性或CSS设置的 width 和height，只是简单的对画布进行缩放。
+
+2倍屏幕下示例代码：
+
+```html
+<canvas width="640" height="800" style="width:320px; height:400px"></canvas>
+```
+
+canvas的实际大小的640px × 800px，但是实际渲染到页面的大小是320px × 400px，相当于缩小一倍来显示。
+
+45. 移动端开发适配注意事项
+
+- [关于移动端适配，你必须要知道的](https://juejin.im/post/5cddf289f265da038f77696c#heading-0)
+- [移动端适配方案-让分辨率来的更猛烈些吧！](https://juejin.im/post/5bc7fb9ef265da0acd20ebeb#heading-0)
+
+46. 理解DOMString、Document、FormData、Blob、File、ArrayBuffer数据类型
+
+- [理解DOMString、Document、FormData、Blob、File、ArrayBuffer数据类型](https://www.zhangxinxu.com/wordpress/2013/10/understand-domstring-document-formdata-blob-file-arraybuffer/)
+
+详见:
+
+- [解决 canvas 在高清屏中绘制模糊的问题](https://www.html.cn/archives/9297)

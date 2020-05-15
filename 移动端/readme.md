@@ -135,3 +135,12 @@ JS 调用客户端
 
 - [司徒正美大大移动端开发遇到的坑总结](https://github.com/RubyLouvre/mobileHack)
 
+7. Vue项目自动转换 px 为 rem，高保真还原设计图
+
+- [Vue项目自动转换 px 为 rem，高保真还原设计图](https://juejin.im/post/5a716c4c6fb9a01cb42cac4b)
+
+8. 移动端开发适配注意事项
+
+- [关于移动端适配，你必须要知道的](https://juejin.im/post/5cddf289f265da038f77696c#heading-0)
+- [移动端适配方案-让分辨率来的更猛烈些吧！](https://juejin.im/post/5bc7fb9ef265da0acd20ebeb#heading-0)
+
