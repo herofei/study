@@ -97,6 +97,8 @@ location / {
 
 详见：
 
+- [在Vue中使用JSX的正确姿势](https://zhuanlan.zhihu.com/p/37920151)
+- [在vue中使用jsx语法](https://juejin.im/post/5affa64df265da0b93488fdd)
 - [Babel Preset JSX](https://github.com/vuejs/jsx)
 - [vue jsx 不完全指北](https://www.w3ctech.com/topic/2130)
 - [Vue 组件开发实践之 scopedSlot 的传递](https://cloud.tencent.com/developer/article/1004962)

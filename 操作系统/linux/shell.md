@@ -36,6 +36,25 @@ source ./myfuns.sh
 . ./myfuns.sh
 ```
 
+## 3. 常见shell命令
+
+### curl
+
+curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。
+
+详见:
+
+- [curl 的用法指南](https://www.ruanyifeng.com/blog/2019/09/curl-reference.html)
+
+### tcpdump
+
+tcpdump命令是一款sniffer工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用-w选项将数据包保存到文件中，方便以后分析。
+
+详见:
+
+- [tcpdump命令](https://man.linuxde.net/tcpdump)
+- [Linux基础：用tcpdump抓包](https://www.cnblogs.com/chyingp/p/linux-command-tcpdump.html)
+
 ## 参考
 
 - [Bash 脚本教程](https://wangdoc.com/bash/intro.html)

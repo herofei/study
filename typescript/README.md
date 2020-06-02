@@ -21,3 +21,14 @@ private isReceived!: boolean;
 
 - [typescript 结合 vue 中 :! 是什么意思](https://segmentfault.com/q/1010000015364690)
 - [ts 文档 - Constant-named properties](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#strict-class-initialization)
+
+
+## 参考
+
+- [js进化，迁徙到typescript](https://segmentfault.com/a/1190000009630935)
+- [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/)
+- [TypeScript Handbook](https://www.typescriptlang.org/v2/docs/handbook/)
+- [TypeScript 技巧拾遗](https://juejin.im/post/5d8c983f518825093212e305)
+- [Utility Types](https://www.typescriptlang.org/v2/docs/handbook/utility-types.html)
+- [来玩TypeScript啊，机都给你开好了！](https://zhuanlan.zhihu.com/c_206498766)
+- [ts-toolbelt](https://github.com/pirix-gh/ts-toolbelt)
