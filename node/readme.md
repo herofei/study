@@ -317,3 +317,4 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 - [NodeJS express框架核心原理全揭秘](https://zhuanlan.zhihu.com/p/56947560)
 - [How express.js works - Understanding the internals of the express library](https://www.sohamkamani.com/blog/2018/05/30/understanding-how-expressjs-works/)
 - [深入理解 Node Stream 内部机制](https://www.barretlee.com/blog/2017/06/06/dive-to-nodejs-at-stream-module/)
+- [node事件循环](https://www.taopoppy.cn/node/one_eventLoop.html#%E5%85%AD%E4%B8%AA%E9%98%B6%E6%AE%B5)

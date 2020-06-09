@@ -301,14 +301,15 @@ git merge --squash feature1
 
 ## 更多相关
 
-1. [git 教程](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%85%B3%E4%BA%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6)
+- [git 教程](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%85%B3%E4%BA%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6)
+- [git与github关联]https://www.cnblogs.com/schaepher/p/5561193.html
+- [git -commit 的时候进入vi或者vim编辑器时的相关操作说明](https://blog.csdn.net/zshlclzsh/article/details/50434404)
+- [git .gitignore文件进行文件提交忽略](https://www.cnblogs.com/jingtyu/p/6831772.html)
+- [自底向上理解Git原理](http://blog.prince2015.club/2017/07/07/Git-Notes/) 
+- [图解Git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
+- [如何撤销 Git 操作？](http://www.ruanyifeng.com/blog/2019/12/git-undo.html)
+- [Git 工作流程](http://www.ruanyifeng.com/blog/2015/12/git-workflow.html)
+- [Git 原理入门](http://www.ruanyifeng.com/blog/2018/10/git-internals.html)
+- [git cherry-pick 教程](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
+- [git bisect 命令教程](http://www.ruanyifeng.com/blog/2018/12/git-bisect.html)
 
-2. [git与github关联]https://www.cnblogs.com/schaepher/p/5561193.html
-
-3. [git -commit 的时候进入vi或者vim编辑器时的相关操作说明](https://blog.csdn.net/zshlclzsh/article/details/50434404)
-
-4. [git .gitignore文件进行文件提交忽略](https://www.cnblogs.com/jingtyu/p/6831772.html)
-
-5. [自底向上理解Git原理](http://blog.prince2015.club/2017/07/07/Git-Notes/) 
-
-6. [图解Git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
