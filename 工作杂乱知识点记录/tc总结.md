@@ -656,8 +656,20 @@ git merge --squash feature1
 - [这就是CDN回源原理和CDN多级缓存啊！](https://cloud.tencent.com/developer/article/1439913)
 - [全局负载均衡GSLB学习笔记](https://jjayyyyyyy.github.io/2017/05/17/GSLB.html)
 - [GSLB概要和实现原理](https://chongit.github.io/2015/04/15/GSLB%E6%A6%82%E8%A6%81%E5%92%8C%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/)
+- [作为一名程序员，你真正了解CDN技术吗？](https://juejin.im/post/5dd3d57b51882521d417a33f)
+- [CDN加速原理](https://www.jianshu.com/p/1dae6e1680ff)
+- [也许是史上最全的一次CDN详解](https://zhuanlan.zhihu.com/p/28940451)
+- [根域名的知识](http://www.ruanyifeng.com/blog/2018/05/root-domain.html)
 
-37. 持续集成、持续交付、持续部署
+如何找到离用户最近的 CDN 节点(CDN 是如何就近返回资源的)?
+
+1）本地 DNS 服务器会将 static.xxx.example.cdn.com 会向第一层 GSLB 全局负载均衡发起请求，第一层全局负载均衡会根据用户所在运营商网络分析，比如移动运营商，返回 CNAME 到如 static.yd.example.cdn.com 域名地址。
+2）本地 DNS 服务器会继续向第二层 GSLB 全局负载均衡发起请求，第二层全局负载均衡依据 DNS 地理位置判断，返回 SLB CDN 负载均衡地址。
+3）本地 DNS 服务器从返回的多个 CDN 节点 IP 中，可以通过本地简单轮询的方式去选择一个 CDN IP 访问。
+此时，最终通过 GSLB 全局负载均衡找到的这些 CDN 节点，就是离用户最近的 CDN 节点了。
+
+
+37.  持续集成、持续交付、持续部署
 
 - [持续集成是什么？](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
 
@@ -750,3 +762,39 @@ canvas的实际大小的640px × 800px，但是实际渲染到页面的大小是
 - 同比：即同期相比，表示某个特定统计段今年与去年之间的比较。比如2009年中国第一季度GDP为G9-1亿元，则2010年第一季度的GDP同比增长为（G10-1-G9-1）/G9-1。
 
 环比和同比在英文中没有单一单词对应的翻译。同比英文可翻译为 compare with the performance/figure/statistics last year， year-on-year ratio， increase/decrease on a year-on-year basis。而环比则只需把前面的year改为month或season即可。
+
+52. httpDNS
+
+主要为了解决传统DNS的以下问题：
+
+- Local DNS 劫持：由于 HttpDns 是通过 IP 直接请求 HTTP 获取服务器 A 记录地址，不存在向本地运营商询问 domain 解析过程，所以从根本避免了劫持问题。
+
+- 平均访问延迟下降：由于是 IP 直接访问省掉了一次 domain 解析过程，通过智能算法排序后找到最快节点进行访问。
+
+- 用户连接失败率下降：通过算法降低以往失败率过高的服务器排序，通过时间近期访问过的数据提高服务器排序，通过历史访问成功记录提高服务器排序。
+
+参考：
+
+- [HttpDns 原理是什么](http://www.linkedkeeper.com/171.html)
+- [全面理解DNS及HTTPDNS](https://juejin.im/post/5dc14f096fb9a04a6b204c6f#heading-1)
+- [移动解析HTTPDNS](https://cloud.tencent.com/product/httpdns)
+
+53. svg入门
+
+- [SVG 图像入门教程](https://www.ruanyifeng.com/blog/2018/08/svg.html)
+- [MDN - SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG)
+- [理解SVG viewport,viewBox,preserveAspectRatio缩放](https://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/)
+
+54. 分布式系统的CAP定理
+
+CAP指的是Consistency(一致性)、Availability(可用性)、Partition tolerance(分区容错性),Consistency 和 Availability 的矛盾, 不能同时成立.
+
+- [CAP 定理的含义](http://www.ruanyifeng.com/blog/2018/07/cap.html)
+
+55. JWT(JSON Web Token)
+
+- [JSON Web Token 入门教程](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
+
+56. make命令教程
+
+- [make命令教程](http://www.ruanyifeng.com/blog/2015/02/make.html)

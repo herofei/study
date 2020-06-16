@@ -105,6 +105,34 @@ SHOW INDEX FROM <表名> [ FROM <数据库名>]
 
 - [MySQL查看索引（SHOW INDEX）](http://c.biancheng.net/view/7364.html)
 
+8. 设置mysql client字符集
+
+```sql
+SET NAMES 'utf8';
+
+# 相当于下面的三句指令：
+SET character_set_client = utf8;
+SET character_set_results = utf8;
+SET character_set_connection = utf8;
+```
+
+9. 查询表结构
+
+```sql
+# 这三个输出结果是一样的
+desc <表名>
+describe <表名>
+show columns from <表名>
+
+# 查看建表语句详情
+show create table <表名>
+```
+
+参考:
+
+- [MySQL 查看数据表结构以及详情的方法](https://segmentfault.com/a/1190000007025543)
+- [SHOW CREATE TABLE Statement](https://dev.mysql.com/doc/refman/8.0/en/show-create-table.html)
+
 
 ## 10. 相关参考
 
