@@ -139,7 +139,24 @@ JS 调用客户端
 
 - [Vue项目自动转换 px 为 rem，高保真还原设计图](https://juejin.im/post/5a716c4c6fb9a01cb42cac4b)
 
-8. 移动端开发适配注意事项
+针对个别不需要将px转换成rem的类, 可使用postcss-pxtorem插件中的selectorBlackList配置处理：
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {},
+    'postcss-pxtorem': {
+      rootValue: 16,
+      propList: ['*'],
+      // 注意：如果有使用第三方UI如VUX，则需要配置下忽略选择器不转换。
+      // 规则是class中包含的字符串，如vux中所有的class前缀都是weui-。也可以是正则。
+      selectorBlackList: ['ignore']
+    }
+  }
+};
+```
+
+1. 移动端开发适配注意事项
 
 - [关于移动端适配，你必须要知道的](https://juejin.im/post/5cddf289f265da038f77696c#heading-0)
 - [移动端适配方案-让分辨率来的更猛烈些吧！](https://juejin.im/post/5bc7fb9ef265da0acd20ebeb#heading-0)

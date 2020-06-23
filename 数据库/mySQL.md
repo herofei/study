@@ -97,7 +97,7 @@ ALTER TABLE <表名> ADD <新字段名> <数据类型> [约束条件] AFTER <已
 
 ## 7. 展示表关键信息
 
-## 7.1 展示表索引
+### 7.1 展示表索引
 
 ```sql
 SHOW INDEX FROM <表名> [ FROM <数据库名>]
@@ -105,7 +105,7 @@ SHOW INDEX FROM <表名> [ FROM <数据库名>]
 
 - [MySQL查看索引（SHOW INDEX）](http://c.biancheng.net/view/7364.html)
 
-8. 设置mysql client字符集
+### 8. 设置mysql client字符集
 
 ```sql
 SET NAMES 'utf8';
@@ -116,7 +116,7 @@ SET character_set_results = utf8;
 SET character_set_connection = utf8;
 ```
 
-9. 查询表结构
+## 9. 查询表结构
 
 ```sql
 # 这三个输出结果是一样的
@@ -128,12 +128,15 @@ show columns from <表名>
 show create table <表名>
 ```
 
-参考:
-
-- [MySQL 查看数据表结构以及详情的方法](https://segmentfault.com/a/1190000007025543)
-- [SHOW CREATE TABLE Statement](https://dev.mysql.com/doc/refman/8.0/en/show-create-table.html)
+## 10. 踩坑记录
 
 
-## 10. 相关参考
+- [记一次MySQL数据库拒绝访问的解决过程](https://www.cnblogs.com/chyingp/p/mysql-access-denied-because-of-anonymous-user.html)
+
+
+
+
+
+## 11. 相关参考
 
 - [常见的MySql操作](http://c.biancheng.net/skill/web/)
