@@ -798,3 +798,20 @@ CAP指的是Consistency(一致性)、Availability(可用性)、Partition toleran
 56. make命令教程
 
 - [make命令教程](http://www.ruanyifeng.com/blog/2015/02/make.html)
+
+57. contenteditable 属性的隐藏坑
+
+```html
+<div id="container" contenteditable>
+  12324234
+  <span contenteditable="false"></span>
+</div>
+```
+
+类似如上情况, 当一个contenteditable属性为true的元素内部有个contenteditable为false的元素的时候, 在chrome中全部删除container中的文字时, 光标会丢失, 无法找到该元素的编辑区域, 即无法再编辑该元素内的文字。而在firefox中, 当全部删除container中的文字时, 如果不主动移除光标, 还是可以添加内部文字, 如果在文字没有后主动移除光标, 则也是再也找不到可编辑区域。
+
+58. GIF生成
+
+参考:
+
+- [纯前端实现可传图可字幕台词定制的GIF表情生成器](https://www.zhangxinxu.com/wordpress/2018/05/js-custom-gif-generate/)

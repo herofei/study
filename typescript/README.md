@@ -32,3 +32,5 @@ private isReceived!: boolean;
 - [Utility Types](https://www.typescriptlang.org/v2/docs/handbook/utility-types.html)
 - [来玩TypeScript啊，机都给你开好了！](https://zhuanlan.zhihu.com/c_206498766)
 - [ts-toolbelt](https://github.com/pirix-gh/ts-toolbelt)
+- [TypeScript Handbook（中文版）](https://zhongsp.gitbooks.io/typescript-handbook/content/)
+- [TypeScript 入门教程](https://ts.xcatliu.com/)

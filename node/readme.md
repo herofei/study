@@ -252,6 +252,12 @@ let cpusNum = cpus().length;
 
 - [如何创建一个可靠稳定的Web服务器](https://juejin.im/post/5c0cf55c51882530544f22e2)
 
+11. nodejs与消息队列
+
+参考:
+
+- [消息队列助你成为高薪的 Node.js 工程师](https://juejin.im/post/5e056b35f265da339f7d0699#heading-1)
+
 ## 主路线
 
 - [一起学 Node.js - 用nodeJs搭建一个个人博客](https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb)
