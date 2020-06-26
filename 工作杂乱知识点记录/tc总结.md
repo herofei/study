@@ -815,3 +815,11 @@ CAP指的是Consistency(一致性)、Availability(可用性)、Partition toleran
 参考:
 
 - [纯前端实现可传图可字幕台词定制的GIF表情生成器](https://www.zhangxinxu.com/wordpress/2018/05/js-custom-gif-generate/)
+
+59. 如何读懂火焰图？
+
+- [如何读懂火焰图？](http://www.ruanyifeng.com/blog/2017/09/flame-graph.html)
+
+60. js内存泄漏
+
+- [JavaScript 内存泄漏教程](http://www.ruanyifeng.com/blog/2017/04/memory-leak.html)

@@ -313,3 +313,6 @@ git merge --squash feature1
 - [git cherry-pick 教程](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
 - [git bisect 命令教程](http://www.ruanyifeng.com/blog/2018/12/git-bisect.html)
 
+- [这才是真正的Git——Git内部原理](https://juejin.im/post/5dedc513f265da33e82bb294)
+- [这才是真正的Git——分支合并](https://juejin.im/post/5ec6067f6fb9a047f0125b4b)
+

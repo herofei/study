@@ -258,6 +258,14 @@ let cpusNum = cpus().length;
 
 - [消息队列助你成为高薪的 Node.js 工程师](https://juejin.im/post/5e056b35f265da339f7d0699#heading-1)
 
+## C++ 插件
+
+参考:
+
+- [写一个N-API没那么难？](https://juejin.im/post/5de484bef265da05ef59feb5)
+- [从暴力到 NAN 再到 NAPI——Node.js 原生模块开发方式变迁](https://cnodejs.org/topic/5957626dacfce9295ba072e0)
+- [在node.js项目中使用c++ addons](https://fsp1yjl.github.io/2017/07/03/%E5%9C%A8node-js%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8c-addon/)
+
 ## 主路线
 
 - [一起学 Node.js - 用nodeJs搭建一个个人博客](https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb)
