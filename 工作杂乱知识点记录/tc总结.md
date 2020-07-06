@@ -192,12 +192,21 @@ peerDependencies的目的是提示宿主环境去安装满足插件peerDependenc
 
 14. 前端大文件上传、切片上传(主要基于FileReader和Blob实现)、并行上传
 
-15. npm script和npm钩子的关系
+- [前端大文件上传](https://juejin.im/post/5cf765275188257c6b51775f)
+
+14. 理解DOMString、Document、FormData、Blob、File、ArrayBuffer数据类型
+
+- [理解DOMString、Document、FormData、Blob、File、ArrayBuffer数据类型](https://www.zhangxinxu.com/wordpress/2013/10/understand-domstring-document-formdata-blob-file-arraybuffer/)
+- [Blob对象](https://github.com/pfan123/Articles/issues/10)
+- [细说Web API中的Blob](https://juejin.im/post/59e35d0e6fb9a045030f1f35)
+- [前端图片canvas，file，blob，DataURL等格式转换](https://juejin.im/post/5b5187da51882519ec07fa41)
+
+15.   npm script和npm钩子的关系
 [也许你不知道的npm-scripts](https://juejin.im/post/5caeffc6f265da03587bea9f)
 [npm文档](https://docs.npmjs.com/misc/scripts)
 [npm 相关知识点汇总](https://juejin.im/post/5d08d3d3f265da1b7e103a4d)
 
-16. 用 githook、husky 和 lint-staged 构建代码检查工作流
+1.   用 githook、husky 和 lint-staged 构建代码检查工作流
 - [官方文档 - 自定义 Git 钩子](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
 - [使用 Githook 实现团队 Coding Review 流程](https://www.jianshu.com/p/935409ce4c9a)
 - [用 Git 钩子进行简单自动部署](https://aotu.io/notes/2017/04/10/githooks/index.html)
@@ -225,7 +234,7 @@ After
 }
 ```
 
-17. 快速打平数组的方法： join
+1.  快速打平数组的方法： join
 
 对于多维数组，join会递归调用数组的toString方法将数组转换成字符串，再用分隔符隔开(没传分隔符默认是',')，但分隔符只对最开始的第一维有效
 
@@ -823,3 +832,11 @@ CAP指的是Consistency(一致性)、Availability(可用性)、Partition toleran
 60. js内存泄漏
 
 - [JavaScript 内存泄漏教程](http://www.ruanyifeng.com/blog/2017/04/memory-leak.html)
+
+61. 大型前端项目性能优化
+
+- [Front-End Performance Checklist 2019 [PDF, Apple Pages, MS Word]](https://www.smashingmagazine.com/2019/01/front-end-performance-checklist-2019-pdf-pages/)
+- [Front-End Performance Checklist 2020 [PDF, Apple Pages, MS Word]](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/)
+- [（译）2019年前端性能优化清单 — 上篇](https://juejin.im/post/5c46cbaee51d453f45612a2c)
+- [（译）2019年前端性能优化清单 — 中篇](https://juejin.im/post/5c471eaff265da616d547c8c)
+- [（译）2019年前端性能优化清单 — 下篇](https://juejin.im/post/5c473cdae51d45518d4701ff)
