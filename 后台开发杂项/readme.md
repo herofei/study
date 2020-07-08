@@ -10,3 +10,8 @@
 
 - [微服务的定义和优缺点](https://zhuanlan.zhihu.com/p/31613331)
 - [微服务设计模式—API Gateway](https://zhuanlan.zhihu.com/p/31769905)
+
+3. service mesh
+
+- [什么是Service Mesh](https://zhuanlan.zhihu.com/p/61901608)
+- [什么是Service Mesh（服务网格）？](https://jimmysong.io/blog/what-is-a-service-mesh/)

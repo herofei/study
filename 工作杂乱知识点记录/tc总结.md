@@ -200,6 +200,9 @@ peerDependencies的目的是提示宿主环境去安装满足插件peerDependenc
 - [Blob对象](https://github.com/pfan123/Articles/issues/10)
 - [细说Web API中的Blob](https://juejin.im/post/59e35d0e6fb9a045030f1f35)
 - [前端图片canvas，file，blob，DataURL等格式转换](https://juejin.im/post/5b5187da51882519ec07fa41)
+- [javascript处理二进制之ArrayBuffer](https://juejin.im/post/5c36a4ec6fb9a049d97566f2)
+- [阮一峰 - 二进制数组](https://javascript.ruanyifeng.com/stdlib/arraybuffer.html)
+- [MDN - ArrayBuffer](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
 
 15.   npm script和npm钩子的关系
 [也许你不知道的npm-scripts](https://juejin.im/post/5caeffc6f265da03587bea9f)
@@ -840,3 +843,23 @@ CAP指的是Consistency(一致性)、Availability(可用性)、Partition toleran
 - [（译）2019年前端性能优化清单 — 上篇](https://juejin.im/post/5c46cbaee51d453f45612a2c)
 - [（译）2019年前端性能优化清单 — 中篇](https://juejin.im/post/5c471eaff265da616d547c8c)
 - [（译）2019年前端性能优化清单 — 下篇](https://juejin.im/post/5c473cdae51d45518d4701ff)
+
+62. service mesh
+
+- [什么是Service Mesh](https://zhuanlan.zhihu.com/p/61901608)
+- [什么是Service Mesh（服务网格）？](https://jimmysong.io/blog/what-is-a-service-mesh/)
+
+63. 自定义h5的video播放器
+
+- [自定义H5 video 播放器](https://juejin.im/post/5daef8b6e51d4524e60e0f6a)
+
+64. html5 video和视频文件流
+
+- [Does HTML5 <video> playback support the .avi format?](https://stackoverflow.com/questions/4129674/does-html5-video-playback-support-the-avi-format)
+- [VIDEO ON THE WEB](http://diveintohtml5.info/video.html)
+- [HTML5 video](https://en.wikipedia.org/wiki/HTML5_video)
+- [Media type and format guide: image, audio, and video content](https://developer.mozilla.org/en-US/docs/Web/Media/Formats)
+- [为什么视频网站的视频链接地址是blob？](https://juejin.im/post/5d1ea7a8e51d454fd8057bea)
+- [H5直播入门（理论篇）](https://juejin.im/post/5aaa34475188253640012847)
+- [三种视频流浏览器播放解决方案](https://juejin.im/post/5d8b57dc6fb9a04e024073c4)
+- [MDN - MediaSource](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaSource#Browser_compatibility)
