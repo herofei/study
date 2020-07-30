@@ -32,6 +32,13 @@ SELECT a.name, p.title, s.name, p.price
 FROM artist AS a INNER JOIN painting AS p INNER JOIN a_state AS s
 ON a.a_id = p.a_id AND p.state = s.abbr
 WHERE a.title = 'hello';
+
+-- 中间的as可以省略，简写成以下形式
+
+SELECT a.name, p.title, s.name, p.price
+FROM artist a INNER JOIN painting p INNER JOIN a_state s
+ON a.a_id = p.a_id AND p.state = s.abbr
+WHERE a.title = 'hello';
 ```
 
 用于联结多个表相关联数据
@@ -65,13 +72,45 @@ ON p1.a_id = p2.a_id
 WHERE p1.title = 'test' AND p1.title <> p1.title
 ```
 
-## 4. 更新表
+参考：
 
-## 5. 删除表(库)
+- [mysql inner join](https://www.yiibai.com/mysql/inner-join.html)
 
-## 6. 修改表结构
+## 4. 插入表数据
+```sql
+-- 插入单行数据
+INSERT INTO table(column1,column2...)
+VALUES (value1,value2,...);
 
-### 6.1 表添加修改字段
+-- 插入多行数据
+INSERT INTO table(column1,column2...)
+VALUES (value1,value2,...),
+       (value1,value2,...),
+...;
+
+-- 具有SELECT子句的MySQL INSERT
+INSERT INTO table_1
+SELECT c1, c2, FROM table_2;
+```
+
+## 5. 更新表数据
+
+```sql
+UPDATE [LOW_PRIORITY] [IGNORE] table_name 
+SET 
+    column_name1 = expr1,
+    column_name2 = expr2,
+    ...
+WHERE
+    condition;
+
+```
+
+## 6. 删除表(库)
+
+## 7. 修改表结构
+
+### 7.1 表添加修改字段
 
 ```sql
 # 在末尾添加字段
@@ -95,9 +134,9 @@ ALTER TABLE <表名> ADD <新字段名> <数据类型> [约束条件] AFTER <已
 - [MySQL数据表添加字段（三种方式）](http://c.biancheng.net/view/7201.html)
 - [mysql 添加字段，修改字段的用法](https://www.cnblogs.com/anxbb/p/8664753.html)
 
-## 7. 展示表关键信息
+## 8. 展示表关键信息
 
-### 7.1 展示表索引
+### 8.1 展示表索引
 
 ```sql
 SHOW INDEX FROM <表名> [ FROM <数据库名>]
@@ -105,7 +144,7 @@ SHOW INDEX FROM <表名> [ FROM <数据库名>]
 
 - [MySQL查看索引（SHOW INDEX）](http://c.biancheng.net/view/7364.html)
 
-### 8. 设置mysql client字符集
+### 8.2 设置mysql client字符集
 
 ```sql
 SET NAMES 'utf8';

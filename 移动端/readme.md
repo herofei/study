@@ -122,19 +122,6 @@ JS 调用客户端
 - [深入理解JSCore](https://tech.meituan.com/2018/08/23/deep-understanding-of-jscore.html)
 - [深入剖析 iOS 与 JS 交互](https://zhuanlan.zhihu.com/p/31368159)
 
-
-## more
-
-- [Hbuilder打包成app的方法]https://www.cnblogs.com/yizhilin/p/7479166.html
-
-- [Hbuilder用夜神模拟器及谷歌联调](http://blog.csdn.net/xuelang532777032/article/details/52268878)
-
-- [移动端chrome远程联调（Inspect Devices）](http://blog.csdn.net/freshlover/article/details/42528643)
-
-- [Vue + webpack项目的调试方式](http://blog.csdn.net/liyijun4114/article/details/73863228)
-
-- [司徒正美大大移动端开发遇到的坑总结](https://github.com/RubyLouvre/mobileHack)
-
 7. Vue项目自动转换 px 为 rem，高保真还原设计图
 
 - [Vue项目自动转换 px 为 rem，高保真还原设计图](https://juejin.im/post/5a716c4c6fb9a01cb42cac4b)
@@ -156,8 +143,27 @@ module.exports = {
 };
 ```
 
-1. 移动端开发适配注意事项
+8. 移动端开发适配注意事项
 
 - [关于移动端适配，你必须要知道的](https://juejin.im/post/5cddf289f265da038f77696c#heading-0)
 - [移动端适配方案-让分辨率来的更猛烈些吧！](https://juejin.im/post/5bc7fb9ef265da0acd20ebeb#heading-0)
+
+9. 移动端webview调试
+
+- [H5 移动调试全攻略](https://zhuanlan.zhihu.com/p/51794821)
+- [移动端Web开发调试之Chrome远程调试(Remote Debugging)](https://blog.csdn.net/freshlover/article/details/42528643)
+- [微信下调试H5页面](https://segmentfault.com/a/1190000018407990)
+- [如何真机调试微信h5页面](https://blog.csdn.net/zwkkkk1/article/details/97393352)
+
+## more
+
+- [Hbuilder打包成app的方法]https://www.cnblogs.com/yizhilin/p/7479166.html
+
+- [Hbuilder用夜神模拟器及谷歌联调](http://blog.csdn.net/xuelang532777032/article/details/52268878)
+
+- [移动端chrome远程联调（Inspect Devices）](http://blog.csdn.net/freshlover/article/details/42528643)
+
+- [Vue + webpack项目的调试方式](http://blog.csdn.net/liyijun4114/article/details/73863228)
+
+- [司徒正美大大移动端开发遇到的坑总结](https://github.com/RubyLouvre/mobileHack)
 
