@@ -881,3 +881,153 @@ CAP指的是Consistency(一致性)、Availability(可用性)、Partition toleran
 
 - [多对多中间表详解 -- Django从入门到精通系列教程](https://www.cnblogs.com/feixuelove1009/p/8417714.html)
 - [数据库中间表](https://blog.cto163.com/wordpress/%E4%B8%AD%E9%97%B4%E8%A1%A8/)
+
+67. Flex Basis与Width的区别
+
+- [[翻译]Flex Basis与Width的区别](https://www.jianshu.com/p/17b1b445ecd4)
+- [The Difference Between Width and Flex Basis](https://mastery.games/post/the-difference-between-width-and-flex-basis/)
+
+68. 为什么flex-box可用于div，但不能用于表格？
+
+- [Why does flex-box work with a div, but not a table?](https://stackoverflow.com/questions/41421512/why-does-flex-box-work-with-a-div-but-not-a-table)
+- [www.w3.org/TR/CSS2/tables](https://www.w3.org/TR/CSS2/tables.html#model)
+
+69. SameSite cookies explained
+
+- [SameSite cookies explained](https://web.dev/samesite-cookies-explained/?utm_source=devtools)
+- [Reject insecure SameSite=None cookies](https://www.chromestatus.com/feature/5633521622188032)
+
+70. fetch进行post请求为什么会首先发一个options 请求?
+
+- [fetch进行post请求为什么会首先发一个options 请求?](https://www.zhihu.com/question/49250449/answer/118740346)
+
+71. 流量劫持、网络劫持
+
+- [应对流量劫持，前端能做哪些工作？](https://www.zhihu.com/question/35720092/answer/523563873)
+
+72. 事件循环
+
+- [从Chrome源码看事件循环](https://zhuanlan.zhihu.com/p/48522249)
+- [Event Loop 这个循环你晓得么？(附GIF详解)](https://zhuanlan.zhihu.com/p/41543963)
+- [详解JavaScript中的Event Loop（事件循环）机制](https://zhuanlan.zhihu.com/p/33058983)
+
+73. ES module 和 commonjs的区别
+
+区别:
+
+1. commonJs是被加载的时候运行，esModule是编译的时候运行
+2. commonJs输出的是值的浅拷贝，esModule输出值的引用
+3. commentJs具有缓存。在第一次被加载时，会完整运行整个文件并输出一个对象，拷贝（浅拷贝）在内存中。下次加载文件时，直接从内存中取值
+
+ES module 执行步骤:
+
+1. 构造: 查找、下载并解析所有文件到模块记录中。
+2. 实例化: 在内存中寻找一块区域来存储所有导出的变量（但还没有填充值）。然后让 export 和 import 都指向这些内存块。这个过程叫做链接（linking）。
+3. 求值: 运行代码，在内存块中填入变量的实际值。
+
+所以es module的export和import指向的是一个内存地址, 故这个地址的值变化的话, 引用这个地址的变量都会变化。
+
+ES6 模块会在程序开始前先根据模块关系查找到所有模块，生成一个无环关系图，并将所有模块实例都创建好，这种方式天然地避免了循环引用的问题，当然也有模块加载缓存，重复 import 同一个模块，只会执行一次代码。
+
+一些example
+
+```js
+// es module
+
+// constants.js
+export const test = {
+  aa: 1,
+  bb: {
+    cc: 'hello'
+  }
+}
+
+export let test2 = 2
+
+setTimeout(() => {
+  test2 = undefined
+  test1.aa = 3
+  test1.bb.cc = 'bye'
+  console.log('test1', test1)
+  console.log('test2', test2)
+}, 2000)
+
+// index.js
+import { test1, test2 } from './constants'
+
+console.log('import1', test1)
+console.log('import2', test2)
+
+setTimeout(() => {
+  console.log('trigger1', test1)
+  console.log('trigger2', test2)
+}, 4000)
+
+// 输出
+// import1 {"aa":1,"bb":{"cc":"hello"}}
+// import2 2
+
+// test1 {"aa":3,"bb":{"cc":"bye"}}
+// test2 undefined
+
+// trigger1 {"aa":3,"bb":{"cc":"bye"}}
+// trigger2 undefined
+```
+
+```js
+// commonjs
+
+// constants.js
+let test1 = {
+  aa: 1,
+  bb: {
+    cc: 'hello'
+  }
+}
+
+let test2 = 2
+
+setTimeout(() => {
+  test1.aa = 2
+  test1.bb.cc = 'bye'
+  test2 = undefined
+  console.log('test1', test1)
+  console.log('test2', test2)
+}, 1000)
+
+module.exports = {
+  test1,
+  test2
+}
+
+// index.js
+let constants = require('./constants');
+
+console.log('require1', constants.test1)
+console.log('require2', constants.test2)
+
+setTimeout(() => {
+  console.log('trigger1', constants.test1)
+  console.log('trigger2', constants.test2)
+}, 4000)
+
+// 输出
+// require1 {"aa":1,"bb":{"cc":"hello"}}
+// require2 2
+
+// test1 {"aa":2,"bb":{"cc":"bye"}}
+// test2 undefined
+
+// trigger1 {"aa":2,"bb":{"cc":"bye"}}
+// trigger2 2
+```
+
+- [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
+- [漫画：深入浅出 ES 模块](https://zhuanlan.zhihu.com/p/36358695)
+- [CommonJS 和 ES6 Module 究竟有什么区别？](https://juejin.im/post/6844904080955932680#heading-0)
+- [Node.js 中的 require 是如何工作的？](https://juejin.im/post/6844903957752463374)
+- [CommonJs 和 ESModule 的 区别整理](https://juejin.im/post/6844903598480965646)
+- [深入理解es module](https://juejin.im/post/6844903834532200461)
+- [What do ES6 modules export?](https://2ality.com/2015/07/es6-module-exports.html)
+- [MDN - export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+

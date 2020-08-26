@@ -34,3 +34,5 @@ private isReceived!: boolean;
 - [ts-toolbelt](https://github.com/pirix-gh/ts-toolbelt)
 - [TypeScript Handbook（中文版）](https://zhongsp.gitbooks.io/typescript-handbook/content/)
 - [TypeScript 入门教程](https://ts.xcatliu.com/)
+
+- [【万字长文】深入理解 TypeScript 高级用法](https://zhuanlan.zhihu.com/p/136254808)

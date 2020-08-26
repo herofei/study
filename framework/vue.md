@@ -93,6 +93,68 @@ location / {
 - [如何在 Vue 中优雅地使用 CSS Modules？](https://juejin.im/post/5ac5fd7f5188257cc20d854e)
 - [[译] Vue: scoped 样式与 CSS Module 对比](https://juejin.im/post/5b9556446fb9a05d1b2e3613)
 
+12. hook event监听组件生命周期事件
+
+```vue
+<template>
+  <div class="echarts"></div>
+</template>
+<script>
+export default {
+  mounted() {
+    this.chart = echarts.init(this.$el)
+    // 请求数据，赋值数据 等等一系列操作...
+    // 监听窗口发生变化，resize组件
+    window.addEventListener('resize', this.$_handleResizeChart)
+  },
+  updated() {
+    // 干了一堆活
+  },
+  created() {
+    // 干了一堆活
+  },
+  beforeDestroy() {
+    // 组件销毁时，销毁监听事件
+    window.removeEventListener('resize', this.$_handleResizeChart)
+  },
+  methods: {
+    $_handleResizeChart() {
+      this.chart.resize()
+    },
+    // 其他一堆方法
+  }
+}
+</script>
+```
+
+在上面代码中, 应该将监听`resize`事件与销毁`resize`事件放到一起，现在两段代码分开而且相隔几百行代码，可读性比较差, 可改成
+
+
+```vue
+<script>
+export default {
+  mounted() {
+    this.chart = echarts.init(this.$el)
+    // 请求数据，赋值数据 等等一系列操作...
+
+    // 监听窗口发生变化，resize组件
+    window.addEventListener('resize', this.$_handleResizeChart)
+    // 通过hook监听组件销毁钩子函数，并取消监听事件
+    this.$once('hook:beforeDestroy', () => {
+      window.removeEventListener('resize', this.$_handleResizeChart)
+    })
+  },
+  updated() {},
+  created() {},
+  methods: {
+    $_handleResizeChart() {
+      // this.chart.resize()
+    }
+  }
+}
+</script>
+```
+
 ## vue jsx
 
 详见：
@@ -133,6 +195,12 @@ location / {
 
 - [浅谈 vue-cli 扩展性和插件设计](https://juejin.im/post/5cedb26451882566477b7235)
 
+
+## vdom
+
+- [如何看待 snabbdom 的作者开发的前端框架 Turbine 抛弃了虚拟DOM？](https://www.zhihu.com/question/59953136)
+- [Vue 用虚拟 DOM 的 diff 是不是属于多此一举?](https://www.zhihu.com/question/280408565)
+
 ## 参考
 
 - [大白话 Vue 源码系列](http://www.cnblogs.com/iovec/p/vue_01.html)
@@ -142,4 +210,7 @@ location / {
 - [vue-loader](https://vue-loader-v14.vuejs.org/zh-cn/start/spec.html)
 - [Vue.js最佳实践（五招让你成为Vue.js大师）](https://mp.weixin.qq.com/s/cVYtYWOB2mie-bjZmSw9AQ)
 - [vue中8种组件通信方式, 值得收藏!](https://juejin.im/post/5d267dcdf265da1b957081a3)
+- [!!非常推荐!!, Vue实战技巧指南](https://www.yuque.com/docs/share/9d79cdd2-086b-4ce3-8fc6-b79880946295)
+- [单向数据绑定和双向数据绑定的优缺点，适合什么场景？](https://www.zhihu.com/question/49964363/answer/136022879)
 
+- [vue-cli 源码分析](https://kuangpf.com/vue-cli-analysis/)

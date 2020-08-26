@@ -45,6 +45,10 @@ location / {
 
 - [本博客 Nginx 配置之完整篇](https://imququ.com/post/my-nginx-conf.html)
 
+5. nginx 超时配置
+
+- [nginx中的超时设置，请求超时、响应等待超时等](https://www.cnblogs.com/lemon-flm/p/8352194.html)
+
 
 
 ## 参考
@@ -55,3 +59,5 @@ location / {
 - [nginx从入门到实践](https://juejin.im/post/5a2600bdf265da432b4aaaba)
 - [Nginx与前端开发](https://juejin.im/post/5bacbd395188255c8d0fd4b2)
 - [简明 Nginx Location Url 配置笔记](https://www.jianshu.com/p/e154c2ef002f)
+
+- [Nginx + Node + Vue 部署初试(2019-03-18修改)](https://zhuanlan.zhihu.com/p/56254402)

@@ -3,6 +3,7 @@
 ## 一些不错的包
 
 - fs-extra: node fs核心模块的补充, 支持move, copy等API
+- execa：A better child_process。
 - commander: 编写命令行工具需要的包, 能大大减少开发量
 - inquirer: 一个让命令行工具能与用户进行问答、选择等操作的包
 - shelljs: 一个可以让你执行shell 命令的包
@@ -10,6 +11,8 @@
 - gulp:  基于流(stream)的自动化构建工具
 - gulp-cli: 在命令行操作gulp相关指令就需要安装此包
 - eslint: 静态代码扫描
+- download-git-repo：Download and extract a git repository (GitHub, GitLab, Bitbucket) from node。
+- consolidate：Template engine consolidation library for node.js 。
 
 ## 知识点杂项
 
