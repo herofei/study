@@ -187,6 +187,9 @@ npm config get registry 或 npm info express
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 ```
+
+13. 当npm 在linux安装
+
 # 参考
 
 - [npm install —— 从一个简单例子，看本地安装与全局安装的区别](https://yq.aliyun.com/articles/36217)
@@ -198,3 +201,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 - [npm ci命令](https://cloud.tencent.com/developer/section/1490280)
 
 - [[译] 你肯定想不到，创建并发布一个小而美的 npm 包有多简单](https://zhuanlan.zhihu.com/p/53575947)
+
+- [npx和npm之间的关系](https://juejin.im/post/6844903945664462855)
+
+- [npx 使用教程](https://www.ruanyifeng.com/blog/2019/02/npx.html)
