@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxifierProfile version="101" platform="Windows" product_id="0" product_minver="310">
+  <Options>
+    <Resolve>
+      <AutoModeDetection enabled="true" />
+      <ViaProxy enabled="false">
+        <TryLocalDnsFirst enabled="false" />
+      </ViaProxy>
+      <ExclusionList>%ComputerName%; localhost; *.local</ExclusionList>
+      <DnsUdpMode>0</DnsUdpMode>
+    </Resolve>
+    <Encryption mode="basic" />
+    <HttpProxiesSupport enabled="false" />
+    <HandleDirectConnections enabled="false" />
+    <ConnectionLoopDetection enabled="false" />
+    <ProcessServices enabled="false" />
+    <ProcessOtherUsers enabled="false" />
+  </Options>
+  <ProxyList>
+    <Proxy id="100" type="HTTPS">
+      <Address>web-proxy.oa.com</Address>
+      <Port>8080</Port>
+      <Options>50</Options>
+    </Proxy>
+    <Proxy id="101" type="HTTPS">
+      <Address>proxy.tencent.com</Address>
+      <Port>8080</Port>
+      <Options>48</Options>
+    </Proxy>
+    <Proxy id="102" type="SOCKS5">
+      <Address>127.0.0.1</Address>
+      <Port>1080</Port>
+      <Options>48</Options>
+    </Proxy>
+    <Proxy id="103" type="HTTPS">
+      <Address>web-proxyhk.oa.com</Address>
+      <Port>8080</Port>
+      <Options>48</Options>
+    </Proxy>
+    <Proxy id="104" type="HTTPS">
+      <Address>dev-proxy.oa.com</Address>
+      <Port>8080</Port>
+      <Options>48</Options>
+    </Proxy>
+    <Proxy id="105" type="HTTPS">
+      <Address>web-proxy.tencent.com</Address>
+      <Port>8080</Port>
+      <Options>48</Options>
+    </Proxy>
+  </ProxyList>
+  <ChainList />
+  <RuleList>
+    <Rule enabled="true">
+      <Name>无需代理</Name>
+      <Applications>qq*;iexplorer*;OUTLOOK*;RTX*;Scm*;svchost*;trayit*;chrome*;player*;tencent*;Client*;WX*;Explorer*;</Applications>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>无需代理目标</Name>
+      <Targets>localhost; 127.0.0.1; %ComputerName%;10.12.193.193;10.12.154.188;10.64.41.*;10.12.188.231;10.*.*.*;9.*.*.*;100.115.168.243;*.oa.com;</Targets>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>开发网</Name>
+      <Targets>dev-proxy.oa.com</Targets>
+      <Ports>8080</Ports>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>新建</Name>
+      <Applications>dontstarve_dedicated_server_nullrenderer.exe</Applications>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>Default</Name>
+      <Action type="Proxy">105</Action>
+    </Rule>
+  </RuleList>
+</ProxifierProfile>
