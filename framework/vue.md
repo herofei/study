@@ -155,6 +155,50 @@ export default {
 </script>
 ```
 
+12. props的延时性
+
+当父组件改变属性值, 通过prop传递到子组件时, 子组件收到的prop不会立刻同步值, 可使用$nextTick处理.
+
+```vue
+<template>
+  <child :some-prop="a" ref="child"></child>
+</template>
+<script>
+// 父组件
+export default {
+  data() {
+    a: 'aa'
+  },
+
+  methods: {
+    changeProp() {
+      this.a = 'bb'
+      const { child } = this.$refs
+      child.alert() // 打印结果是aa
+    }
+  }
+}
+</script>
+
+
+<script>
+// 子组件
+export default {
+  prop: {
+    someProp: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    alert() {
+      console.log(this.someProp)
+    }
+  }
+}
+</script>
+```
+
 ## vue jsx
 
 详见：

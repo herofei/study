@@ -269,6 +269,13 @@ let cpusNum = cpus().length;
 - [从暴力到 NAN 再到 NAPI——Node.js 原生模块开发方式变迁](https://cnodejs.org/topic/5957626dacfce9295ba072e0)
 - [在node.js项目中使用c++ addons](https://fsp1yjl.github.io/2017/07/03/%E5%9C%A8node-js%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8c-addon/)
 
+## node 与 docker
+
+- [一份为 Node.js 应用准备的 Dockerfile 指南](https://juejin.im/post/6844903567942221837)
+- [Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#cmd)
+- [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#add-or-copy)
+
+
 ## 主路线
 
 - [一起学 Node.js - 用nodeJs搭建一个个人博客](https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb)
@@ -335,3 +342,5 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 - [How express.js works - Understanding the internals of the express library](https://www.sohamkamani.com/blog/2018/05/30/understanding-how-expressjs-works/)
 - [深入理解 Node Stream 内部机制](https://www.barretlee.com/blog/2017/06/06/dive-to-nodejs-at-stream-module/)
 - [node事件循环](https://www.taopoppy.cn/node/one_eventLoop.html#%E5%85%AD%E4%B8%AA%E9%98%B6%E6%AE%B5)
+
+- [node.js 源码剖析](https://github.com/theanarkh/understand-nodejs)
