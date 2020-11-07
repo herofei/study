@@ -344,3 +344,6 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 - [node事件循环](https://www.taopoppy.cn/node/one_eventLoop.html#%E5%85%AD%E4%B8%AA%E9%98%B6%E6%AE%B5)
 
 - [node.js 源码剖析](https://github.com/theanarkh/understand-nodejs)
+- [nodejs源码分析](https://zhuanlan.zhihu.com/c_1094251741922619392)
+- [read-nodejs-code](https://github.com/theanarkh/read-nodejs-code)
+- [libuv源码分析](https://zhuanlan.zhihu.com/c_1094553212761309184)

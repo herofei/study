@@ -1031,3 +1031,86 @@ setTimeout(() => {
 - [What do ES6 modules export?](https://2ality.com/2015/07/es6-module-exports.html)
 - [MDN - export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 
+74. RegExp.prototype.exec()的一个坑
+
+>exec() 方法在一个指定字符串中执行一个搜索匹配。返回一个结果数组或 null。
+>
+>在设置了 global 或 sticky 标志位的情况下（如 /foo/g or /foo/y），JavaScript RegExp 对象是有状态的。他们会将上次成功匹配后的位置记录在 lastIndex 属性中。使用此特性，exec() 可用来对单个字符串中的多次> 匹配结果进行逐条的遍历（包括捕获到的匹配），而相比之下， String.prototype.match() 只会返回匹配到的结果。
+>
+>如果你只是为了判断是否匹配（true或 false），可以使用 RegExp.test() 方法，或者 String.search() 方法。
+
+- [MDN - RegExp.prototype.exec()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)
+- [js正则exec方法的一个诡异现象](https://www.jianshu.com/p/c6f4e0f732f8)
+
+75. 关于git在win或者mac下对文件名大小写不敏感的问题处理:
+
+方案一: 
+
+```bash
+git mv -f OldFileNameCase newfilenamecase
+```
+
+方案二:
+
+```bash
+git config core.ignorecase false
+```
+
+- [How do I commit case-sensitive only filename changes in Git?](https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-only-filename-changes-in-git)
+
+
+76. 声明式与命令式编程
+
+- 声明式编程（ Declarative）：只告诉你想要的结果（What），机器自己摸索过程（How）。典型例子就是html和sql，抽象成简单易懂的语法，让机器去执行里面的复杂渲染和查询逻辑。
+- 命令式编程（Imperative）：详细的命令机器怎么（How）去处理一件事情以达到你想要的结果（What）。一步一步告诉机器应该怎么做。
+
+参考：
+
+- [声明式编程和命令式编程有什么区别？](https://www.zhihu.com/question/22285830)
+- [命令式编程（Imperative） vs声明式编程（ Declarative）](https://zhuanlan.zhihu.com/p/34445114)
+- [声明式编程和命令式编程的比较](https://www.aqee.net/post/imperative-vs-declarative.html)
+- [声明式(declarative) vs 命令式(imperative)](https://lotabout.me/2020/Declarative-vs-Imperative-language/)
+
+77. HTTP协议中的Transfer-Encoding
+
+1. Transfer-Encoding，是一个 HTTP 头部字段，字面意思是「传输编码」。实际上，HTTP 协议中还有另外一个头部与编码有关：Content-Encoding（内容编码）。Content-Encoding 通常用于对实体内容进行压缩编码，目的是优化传输，例如用 gzip 压缩文本文件，能大幅减小体积。内容编码通常是选择性的，例如 jpg / png 这类文件一般不开启，因为图片格式已经是高度压缩过的，再压一遍没什么效果不说还浪费 CPU。而 Transfer-Encoding 则是用来改变报文格式，它不但不会减少实体内容传输大小，甚至还会使传输变大，那它的作用是什么呢？本文接下来主要就是讲这个。我们先记住一点，Content-Encoding 和 Transfer-Encoding 二者是相辅相成的，对于一个 HTTP 报文，很可能同时进行了内容编码和传输编码。
+
+2. 在node server的应用中, 如果返回数据中不添加Content-Length头部的话, 会默认是Transfer-Encoding: chunked的形式。
+
+3. chunked还是会给浏览器传输了每段chunk(数据段)的长度，但是偷偷藏在了报文当中，所以并没有显式地像content-length在头部声明。
+
+4. nginx中转发接口请求过程中, 会默认将所接受的数据buffer起来(proxy_request_buffering on;), 等这个连接的数据发送完毕之后再彻底转发, 也就是不走Transfer-Encoding: chunked的形式, 而是接受完所有数据, 赋值content-length头部的形式。 如果期望走Transfer-Encoding: chunked的形式转发接口请求的话, 可以将proxy_request_buffering配置改成off。
+
+参考:
+
+- [为什么在HTTP的chunked模式下不需要设置长度](https://zhuanlan.zhihu.com/p/65816404)
+- [MDN - Transfer-Encoding](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Transfer-Encoding)
+- [HTTP 协议中的 Transfer-Encoding](https://imququ.com/post/transfer-encoding-header-in-http.html)
+- [用了这么久HTTP, 你是否了解Content-Length?](https://blog.fundebug.com/2019/09/10/understand-http-content-length/)
+
+78. IOC(Inversion of Control, 控制反转)
+
+#### 起源
+
+早在2004年，Martin Fowler就提出了“哪些方面的控制被反转了？”这个问题。他总结出是依赖对象的获得被反转了，因为大多数应用程序都是由两个或是更多的类通过彼此的合作来实现业务逻辑，这使得每个对象都需要获取与其合作的对象（也就是它所依赖的对象）的引用。如果这个获取过程要靠自身实现，那么这将导致代码高度耦合并且难以维护和调试。
+
+#### 技术描述
+
+Class A中用到了Class B的对象b，一般情况下，需要在A的代码中显式的new一个B的对象。
+
+采用依赖注入技术之后，A的代码只需要定义一个私有的B对象，不需要直接new来获得这个对象，而是通过相关的容器控制程序来将B对象在外部new出来并注入到A类里的引用中。而具体获取的方法、对象被获取时的状态由配置文件（如XML）来指定。
+
+#### 实现方法
+
+实现控制反转主要有两种方式：依赖注入和依赖查找。两者的区别在于，前者是被动的接收对象，在类A的实例创建过程中即创建了依赖的B对象，通过类型或名称来判断将不同的对象注入到不同的属性中，而后者是主动索取相应类型的对象，获得依赖对象的时间也可以在代码中自由控制。
+
+- [IoC原理](https://www.liaoxuefeng.com/wiki/1252599548343744/1282381977747489)
+- [控制反转](https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC)
+- [浅谈IOC--说清楚IOC是什么](https://www.cnblogs.com/DebugLZQ/archive/2013/06/05/3107957.html)
+- [从前端角度彻底搞懂 DIP、IoC、DI、JS](https://zhuanlan.zhihu.com/p/61018434)
+- [面向复杂应用，Node.js中的IoC容器 -- Rockerjs/core](https://cloud.tencent.com/developer/article/1405995)
+- [当IoC遇见了Node.js](https://www.infoq.cn/article/ioc-meet-nodejs)
+- [五分钟掌握 JavaScript 中的 IoC](https://segmentfault.com/a/1190000022264251)
+- [前端 IoC 理念入门](https://efe.baidu.com/blog/introduction-about-ioc-in-frontend/)
+- [IOC在Nodejs上的初体验](https://juejin.im/post/6844903957366571016)
+- [浅谈阿里 Node 框架 Midway 在企业产品中的应用实践](https://zhuanlan.zhihu.com/p/81072053)
