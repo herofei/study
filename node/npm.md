@@ -152,7 +152,31 @@ npm root -g 查看在你的系统中全局的路径,例如返回结果如下：C
 - 如果a node_modules已经存在，它将在npm ci开始安装之前自动删除。
 - 它永远不会写入package.json或任何包锁：安装基本上是冻结的。
 
-12. npm install
+12. package-lock.json 与 npm-shrinkwrap.json
+
+在npm5之后，对于某一package.json文件，输入npm install，在相同时间点时总是可以得到相同的package-lock.json。当package.json中的依赖/子依赖的存在新的版本迭代时，则会忽略package-lock.json，并用新版本号覆盖package-lock.json。
+
+项目开发过程中肯定会持续更新依赖包的版本，如果需要确定性的构建结果，可以尝试使用npm ci。
+
+npm ci将会直接从package-lock.json安装依赖项，并仅使用package.json来验证是否存在不匹配的版本。 如果缺少任何依赖项或版本不兼容，则将抛出异常。
+
+package-lock的主要用处总结如下：
+
+- 1. package-lock的依赖目录和node_modules完全相同，因此可以通过package-lock了解依赖树的结构；
+- 2. 保证不同开发者间的版本库依赖关系完全相同；
+- 3. 允许npm跳过以前安装的依赖包的重复meta数据解析，显著减少安装耗时；
+
+基于以上的特点，笔者极力推荐开发者在生产项目中上传package-lock文件，以避免不必要的版本冲突。
+
+这里需要注意两点，一个是在根目录之外的任何地方都将被忽略，所以不会存在跨目录间package-lock互相干扰的问题；另一点是package-lock.json无法随着npm包一起被发布出去，因此开发npm包时是不能锁依赖版本的。
+
+如果发npm包有锁版本的需要，可以在存在node_modules或package-lock时通过npm shrinkwrap创建npm-shrinkwrap.json。npm-shrinkwrap与package-lock的结构与内容完全一致，唯一的区别就是npm-shrinkwrap可以随npm包一起上传，从而达到锁版本的目的。
+
+额外提一下，npm-shrinkwrap的创建强依赖于node_modules以及package-lock文件，如果不存在上述两个文件，则会创建一个空依赖的文件。如果已经存在package-lock，则会将其rename为npm-shrinkwrap；若只存在node_modules则会根据其结构创建npm-shrinkwrap。
+
+如果package-lock.json和npm-shrinkwrap.json都存在于包的根目录中，则package-lock.json将被忽略。
+
+13.   npm install
 ```bash
 npm install (with no args, in package dir)
 npm install [<@scope>/]<name>
@@ -167,30 +191,31 @@ npm install <folder>
 
 alias: npm i
 common options: [-P|--save-prod|-D|--save-dev|-O|--save-optional] [-E|--save-exact] [-B|--save-bundle] [--no-save] [--dry-run]
-
-13. 设置npm registry的几种方法
-
-(1) 临时使用
-
-npm --registry https://registry.npm.taobao.org install express
-
-(2) 持久使用
-
-npm config set registry https://registry.npm.taobao.org
-
-配置后可通过下面方式来验证是否成功
-
-npm config get registry 或 npm info express
-
-(3) 通过cnpm使用
-
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-
 ```
 
-13. 当npm 在linux安装
+14.  设置npm registry的几种方法
+
+(1) 临时使用
+```bash
+npm --registry https://registry.npm.taobao.org install express
+```
+
+(2) 持久使用
+```bash
+npm config set registry https://registry.npm.taobao.org
+npm config get registry 或 npm info express
+```
+
+(3) 通过cnpm使用
+```bash
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+15. 当npm 在linux安装
 
 # 参考
+
+- [npm中文文档](https://cloud.tencent.com/developer/chapter/18110)
 
 - [npm install —— 从一个简单例子，看本地安装与全局安装的区别](https://yq.aliyun.com/articles/36217)
 

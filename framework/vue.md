@@ -199,6 +199,11 @@ export default {
 </script>
 ```
 
+13. vue 中使用watch方法监听对象和数组的变化的时候, 对数组进行push操作和对Obj进行$set操作，虽然都可能触发watch事件，但是在callback返回的结果中，oldValue和newValue相同。那时因为对数组和对象的引用是同源的，虽然会触发数据watch，但是newValue和oldValue是同一个，解决方案是重新赋值对象或者数组。
+
+- [$watch中的oldvalue和newValue](https://segmentfault.com/a/1190000010397584)
+- [Vue watch 复杂对象变化，oldvalue 和 newValue 一致，解决办法。](https://blog.csdn.net/u011330018/article/details/107322733/?utm_medium=distribute.pc_relevant.none-task-blog-title-2&spm=1001.2101.3001.4242)
+
 ## vue jsx
 
 详见：
@@ -238,6 +243,8 @@ export default {
 详见:
 
 - [浅谈 vue-cli 扩展性和插件设计](https://juejin.im/post/5cedb26451882566477b7235)
+- [vue-cli-analysis](https://kuangpf.com/vue-cli-analysis/foreword/)
+- [【cli】这是看过最优秀的Vue-cli源码分析，绝对受益匪浅](https://juejin.cn/post/6844903586929868813)
 
 
 ## vdom

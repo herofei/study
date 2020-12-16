@@ -173,6 +173,15 @@ show create table <表名>
 - [记一次MySQL数据库拒绝访问的解决过程](https://www.cnblogs.com/chyingp/p/mysql-access-denied-because-of-anonymous-user.html)
 
 
+## mysql 导出 sql的执行结果到 csv文件
+
+```bash
+mysql -A db_name -h host_name -u user_name -p -ss -e "SELECT * FROM table_name LIMIT 100;" | sed 's/\t/","/g;s/^/"/;s/$/"/;s/\n//g' > apps.csv
+```
+
+- [mysql 导出 sql的执行结果到 csv文件](https://www.cnblogs.com/tommy-huang/p/9417090.html)
+
+
 
 
 

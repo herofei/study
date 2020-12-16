@@ -347,3 +347,6 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 - [nodejs源码分析](https://zhuanlan.zhihu.com/c_1094251741922619392)
 - [read-nodejs-code](https://github.com/theanarkh/read-nodejs-code)
 - [libuv源码分析](https://zhuanlan.zhihu.com/c_1094553212761309184)
+
+- [V8 文档](https://v8.dev/docs)
+- [libuv文档](http://docs.libuv.org/en/v1.x/)

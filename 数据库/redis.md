@@ -32,3 +32,9 @@ redis主从复制大概分为6、7个过程，简单说就是前期全量，后�
 参考: 
 
 - [腾讯云Redis混合存储版重磅推出，万字长文助你破解缓存难题！](https://mp.weixin.qq.com/s?__biz=Mzg4NjA4NTAzNQ==&mid=2247486896&idx=1&sn=f3e6f09fa19945fd8543597d40b4ba65&chksm=cf9e4974f8e9c0620574da8fa230385344a2528c3c36a413b8fd1e337a41cf890d07724a082e&scene=126&sessionid=1592466314&key=efbee84428230769d8cecb11c9fc54fff7a3911eb708c16a42a104c8092db08509f7870f582e2f0e9a0128474eee98f6a7ca9352e725b42c4ece8dc349c56a2404dfd7965e8807543cfe35bb6370e5e0&ascene=1&uin=ODExMzQwNTI0&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=Aw2QBSZIeRbs6GINYR6Cc64%3D&pass_ticket=%2FoM8ExRraLloscV60etT%2BF%2F5e3YYadA8oLR%2BycQ0gDXqHxXk%2BtsT4%2FRv19suExR5)
+- [用最少的机器支撑万亿级访问，微博6年Redis优化历程](https://www.weibo.com/ttarticle/p/show?id=2309403978986932807291)
+- [万亿级日访问量下，Redis在微博的9年优化历程](https://mp.weixin.qq.com/s?__biz=MzI4NTA1MDEwNg==&mid=2650782429&idx=1&sn=7f2df520a7295a002c4a59f6aea9e7f3&chksm=f3f90f48c48e865e478d936d76c5303663c98da506f221ede85f0f9250e5f897f24896147cfb&scene=27#wechat_redirect)
+- [美团点评万亿级KV存储架构与实践](https://tool.lu/ru_RU/deck/i4/detail?slide=20)
+- [美团点评万亿级KV存储架构与实践 齐泽斌](https://myslide.cn/slides/21838)
+- [Redis混合存储产品与架构介绍](https://developer.aliyun.com/article/582418)
+- [github redis](https://github.com/redis/redis)
