@@ -167,15 +167,21 @@ show columns from <表名>
 show create table <表名>
 ```
 
-## 10. 踩坑记录
+## 10. 索引
 
+### 参考
+
+- [理解索引（上）](https://juejin.im/post/6844903612959686664)
+- [理解索引（中）：MySQL查询过程和高级查询](https://juejin.im/post/6844903613869850637)
+- [理解索引：MySQL执行计划详细介绍](https://juejin.im/post/6844903615665029127)
+- [理解索引：索引优化](https://juejin.im/post/6844903616277381133)
+- [极客时间-深入浅出索引（上）](https://time.geekbang.org/column/article/69236)
+- [05 | 深入浅出索引（下）](https://time.geekbang.org/column/article/69636)
+
+## 15. 踩坑记录
 
 - [记一次MySQL数据库拒绝访问的解决过程](https://www.cnblogs.com/chyingp/p/mysql-access-denied-because-of-anonymous-user.html)
 
-
-
-
-
-## 11. 相关参考
+## 16. 相关参考
 
 - [常见的MySql操作](http://c.biancheng.net/skill/web/)
