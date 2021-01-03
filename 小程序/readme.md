@@ -166,6 +166,21 @@ Page({
 
 ```
 
+13. 小程序的wxs不支持字面量及构造函数构造正则, 需要使用特定的getRegExp函数
+
+```js
+// 语法
+getRegExp(pattern[, flags])
+
+// 示例
+var a = getRegExp("x", "img");
+console.log("x" === a.source);
+console.log(true === a.global);
+console.log(true === a.ignoreCase);
+console.log(true === a.multiline);
+```
+
+14. 小程序的tabbar中的tab不能超过5个, 即使使用自定义tabbar, 也不能超过5个(自定义tabbar展示上可以展示5个以上, 但是点击进去会报错, 显示页面没注册)。因为tabbar上的页面初始化后会常驻内存中, 放通太多个很容易OOM, 所以官方限制了只能5个。如果要确实想要实现5个以上的情况的话, 只能所有页面逻辑都写在一个页面上, 然后在那个页面上自己模拟一个tabbar出来.
 
 ## 官方工具
 

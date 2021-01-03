@@ -153,3 +153,7 @@ ExecStart=/usr/bin/dockerd -g /sf/docker --experimental=true
 
 - [从零开始Docker化你的Node.js应用](https://juejin.im/post/5b2cb6986fb9a00e3a5aa279)
 - [把一个 Node.js web 应用程序给 Docker 化](https://nodejs.org/zh-cn/docs/guides/nodejs-docker-webapp/)
+
+- [一份为 Node.js 应用准备的 Dockerfile 指南](https://juejin.im/post/6844903567942221837)
+- [Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#cmd)
+- [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#add-or-copy)

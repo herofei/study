@@ -171,12 +171,22 @@ show create table <表名>
 
 ### 参考
 
+
 - [理解索引（上）](https://juejin.im/post/6844903612959686664)
 - [理解索引（中）：MySQL查询过程和高级查询](https://juejin.im/post/6844903613869850637)
 - [理解索引：MySQL执行计划详细介绍](https://juejin.im/post/6844903615665029127)
 - [理解索引：索引优化](https://juejin.im/post/6844903616277381133)
 - [极客时间-深入浅出索引（上）](https://time.geekbang.org/column/article/69236)
 - [05 | 深入浅出索引（下）](https://time.geekbang.org/column/article/69636)
+
+
+## 11. mysql 导出 sql的执行结果到 csv文件
+
+```bash
+mysql -A db_name -h host_name -u user_name -p -ss -e "SELECT * FROM table_name LIMIT 100;" | sed 's/\t/","/g;s/^/"/;s/$/"/;s/\n//g' > apps.csv
+```
+
+- [mysql 导出 sql的执行结果到 csv文件](https://www.cnblogs.com/tommy-huang/p/9417090.html)
 
 ## 15. 踩坑记录
 
