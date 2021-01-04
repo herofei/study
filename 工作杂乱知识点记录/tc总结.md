@@ -1168,3 +1168,13 @@ package-lock的主要用处总结如下：
 84. ajax请求跨域携带cookie，cors支持ajax请求携带cookie
 
 - [如何配置ajax请求跨域携带cookie，cors支持ajax请求携带cookie](https://cloud.tencent.com/developer/article/1467263)
+
+85. 线程安全
+
+- [【面试】如果你这样回答“什么是线程安全”，面试官都会对你刮目相看](https://www.cnblogs.com/lixinjie/p/a-answer-about-thread-safety-in-a-interview.html)
+- [什么是线程安全以及如何实现？](https://segmentfault.com/a/1190000023187634)
+
+
+86. js加载器的实现
+
+- [[转]动态加载js文件的正确姿势](https://github.com/xiongwilee/blog/issues/8)

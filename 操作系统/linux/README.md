@@ -13,4 +13,5 @@
 ## 参考
 
 - [一言不合就改成 777 权限？会出人命的！](https://juejin.im/post/5bad92cd6fb9a05cde1d6076)
+- [Tmux 使用教程](http://www.ruanyifeng.com/blog/2019/10/tmux.html)
 

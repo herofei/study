@@ -213,6 +213,13 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 15. 当npm 在linux安装
 
+
+16. npm audit fix
+
+- [npm audit 二三事](http://eux.baidu.com/blog/fe/npm%20aduit%E4%BA%8C%E4%B8%89%E4%BA%8B)
+- [关于npm audit fix](https://juejin.cn/post/6844903965222502413)
+- [npm-audit 官方文档](https://docs.npmjs.com/cli/v6/commands/npm-audit)
+
 # 参考
 
 - [npm中文文档](https://cloud.tencent.com/developer/chapter/18110)

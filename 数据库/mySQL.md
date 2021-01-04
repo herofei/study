@@ -188,3 +188,4 @@ mysql -A db_name -h host_name -u user_name -p -ss -e "SELECT * FROM table_name L
 ## 11. 相关参考
 
 - [常见的MySql操作](http://c.biancheng.net/skill/web/)
+- [12800字！SQL 语法速成手册（干货满满，建议收藏！）](https://zhuanlan.zhihu.com/p/273568626)

@@ -1,6 +1,21 @@
 # nodejs
 
-## 一些不错的包
+## 主线
+
+### stream
+
+### 多进程与多线程
+
+- [Node.js 多线程完全指南](https://segmentfault.com/a/1190000018660861)
+- [多进程优化：Node.js子进程与线程](https://serverless-action.com/fontend/nodejs/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%8C%96%EF%BC%9ANode.js%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html#node-js-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF)
+
+### http与https
+
+### 进程间通信
+
+## 拓展
+
+### 一些不错的包
 
 - fs-extra: node fs核心模块的补充, 支持move, copy等API
 - execa：A better child_process。
@@ -14,7 +29,7 @@
 - download-git-repo：Download and extract a git repository (GitHub, GitLab, Bitbucket) from node。
 - consolidate：Template engine consolidation library for node.js 。
 
-## 知识点杂项
+### 杂项
 
 1. require:
 
@@ -350,3 +365,8 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 
 - [V8 文档](https://v8.dev/docs)
 - [libuv文档](http://docs.libuv.org/en/v1.x/)
+
+- [[转]关于Node进程管理器PM2使用技巧和需要注意的地方](https://github.com/xiongwilee/blog/issues/6)
+- [[转]Node.js的线程和进程详解](https://github.com/xiongwilee/blog/issues/9)
+- [Node.js 多线程完全指南](https://segmentfault.com/a/1190000018660861)
+- [多进程优化：Node.js子进程与线程](https://serverless-action.com/fontend/nodejs/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%8C%96%EF%BC%9ANode.js%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html#node-js-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF)

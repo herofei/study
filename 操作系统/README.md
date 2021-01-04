@@ -17,9 +17,16 @@
 - [「前端进阶」从多线程到Event Loop全面梳理](https://juejin.im/post/5d5b4c2df265da03dd3d73e5)
 - 深入理解计算机系统
 
+#### 线程安全
+
+- [【面试】如果你这样回答“什么是线程安全”，面试官都会对你刮目相看](https://www.cnblogs.com/lixinjie/p/a-answer-about-thread-safety-in-a-interview.html)
+- [什么是线程安全以及如何实现？](https://segmentfault.com/a/1190000023187634)
+
 
 ### IO多路复用之select、poll、epoll详解
 
 - [聊聊IO多路复用之select、poll、epoll详解](https://www.jianshu.com/p/dfd940e7fca2)
 - [Linux IO模式及 select、poll、epoll详解](https://segmentfault.com/a/1190000003063859)
 - [《大前端进阶 Node.js》系列 异步非阻塞（同步/异步/阻塞/非阻塞/read/select/epoll）](https://juejin.im/post/5e8ab5a551882573c15ed44c)
+
+

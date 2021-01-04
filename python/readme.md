@@ -343,3 +343,4 @@ else:
 - [python 菜鸟教程](https://www.runoob.com/python/python-multithreading.html)
 - [Python/WSGI 应用快速入门](https://uwsgi-docs-cn.readthedocs.io/zh_CN/latest/WSGIquickstart.html)
 - [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days)
+- [Python Tutorial](https://www.cnblogs.com/lixinjie/category/436499.html)
