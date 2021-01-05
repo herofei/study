@@ -1,4 +1,14 @@
-## 总结
+## 小程序技术架构
+
+- [微信小程序架构分析 (上)](https://zhuanlan.zhihu.com/p/22754296)
+- [微信小程序架构分析 (中)](https://zhuanlan.zhihu.com/p/22765476)
+- [微信小程序架构分析 (下)](https://zhuanlan.zhihu.com/p/22932309)
+- [WEPT (Wechat app page development tool)](https://github.com/wetools/wept)
+- [微信小程序底层的实现原理是怎样的？](https://www.zhihu.com/question/50920642)
+- [微信小程序架构原理](http://eux.baidu.com/blog/fe/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86)
+
+
+## 开发小结
 
 1. 切记不要频繁调用setData，在低端机中，性能会很差，详见[优化说明](https://developers.weixin.qq.com/miniprogram/dev/framework/performance/tips.html)
 
