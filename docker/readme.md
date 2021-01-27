@@ -157,3 +157,6 @@ ExecStart=/usr/bin/dockerd -g /sf/docker --experimental=true
 - [一份为 Node.js 应用准备的 Dockerfile 指南](https://juejin.im/post/6844903567942221837)
 - [Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#cmd)
 - [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#add-or-copy)
+- [前端高级进阶：使用 docker 高效部署你的前端应用](https://juejin.cn/post/6844904085938765837)
+- [Docker中Nginx服务器相关配置](https://www.cnblogs.com/jesse131/p/11529918.html)
+- 

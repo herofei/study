@@ -220,6 +220,11 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 - [关于npm audit fix](https://juejin.cn/post/6844903965222502413)
 - [npm-audit 官方文档](https://docs.npmjs.com/cli/v6/commands/npm-audit)
 
+
+17. npm包增加忽略提交配置
+
+- [npm包增加忽略提交配置](https://www.zhuyuntao.cn/npm%E5%8C%85%E5%A2%9E%E5%8A%A0%E5%BF%BD%E7%95%A5%E6%8F%90%E4%BA%A4%E9%85%8D%E7%BD%AE)
+
 # 参考
 
 - [npm中文文档](https://cloud.tencent.com/developer/chapter/18110)

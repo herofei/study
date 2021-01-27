@@ -290,6 +290,8 @@ let cpusNum = cpus().length;
 - [Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#cmd)
 - [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#add-or-copy)
 
+## node与消息队列
+
 
 ## 主路线
 
@@ -370,3 +372,7 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 - [[转]Node.js的线程和进程详解](https://github.com/xiongwilee/blog/issues/9)
 - [Node.js 多线程完全指南](https://segmentfault.com/a/1190000018660861)
 - [多进程优化：Node.js子进程与线程](https://serverless-action.com/fontend/nodejs/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%8C%96%EF%BC%9ANode.js%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html#node-js-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF)
+
+- [Building Robust Node Applications: Error Handling](https://strongloop.com/strongblog/robust-node-applications-error-handling/)
+- [Node.js Best Practices](https://www.joyent.com/node-js/production)
+- [node服务 - 生产环境最佳实践：性能和可靠性](https://expressjs.com/zh-cn/advanced/best-practice-performance.html)
