@@ -34,6 +34,10 @@ Class A中用到了Class B的对象b，一般情况下，需要在A的代码中�
 - [IOC在Nodejs上的初体验](https://juejin.im/post/6844903957366571016)
 - [浅谈阿里 Node 框架 Midway 在企业产品中的应用实践](https://zhuanlan.zhihu.com/p/81072053)
 
+## 系统设计
+
+- [The System Design Primer](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache)
+
 ## 更多引用
 
 - [大型项目前端架构浅谈（8000字原创首发）](https://zhuanlan.zhihu.com/p/67034025)

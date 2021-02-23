@@ -359,6 +359,7 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 - [How express.js works - Understanding the internals of the express library](https://www.sohamkamani.com/blog/2018/05/30/understanding-how-expressjs-works/)
 - [深入理解 Node Stream 内部机制](https://www.barretlee.com/blog/2017/06/06/dive-to-nodejs-at-stream-module/)
 - [node事件循环](https://www.taopoppy.cn/node/one_eventLoop.html#%E5%85%AD%E4%B8%AA%E9%98%B6%E6%AE%B5)
+- [[NodeJS源码探秘]之启动全流程](https://blog.dingkewz.com/post/tech/nodejs_source_startup03/)
 
 - [node.js 源码剖析](https://github.com/theanarkh/understand-nodejs)
 - [nodejs源码分析](https://zhuanlan.zhihu.com/c_1094251741922619392)
@@ -376,3 +377,6 @@ https://cnodejs.org/topic/58f376fec749f63d48fe9548
 - [Building Robust Node Applications: Error Handling](https://strongloop.com/strongblog/robust-node-applications-error-handling/)
 - [Node.js Best Practices](https://www.joyent.com/node-js/production)
 - [node服务 - 生产环境最佳实践：性能和可靠性](https://expressjs.com/zh-cn/advanced/best-practice-performance.html)
+
+- [* node服务架构 *](https://xin-tan.com/2020-05-28-learn-note/)
+- [《深入理解Node.js：核心思想与源码分析》](https://yjhjstz.gitbooks.io/deep-into-node/content/)

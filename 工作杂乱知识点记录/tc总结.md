@@ -1255,3 +1255,10 @@ Node.js 应用对内存的要求比较高，如果使用 4 个 1c1g 的容器来
 ```
 
 - [what is the point of using pm2 and docker together?](https://stackoverflow.com/questions/51191378/what-is-the-point-of-using-pm2-and-docker-together)
+
+91. VS Code 项目配置路径别名跳转
+
+开发脚手架自定义路径别名的时候, vscode等编辑器无法识别这类自定义别名导致智能提示和智能跳转会失效, 可以通过以下方案处理.
+
+- [VS Code 项目配置路径别名跳转](https://github.com/pfan123/Articles/issues/66)
+- [vscode 开启对 webpack alias(文件别名) 引入的智能提示](https://blog.csdn.net/zzl1243976730/article/details/92820985)
